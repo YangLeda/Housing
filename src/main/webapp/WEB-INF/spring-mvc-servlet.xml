@@ -30,7 +30,7 @@
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
         <property name="jdbcUrl"
-                  value="jdbc:mysql://localhost:3306/uohrs?useSSL=false"/>
+                  value="jdbc:mysql://localhost:3306/housing?useSSL=false"/>
         <property name="user" value="sep"/>
         <property name="password" value="sep"/>
 

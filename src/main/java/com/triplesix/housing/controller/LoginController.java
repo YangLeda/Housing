@@ -20,20 +20,32 @@ public class LoginController {
         return "login";
     }
 
+    @RequestMapping("/login_admin")
+    public String showAdminLoginPage() {
+        return "login_admin";
+    }
+
     @RequestMapping("/login_process")
     public String loginProcess(HttpServletRequest request, Model model) {
 
         // get parameters from form
+        String as = request.getParameter("as");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String[] remember = request.getParameterValues("remember");
+
 
         model.addAttribute("username", username);
-        model.addAttribute("password", password);
+        model.addAttribute("as", as);
+        if (remember == null){
+            model.addAttribute("rememberMe", false);
+        }else{
+            model.addAttribute("rememberMe", true);
+        }
+
 
         // get result from dao
-        boolean loginResult = loginDAO.checkLogin(username, password);
-
-        // add result string to model
+        boolean loginResult = loginDAO.checkLogin(as, username, password);
         if (loginResult) {
             model.addAttribute("loginResult", "Login successful!");
         } else {

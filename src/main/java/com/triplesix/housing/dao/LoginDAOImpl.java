@@ -20,14 +20,15 @@ public class LoginDAOImpl implements LoginDAO {
 
     @Override
     @Transactional
-    public boolean checkLogin(String username, String password) {
+    public boolean checkLogin(String as, String username, String password) {
 
         Session currentSession = sessionFactory.getCurrentSession();
 
-        String SQL_QUERY = "from Student as o where o.username=? and o.password=?";
-        Query<Student> query = currentSession.createQuery(SQL_QUERY, Student.class);
-        query.setParameter(0, username);
-        query.setParameter(1, password);
+        String SQL_QUERY = "from " + as + " as o where o.username=:username and o.password=:password";
+        Query query = currentSession.createQuery(SQL_QUERY);
+        //query.setParameter("as", as);
+        query.setParameter("username", username);
+        query.setParameter("password", password);
 
         List<Student> list = query.list();
 

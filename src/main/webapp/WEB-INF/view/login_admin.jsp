@@ -17,16 +17,16 @@
 
 <div class="container">
 
-    <form class="form-signin" action="login_process">
-        <h2 class="form-signin-heading">Sign in</h2>
+    <form class="form-signin" action="#">
+        <h2 class="form-signin-heading">Staff/Admin Login</h2>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="as" value="Student" checked> Student
+                <input class="form-check-input" type="radio" name="as" value="Staff" checked> Staff
             </label>
         </div>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="as" value="Landlord"> Landlord
+                <input class="form-check-input" type="radio" name="as" value="Admin"> Admin
             </label>
         </div>
         <input type="text" name="username" class="form-control" placeholder="Email address" required autofocus>
@@ -37,7 +37,6 @@
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <a href="login_admin">Staff/Admin Login</a>
     </form>
 
 </div> <!-- /container -->
