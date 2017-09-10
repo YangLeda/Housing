@@ -10,5 +10,7 @@
 
 ${loginResult}
 
+${username}
+
 </body>
 </html>

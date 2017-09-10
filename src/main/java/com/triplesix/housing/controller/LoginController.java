@@ -27,6 +27,9 @@ public class LoginController {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        model.addAttribute("username", username);
+        model.addAttribute("password", password);
+
         // get result from dao
         boolean loginResult = loginDAO.checkLogin(username, password);
 
