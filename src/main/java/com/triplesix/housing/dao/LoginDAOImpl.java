@@ -26,7 +26,6 @@ public class LoginDAOImpl implements LoginDAO {
 
         String SQL_QUERY = "from " + as + " as o where o.username=:username and o.password=:password";
         Query query = currentSession.createQuery(SQL_QUERY);
-        //query.setParameter("as", as);
         query.setParameter("username", username);
         query.setParameter("password", password);
 
