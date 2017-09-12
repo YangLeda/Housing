@@ -29,7 +29,7 @@
                 <input class="form-check-input" type="radio" name="as" value="Landlord"> Landlord
             </label>
         </div>
-        <input type="text" name="username" class="form-control" placeholder="Email address" required autofocus>
+        <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox">
             <label>
