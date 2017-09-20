@@ -61,6 +61,88 @@
     <!-- header -->
 
 
+    <div class="row">
+        <!-- search -->
+        <div class="col-md-3">
+            <h4>Search</h4>
+            <div class="row">
+                <div class="col">
+                    <h5>Min Beds</h5>
+                    <select class="">
+                        <option value="">any</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <h5>Min Baths</h5>
+                    <select class="">
+                        <option value="">any</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h5>Min Price</h5>
+                    <select class="">
+                        <option value="">any</option>
+                        <option value="">$500</option>
+                        <option value="">$1000</option>
+                        <option value="">$2000</option>
+                        <option value="">$3000</option>
+                        <option value="">$4000</option>
+                        <option value="">$5000</option>
+                        <option value="">$75000</option>
+                        <option value="">$10000</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <h5>Max Price</h5>
+                    <select class="">
+                        <option value="">any</option>
+                        <option value="">$1000</option>
+                        <option value="">$2000</option>
+                        <option value="">$3000</option>
+                        <option value="">$4000</option>
+                        <option value="">$5000</option>
+                        <option value="">$75000</option>
+                        <option value="">$10000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="">
+                <form>
+                    <input type="submit" value="Go">
+                </form>
+            </div>
+        </div>
+        <!-- search -->
+
+
+        <!-- list -->
+        <div class="col-md-9">
+            <div class="card">
+                <img class="card-img-top" src="/resources/img/house1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">29 Ross St,North Parramatta &#124; $600</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                        diam.</p>
+                    <a href="#" class="btn btn-primary">More detail</a>
+                </div>
+            </div>
+        </div>
+        <!-- list -->
+    </div>
+
     <!-- footer -->
     <footer class="footer">
         <div class="right">

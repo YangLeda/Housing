@@ -9,13 +9,14 @@
 <body>
 
 ${loginResult}
-<br><br>
-${username}
+<br><br><br><br>
+${username}...
 <br><br>
 ${as}
 <br><br>
 ${rememberMe}
 <br><br>
+
 
 </body>
 </html>
