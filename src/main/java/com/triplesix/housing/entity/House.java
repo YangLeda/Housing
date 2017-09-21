@@ -30,9 +30,8 @@ public class House {
     @Column(name = "carparks")
     private Integer carparks;
 
-    @Lob
-    @Column(name = "pic", columnDefinition = "mediumblob")
-    private byte[] pic;
+    @Column(name = "pic")
+    private String pic;
 
 
     public Integer getId() {
@@ -91,11 +90,11 @@ public class House {
         this.carparks = carparks;
     }
 
-    public byte[] getPic() {
+    public String getPic() {
         return pic;
     }
 
-    public void setPic(byte[] pic) {
+    public void setPic(String pic) {
         this.pic = pic;
     }
 
@@ -109,7 +108,7 @@ public class House {
                 ", bedrooms=" + bedrooms +
                 ", bathrooms=" + bathrooms +
                 ", carparks=" + carparks +
-                ", pic=" + Arrays.toString(pic).length() +
+                ", pic=" + pic +
                 "}";
     }
 }

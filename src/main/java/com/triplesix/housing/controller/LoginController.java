@@ -16,7 +16,7 @@ public class LoginController {
     @Autowired
     private LoginDAO loginDAO;
 
-    @RequestMapping("/")
+    @RequestMapping("/login")
     public String showLoginPage() {
         return "login";
     }
@@ -50,7 +50,7 @@ public class LoginController {
         if (loginResult) {
             model.addAttribute("loginResult", true);
             // Add redirect
-            response.setHeader("Refresh", "2;url=main");
+            response.setHeader("Refresh", "2;url=/");
         } else {
             model.addAttribute("loginResult", false);
         }

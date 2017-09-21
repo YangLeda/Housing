@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +45,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="#">Login</a>
+                    <a href="login">Login</a>
                 </form>
             </div>
         </nav>
@@ -65,6 +67,7 @@
         <!-- search -->
         <div class="col-md-3">
             <h4>Search</h4>
+            <br>
             <div class="row">
                 <div class="col">
                     <h5>Min Beds</h5>
@@ -89,6 +92,7 @@
                     </select>
                 </div>
             </div>
+            <br>
             <div class="row">
                 <div class="col">
                     <h5>Min Price</h5>
@@ -118,7 +122,7 @@
                     </select>
                 </div>
             </div>
-
+            <br>
             <div class="">
                 <form>
                     <input type="submit" value="Go">
@@ -130,16 +134,17 @@
 
         <!-- list -->
         <div class="col-md-9">
-            ${houses}
-            <div class="card">
-                <img class="card-img-top" src="/resources/img/house1.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">29 Ross St,North Parramatta &#124; $600</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        diam.</p>
-                    <a href="#" class="btn btn-primary">More detail</a>
+            <c:forEach var="house" items="${houses}">
+                <div class="card">
+                    <img class="card-img-top" src="${house.pic}">
+                    <div class="card-body">
+                        <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
+                        <p class="card-text">${house.description}</p>
+                        <a href="#" class="btn btn-primary">More detail</a>
+                    </div>
                 </div>
-            </div>
+                <br><br>
+            </c:forEach>
         </div>
         <!-- list -->
     </div>

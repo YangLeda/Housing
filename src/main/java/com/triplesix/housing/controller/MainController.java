@@ -15,8 +15,7 @@ public class MainController {
     @Autowired
     private HouseDAO houseDAO;
 
-
-    @RequestMapping("/main")
+    @RequestMapping("/")
     public String showMain(Model model) {
         List<House> houses = houseDAO.getHouses();
         model.addAttribute("houses", houses);
