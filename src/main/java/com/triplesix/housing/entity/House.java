@@ -1,6 +1,7 @@
 package com.triplesix.housing.entity;
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 @Entity
 @Table(name = "house")
@@ -105,6 +106,10 @@ public class House {
                 ", address='" + address + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                '}';
+                ", bedrooms=" + bedrooms +
+                ", bathrooms=" + bathrooms +
+                ", carparks=" + carparks +
+                ", pic=" + Arrays.toString(pic).length() +
+                "}";
     }
 }
