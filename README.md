@@ -22,3 +22,5 @@ UPDATE user SET authentication_string=PASSWORD("NEWPASSWORD") WHERE User='root';
 FLUSH PRIVILEGES;
 
 quit
+
+test
