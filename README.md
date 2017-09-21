@@ -8,14 +8,14 @@ Test landlord username: "landlord", password:"landlord".
 
 
 
+cd /usr/local
 
+sudo ./mysqld_safe --skip-grant-tables
 
-sudo mysqld_safe --skip-grant-tables
+./mysql -u root
 
-mysql -u root
-
-UPDATE mysql.user SET Password=PASSWORD('your-password') WHERE User='root';
+UPDATE user SET authentication_string=PASSWORD("NEWPASSWORD") WHERE User='root';
 
 FLUSH PRIVILEGES;
 
-\q
+quit
