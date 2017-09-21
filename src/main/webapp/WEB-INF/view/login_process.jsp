@@ -10,7 +10,7 @@
 
 ${loginResult}
 <br><br><br><br>
-${username}...
+${username}
 <br><br>
 ${as}
 <br><br>

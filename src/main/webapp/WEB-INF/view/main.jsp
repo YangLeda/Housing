@@ -130,6 +130,7 @@
 
         <!-- list -->
         <div class="col-md-9">
+            ${houses}
             <div class="card">
                 <img class="card-img-top" src="/resources/img/house1.jpg" alt="Card image cap">
                 <div class="card-body">
