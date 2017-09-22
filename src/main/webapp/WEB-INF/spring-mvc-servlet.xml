@@ -32,7 +32,7 @@
         <property name="jdbcUrl"
                   value="jdbc:mysql://localhost:3306/housing?useSSL=false"/>
         <property name="user" value="sep"/>
-        <property name="password" value="sep"/>
+        <property name="password" value="sepp"/>
 
         <!-- these are connection pool properties for C3P0 -->
         <property name="initialPoolSize" value="5"/>
