@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "landlord")
-public class Landlord implements User{
+public class Landlord implements User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,8 @@ public class Landlord implements User{
     @Column(name = "fullname")
     private String fullname;
 
-    public Landlord(){}
+    public Landlord() {
+    }
 
     public Landlord(String username, String password, String gender, String fullname) {
         this.username = username;

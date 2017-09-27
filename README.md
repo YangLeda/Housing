@@ -23,4 +23,3 @@ FLUSH PRIVILEGES;
 
 quit
 
-test456
