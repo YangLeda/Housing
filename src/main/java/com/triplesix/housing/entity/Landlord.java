@@ -23,6 +23,8 @@ public class Landlord {
     @Column(name = "fullname")
     private String fullname;
 
+    public Landlord(){}
+
     public Landlord(String username, String password, String gender, String fullname) {
         this.username = username;
         this.password = password;

@@ -24,19 +24,11 @@ public class RegisterController {
     public String showRegisterProcess(HttpServletRequest request, HttpServletResponse response, Model model) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
         String gender = request.getParameter("gender");
         String fullname = request.getParameter("fullname");
 
-        System.out.println(password);
-        System.out.println(gender);
-        registerDAO.register(username, password, gender, fullname);
         // DAO add landlord data
-        /*session.setAttribute("username", username);
-        session.setAttribute("password", password);
-        session.setAttribute("fullname", fullname);
-        String gender = request.getParameter("gender");
-        session.setAttribute("gender", gender);*/
+        registerDAO.register(username, password, gender, fullname);
 
         return "register_process";
     }

@@ -36,28 +36,27 @@ public class LoginController {
         String password = request.getParameter("password");
         String[] remember = request.getParameterValues("remember");
 
-
-        model.addAttribute("username", username);
+        /*model.addAttribute("username", username);
         model.addAttribute("as", as);
         if (remember == null) {
             model.addAttribute("rememberMe", false);
         } else {
             model.addAttribute("rememberMe", true);
-        }
-
+        }*/
 
         // get result from dao
         boolean loginResult = loginDAO.checkLogin(as, username, password);
-        if (loginResult) {
+
+        if (loginResult && as.equals("Student")) {
             session.setAttribute("id", 0);
-            model.addAttribute("loginResult", true);
-            // Add redirect
-            response.setHeader("Refresh", "2;url=/");
+            return "redirect:/";
+        } else if (loginResult && as.equals("Landlord")) {
+            session.setAttribute("id", 0);
+            return "redirect:/landlord";
         } else {
             model.addAttribute("loginResult", false);
+            return "login_process";
         }
 
-        return "login_process";
     }
-
 }

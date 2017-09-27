@@ -9,14 +9,8 @@
 <body>
 
 ${loginResult}
-<br><br><br><br>
-${username}
 <br><br>
-${as}
-<br><br>
-${rememberMe}
-<br><br>
-
+<p>Wrong username or password.</p>
 
 </body>
 </html>
