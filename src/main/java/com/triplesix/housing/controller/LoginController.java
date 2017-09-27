@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
@@ -27,7 +28,7 @@ public class LoginController {
     }
 
     @RequestMapping("/login_process")
-    public String loginProcess(HttpServletRequest request, HttpServletResponse response, Model model) {
+    public String loginProcess(HttpServletRequest request, HttpServletResponse response, HttpSession session, Model model) {
 
         // get parameters from form
         String as = request.getParameter("as");
@@ -48,6 +49,7 @@ public class LoginController {
         // get result from dao
         boolean loginResult = loginDAO.checkLogin(as, username, password);
         if (loginResult) {
+            session.setAttribute("id", 0);
             model.addAttribute("loginResult", true);
             // Add redirect
             response.setHeader("Refresh", "2;url=/");

@@ -83,9 +83,11 @@ CREATE TABLE `landlord` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `fullname` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +96,7 @@ CREATE TABLE `landlord` (
 
 LOCK TABLES `landlord` WRITE;
 /*!40000 ALTER TABLE `landlord` DISABLE KEYS */;
-INSERT INTO `landlord` VALUES (1,'landlord','landlord');
+INSERT INTO `landlord` VALUES (1,'landlord','landlord','male','landlord');
 /*!40000 ALTER TABLE `landlord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 13:17:04
+-- Dump completed on 2017-09-27 19:35:09

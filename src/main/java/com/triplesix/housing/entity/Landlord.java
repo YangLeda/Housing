@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Landlord {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
@@ -16,6 +16,27 @@ public class Landlord {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "fullname")
+    private String fullname;
+
+    public Landlord(String username, String password, String gender, String fullname) {
+        this.username = username;
+        this.password = password;
+        this.gender = gender;
+        this.fullname = fullname;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
 
     public Integer getId() {
         return id;
@@ -41,9 +62,22 @@ public class Landlord {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Landlord [id=" + id + ", username=" + username + ", password=" + password + "]";
+    public String getGender() {
+        return gender;
     }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Landlord{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", gender='" + gender + '\'' +
+                ", fullname='" + fullname + '\'' +
+                '}';
+    }
 }

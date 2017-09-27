@@ -16,11 +16,11 @@
         <table>
             <tr>
                 <td>Email</td>
-                <td><input type="text" name="user"></td>
+                <td><input type="text" name="username"></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="password" name="pwd"> The password must be less than 6 digits</td>
+                <td><input type="password" name="password"> The password must be less than 6 digits</td>
             </tr>
             <tr>
                 <td>Full name</td>
@@ -28,8 +28,8 @@
             </tr>
             <tr>
                 <td>Gender</td>
-                <td><input type="radio" name="sex" value="male">Male
-                    <input type="radio" name="sex" value="Female">Femal
+                <td><input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="Female">Femal
                 </td>
             </tr>
             <tr>
