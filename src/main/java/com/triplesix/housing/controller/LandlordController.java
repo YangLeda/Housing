@@ -22,9 +22,14 @@ public class LandlordController {
     public String showMain(HttpSession session, Model model) {
         // get current id from session
         Integer landlordid = (Integer) session.getAttribute("id");
-        List<House> houses = houseDAO.getLandlordHouses(landlordid);
-        model.addAttribute("houses", houses);
-        return "landlord";
+
+        if (landlordid == null || landlordid < 1){
+            return "redirect:/login";
+        } else {
+            List<House> houses = houseDAO.getLandlordHouses(landlordid);
+            model.addAttribute("houses", houses);
+            return "landlord";
+        }
     }
 
     @RequestMapping("/upload_house")
@@ -46,6 +51,6 @@ public class LandlordController {
 
         houseDAO.addHouse(address, description, price, bedrooms, bathrooms, carparks, "", landlordid);
 
-        return "redirect:/";
+        return "redirect:/landlord";
     }
 }

@@ -20,22 +20,7 @@
 
 <div class="container">
 
-    <a href="/">Home</a>
-    <br>
-    <a href="/upload_house"> Upload Property</a>
-    <br>
-    <p>List of uploaded houses:</p>
-    <br>
-
-    <c:forEach var="house" items="${houses}">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
-                <p class="card-text">${house.description}</p>
-            </div>
-        </div>
-        <br><br>
-    </c:forEach>
+    <p>List of applied houses:</p>
 
 </div> <!-- /container -->
 
