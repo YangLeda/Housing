@@ -5,7 +5,6 @@
   Time: 1:31 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
 <html>
 <head>
     <title>Register</title>
@@ -13,7 +12,7 @@
 <body>
 <center>
     <h1>Create an account</h1>
-    <form action="register_check.jsp" method="post">
+    <form method="post" action="register_process">
         <table>
             <tr>
                 <td>Email</td>
@@ -30,17 +29,16 @@
             <tr>
                 <td>Gender</td>
                 <td><input type="radio" name="sex" value="male">Male
-                    <input type="radio" name="sex" value="Female">Femal</td>
+                    <input type="radio" name="sex" value="Female">Femal
+                </td>
             </tr>
             <tr>
                 <td>Submit your photo ID</td>
-                <td><input  type="file"></td>
+                <td><input type="file"></td>
             </tr>
 
             <tr>
-                <td><input type="submit" value="Submit" onClick="window.location.href='register_show.jsp'"></td>
-                <td><input type="submit" value="Cancel" onClick="window.location.href='main.jsp'"></td>
-
+                <td><input type="submit" value="Submit"></td>
             </tr>
         </table>
     </form>

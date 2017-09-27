@@ -58,9 +58,4 @@ public class LoginController {
         return "login_process";
     }
 
-    @RequestMapping("/register")
-    public String showRegisterPage() {
-        return "register";
-    }
-
 }
