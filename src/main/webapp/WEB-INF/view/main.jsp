@@ -46,7 +46,7 @@
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a href="login">Login</a>
-                    &nbsp;id: ${sessionScope.id}
+                    &nbsp;current user id: ${sessionScope.id}
                 </form>
             </div>
         </nav>

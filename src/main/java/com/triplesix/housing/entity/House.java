@@ -1,14 +1,13 @@
 package com.triplesix.housing.entity;
 
 import javax.persistence.*;
-import java.util.Arrays;
 
 @Entity
 @Table(name = "house")
 public class House {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
@@ -33,6 +32,22 @@ public class House {
     @Column(name = "pic")
     private String pic;
 
+    @Column(name = "landlordid")
+    private Integer landlordid;
+
+    public House() {
+    }
+
+    public House(String address, String description, Integer price, Integer bedrooms, Integer bathrooms, Integer carparks, String pic, Integer landlordid) {
+        this.address = address;
+        this.description = description;
+        this.price = price;
+        this.bedrooms = bedrooms;
+        this.bathrooms = bathrooms;
+        this.carparks = carparks;
+        this.pic = pic;
+        this.landlordid = landlordid;
+    }
 
     public Integer getId() {
         return id;
@@ -98,6 +113,14 @@ public class House {
         this.pic = pic;
     }
 
+    public Integer getLandlordid() {
+        return landlordid;
+    }
+
+    public void setLandlordid(Integer landlordid) {
+        this.landlordid = landlordid;
+    }
+
     @Override
     public String toString() {
         return "House{" +
@@ -108,7 +131,8 @@ public class House {
                 ", bedrooms=" + bedrooms +
                 ", bathrooms=" + bathrooms +
                 ", carparks=" + carparks +
-                ", pic=" + pic +
-                "}";
+                ", pic='" + pic + '\'' +
+                ", landlordid=" + landlordid +
+                '}';
     }
 }

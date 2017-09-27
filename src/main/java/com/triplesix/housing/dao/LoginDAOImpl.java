@@ -1,7 +1,7 @@
 package com.triplesix.housing.dao;
 
 
-import com.triplesix.housing.entity.Student;
+import com.triplesix.housing.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -29,7 +29,7 @@ public class LoginDAOImpl implements LoginDAO {
         query.setParameter("username", username);
         query.setParameter("password", password);
 
-        List<Student> list = query.list();
+        List<User> list = query.list();
 
         if ((list != null) && (list.size() > 0)) {
             return list.get(0).getId();
