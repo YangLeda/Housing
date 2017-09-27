@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface HouseDAO {
     List<House> getHouses();
+
+    List<House> getLandlordHouses(Integer id);
 }

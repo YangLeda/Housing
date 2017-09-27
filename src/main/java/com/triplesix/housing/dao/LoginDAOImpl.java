@@ -20,7 +20,7 @@ public class LoginDAOImpl implements LoginDAO {
 
     @Override
     @Transactional
-    public boolean checkLogin(String as, String username, String password) {
+    public Integer checkLogin(String as, String username, String password) {
 
         Session currentSession = sessionFactory.getCurrentSession();
 
@@ -31,7 +31,11 @@ public class LoginDAOImpl implements LoginDAO {
 
         List<Student> list = query.list();
 
-        return (list != null) && (list.size() > 0);
-    }
+        if ((list != null) && (list.size() > 0)) {
+            return list.get(0).getId();
+        } else {
+            return -1;
+        }
 
+    }
 }

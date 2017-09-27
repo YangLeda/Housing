@@ -45,13 +45,13 @@ public class LoginController {
         }*/
 
         // get result from dao
-        boolean loginResult = loginDAO.checkLogin(as, username, password);
+        Integer loginResult = loginDAO.checkLogin(as, username, password);
 
-        if (loginResult && as.equals("Student")) {
-            session.setAttribute("id", 0);
+        if (loginResult > 0 && as.equals("Student")) {
+            session.setAttribute("id", loginResult);
             return "redirect:/";
-        } else if (loginResult && as.equals("Landlord")) {
-            session.setAttribute("id", 0);
+        } else if (loginResult > 0 && as.equals("Landlord")) {
+            session.setAttribute("id", loginResult);
             return "redirect:/landlord";
         } else {
             model.addAttribute("loginResult", false);
