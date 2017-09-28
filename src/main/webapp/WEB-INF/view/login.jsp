@@ -40,7 +40,7 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <a href="login_admin">Staff/Admin Login</a><br/>
 
-        If you wanna to be a landlord, please<a href="register">Register</a>
+        <a href="register">Register</a> as a landlord
 
     </form>
 
