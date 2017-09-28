@@ -158,6 +158,7 @@
     </footer>
     <!-- footer -->
     Logged in as: ${sessionScope.as}
+    <a href="/logout">Logout</a>
 </div>
 <!-- container -->
 

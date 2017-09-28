@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -27,22 +26,21 @@ public class LoginController {
         return "login_admin";
     }
 
+    @RequestMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("as");
+        session.removeAttribute("id");
+        return "redirect:/";
+    }
+
     @RequestMapping("/login_process")
-    public String loginProcess(HttpServletRequest request, HttpServletResponse response, HttpSession session, Model model) {
+    public String loginProcess(HttpServletRequest request, HttpSession session, Model model) {
 
         // get parameters from form
         String as = request.getParameter("as");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String[] remember = request.getParameterValues("remember");
-
-        /*model.addAttribute("username", username);
-        model.addAttribute("as", as);
-        if (remember == null) {
-            model.addAttribute("rememberMe", false);
-        } else {
-            model.addAttribute("rememberMe", true);
-        }*/
 
         // get result from dao
         Integer loginResult = loginDAO.checkLogin(as, username, password);
