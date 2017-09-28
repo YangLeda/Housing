@@ -9,13 +9,13 @@ import javax.servlet.http.HttpSession;
 public class StudentController {
     @RequestMapping("/student")
     public String showLoginPage(HttpSession session) {
-        // get current id from session
-        Integer studentid = (Integer) session.getAttribute("id");
+        // get from session
+        String as = (String) session.getAttribute("as");
 
-        if (studentid == null || studentid < 1) {
-            return "redirect:/login";
-        } else {
+        if (as.equals("Student")) {
             return "student";
+        } else {
+            return "redirect:/login";
         }
     }
 }

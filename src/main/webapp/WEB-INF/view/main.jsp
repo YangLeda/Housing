@@ -157,7 +157,7 @@
         </div>
     </footer>
     <!-- footer -->
-    current user id: ${sessionScope.id}
+    Logged in as: ${sessionScope.as}
 </div>
 <!-- container -->
 

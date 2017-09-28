@@ -49,9 +49,11 @@ public class LoginController {
 
         if (loginResult > 0 && as.equals("Student")) {
             session.setAttribute("id", loginResult);
+            session.setAttribute("as", as);
             return "redirect:/";
         } else if (loginResult > 0 && as.equals("Landlord")) {
             session.setAttribute("id", loginResult);
+            session.setAttribute("as", as);
             return "redirect:/landlord";
         } else {
             model.addAttribute("loginResult", false);

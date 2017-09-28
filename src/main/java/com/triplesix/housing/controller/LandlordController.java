@@ -20,15 +20,16 @@ public class LandlordController {
 
     @RequestMapping("/landlord")
     public String showMain(HttpSession session, Model model) {
-        // get current id from session
-        Integer landlordid = (Integer) session.getAttribute("id");
+        // get from session
+        String as = (String) session.getAttribute("as");
+        Integer id = (Integer) session.getAttribute("id");
 
-        if (landlordid == null || landlordid < 1){
-            return "redirect:/login";
-        } else {
-            List<House> houses = houseDAO.getLandlordHouses(landlordid);
+        if (as.equals("Landlord")) {
+            List<House> houses = houseDAO.getLandlordHouses(id);
             model.addAttribute("houses", houses);
             return "landlord";
+        } else {
+            return "redirect:/login";
         }
     }
 
