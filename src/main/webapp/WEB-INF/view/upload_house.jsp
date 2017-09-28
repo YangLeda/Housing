@@ -33,23 +33,23 @@
 
     <div class="container">
         <form action="upload_house_process">
-            <div class="spacefix">
+            <div>
                 <h5>Address</h5>
                 <input type="text" name="address" class="form-control" placeholder="Enter the address" required
                        autofocus>
             </div>
 
-            <div class="spacefix">
+            <div>
                 <h5>Price</h5>
                 <input type="text" name="price" class="form-control" placeholder="price" required autofocus>
             </div>
 
-            <div class="oneline">
-                <div class="spacefix">
+            <div >
+                <div class="form-check form-check-inline">
                     <h5> Bedrooms:</h5>
                 </div>
-                <div class="spacefix">
-                    <select class="selectSty" name="bedrooms">
+                <div class="form-check form-check-inline">
+                    <select name="bedrooms">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -58,11 +58,11 @@
                     </select>
                 </div>
 
-                <div class="spacefix">
+                <div class="form-check form-check-inline">
                     <h5>Bathrooms:</h5>
                 </div>
-                <div class="spacefix">
-                    <select class="selectSty" name="bathrooms">
+                <div class="form-check form-check-inline">
+                    <select name="bathrooms">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -71,11 +71,11 @@
                     </select>
                 </div>
 
-                <div class="spacefix">
+                <div class="form-check form-check-inline">
                     <h5>Carparks:</h5>
                 </div>
-                <div class="spacefix">
-                    <select class="selectSty" name="carparks">
+                <div class="form-check form-check-inline">
+                    <select name="carparks">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -85,12 +85,12 @@
                 </div>
             </div>
 
-            <div class="spacefix">
+            <div>
                 <h5>Picture</h5>
                 <input type="file">
             </div>
 
-            <div class="spacefix">
+            <div class="form-check form-check-inline">
                 <h5>Description</h5>
                 <input type="text" name="description" class="form-control" placeholder="Enter your description" required
                        autofocus>
