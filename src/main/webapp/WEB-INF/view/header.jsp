@@ -17,7 +17,7 @@
                     <a class="nav-link" href="/student">Student</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/landlord">landlord</a>
+                    <a class="nav-link" href="/landlord">Landlord</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
