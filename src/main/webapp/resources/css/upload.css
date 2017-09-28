@@ -1,0 +1,25 @@
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 50px;
+    font-size: 16px;
+}
+.form-signin .text-center{
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: content-box;
+    box-sizing: border-box;
+    padding: 50px;
+    font-size: 50px;
+}
+.oneline{
+    display:-ms-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+}
+.spacefix{
+    margin: 20px 50px 20px 0px;
+}
