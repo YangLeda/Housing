@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link href="/resources/css/login.css" rel="stylesheet">
+    <link href="/resources/css/main.css" rel="stylesheet">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 
     <a href="/upload_house"> Upload Property</a>
     <br>
-    <p>List of uploaded houses:</p>
+    <h>List of uploaded houses:</h>
     <br>
 
     <c:forEach var="house" items="${houses}">
