@@ -8,9 +8,7 @@
 </head>
 <body>
 
-${loginResult}
-<br><br>
-<p>Wrong username or password.</p>
+<h3>Wrong username or password.</h3>
 
 </body>
 </html>

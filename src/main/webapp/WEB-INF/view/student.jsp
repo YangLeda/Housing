@@ -24,7 +24,7 @@
     <jsp:include page="header.jsp"></jsp:include>
     <!-- header -->
 
-    <h1>List of applied houses:</h1>
+    <h2>List of applied houses:</h2>
 
 </div> <!-- /container -->
 

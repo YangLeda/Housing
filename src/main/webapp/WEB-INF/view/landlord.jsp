@@ -24,7 +24,7 @@
 
     <a href="/upload_house"> Upload Property</a>
     <br>
-    <h>List of uploaded houses:</h>
+    <h2>List of uploaded houses:</h2>
     <br>
 
     <c:forEach var="house" items="${houses}">
