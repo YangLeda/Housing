@@ -24,7 +24,7 @@ public class LandlordController {
         String as = (String) session.getAttribute("as");
         Integer id = (Integer) session.getAttribute("id");
 
-        if (as.equals("Landlord")) {
+        if (as != null && as.equals("Landlord")) {
             List<House> houses = houseDAO.getLandlordHouses(id);
             model.addAttribute("houses", houses);
             return "landlord";

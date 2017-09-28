@@ -17,11 +17,11 @@
 </head>
 <body>
 
-
 <div class="container">
+    <!-- header -->
+    <jsp:include page="header.jsp"></jsp:include>
+    <!-- header -->
 
-    <a href="/">Home</a>
-    <br>
     <a href="/upload_house"> Upload Property</a>
     <br>
     <p>List of uploaded houses:</p>

@@ -13,22 +13,58 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link href="/resources/css/login.css" rel="stylesheet">
 </head>
 <body>
 
-
+<!-- container -->
 <div class="container">
-
     <!-- header -->
     <jsp:include page="header.jsp"></jsp:include>
     <!-- header -->
 
-    <p>List of applied houses:</p>
+    <h2>33 lakeside rd eastwood</h2>
+    <img src="/resources/img/house2.jpg">
 
-</div> <!-- /container -->
+    <div class="container">
 
+        <div class="spacefix">
+            <h5>Address</h5>\
+        </div>
 
+        <div class="spacefix">
+            <h5>Price</h5>
+        </div>
+
+        <div class="online">
+            <div class="spacefix">
+                <h5> Bedrooms:</h5>
+            </div>
+            <div class="spacefix">
+            </div>
+
+            <div class="spacefix">
+                <h5>Bathrooms:</h5>
+            </div>
+            <div class="spacefix">
+            </div>
+
+            <div class="spacefix">
+                <h5>Carparks:</h5>
+            </div>
+            <div class="spacefix">
+            </div>
+        </div>
+
+        <div class="spacefix">
+            <h5>Leave a Message</h5>
+            <textarea rows="10" cols="50"></textarea>
+        </div>
+
+        <div class="spacefix">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">contact me!</button>
+        </div>
+    </div>
+</div>
 <!-- Optional JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

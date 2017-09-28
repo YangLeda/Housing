@@ -28,22 +28,8 @@
 <!-- container -->
 <div class="container">
     <!-- header -->
-    <div class="header">
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <a class="navbar-brand" href="#">UTS Housing</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-    </div>
-
-    <div class="banner">
-        <div class="container">
-            <h2>Upload your properties here</h2>
-        </div>
-    </div>
+    <jsp:include page="header.jsp"></jsp:include>
+    <!-- header -->
 
     <div class="container">
         <form action="upload_house_process">

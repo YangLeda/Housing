@@ -12,10 +12,15 @@ public class StudentController {
         // get from session
         String as = (String) session.getAttribute("as");
 
-        if (as.equals("Student")) {
+        if (as != null && as.equals("Student")) {
             return "student";
         } else {
             return "redirect:/login";
         }
+    }
+
+    @RequestMapping("/detail")
+    public String showHouseDetail(HttpSession session) {
+        return "house_detail";
     }
 }
