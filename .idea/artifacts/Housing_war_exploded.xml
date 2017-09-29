@@ -8,12 +8,15 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.0.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.0.RELEASE" />
