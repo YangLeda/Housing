@@ -27,6 +27,20 @@ public class HouseDAOImpl implements HouseDAO {
 
     @Override
     @Transactional
+    public List<House> searchHouses() {
+        Session currentSession = sessionFactory.getCurrentSession();
+        String query = "from House";
+        Query<House> q = currentSession.createQuery(query, House.class);
+        List<House> houses = q.getResultList();
+
+        //
+        System.out.println(houses);
+        houses = null;
+        return houses;
+    }
+
+    @Override
+    @Transactional
     public List<House> getLandlordHouses(Integer id) {
         Session currentSession = sessionFactory.getCurrentSession();
         Query<House> q = currentSession.createQuery("Select h from House h where h.landlordid=:id", House.class);

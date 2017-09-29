@@ -21,4 +21,11 @@ public class MainController {
         model.addAttribute("houses", houses);
         return "main";
     }
+
+    @RequestMapping("/search")
+    public String showSearchMain(Model model) {
+        List<House> houses = houseDAO.searchHouses();
+        model.addAttribute("houses", houses);
+        return "main";
+    }
 }

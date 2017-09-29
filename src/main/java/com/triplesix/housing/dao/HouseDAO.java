@@ -7,6 +7,8 @@ import java.util.List;
 public interface HouseDAO {
     List<House> getHouses();
 
+    List<House> searchHouses();
+
     List<House> getLandlordHouses(Integer id);
 
     House getHouseById(Integer id);
