@@ -30,15 +30,21 @@ public class HouseDAOImpl implements HouseDAO {
     public List<House> searchHouses(Integer minBedrooms, Integer minBathrooms, Integer minCarparks,
                                     Integer minPrice, Integer maxPrice) {
         Session currentSession = sessionFactory.getCurrentSession();
-        String query = "from House";
-        Query<House> q = currentSession.createQuery(query, House.class);
-        List<House> houses = q.getResultList();
 
-        // todo
-        System.out.println(minBathrooms);
-        System.out.println(maxPrice);
-        System.out.println(houses);
-        houses = null;
+        String query = "Select h from House h where " +
+                "h.bedrooms >= :minBedrooms and " +
+                "h.bathrooms >= :minBathrooms and " +
+                "h.carparks > :minCarparks and " +
+                "h.price between :minPrice and :maxPrice";
+
+        Query<House> q = currentSession.createQuery(query, House.class);
+        q.setParameter("minBedrooms", minBedrooms);
+        q.setParameter("minBathrooms", minBathrooms);
+        q.setParameter("minCarparks", minCarparks);
+        q.setParameter("minPrice", minPrice);
+        q.setParameter("maxPrice", maxPrice);
+
+        List<House> houses = q.getResultList();
 
         return houses;
     }
