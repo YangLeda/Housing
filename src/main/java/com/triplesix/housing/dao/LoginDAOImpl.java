@@ -1,6 +1,7 @@
 package com.triplesix.housing.dao;
 
 
+import com.google.common.hash.Hashing;
 import com.triplesix.housing.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 
@@ -21,6 +23,11 @@ public class LoginDAOImpl implements LoginDAO {
     @Override
     @Transactional
     public Integer checkLogin(String as, String username, String password) {
+
+        // Create SHA256 password
+        password = Hashing.sha256()
+                .hashString(password, StandardCharsets.UTF_8)
+                .toString();
 
         Session currentSession = sessionFactory.getCurrentSession();
 

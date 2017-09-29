@@ -22,11 +22,10 @@ public class RegisterController {
     public String showRegisterProcess(HttpServletRequest request) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String gender = request.getParameter("gender");
         String fullname = request.getParameter("fullname");
 
         // DAO add landlord data
-        registerDAO.register(username, password, gender, fullname);
+        registerDAO.register(username, password, fullname);
 
         return "register_process";
     }

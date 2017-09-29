@@ -17,19 +17,15 @@ public class Landlord implements User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "gender")
-    private String gender;
-
     @Column(name = "fullname")
     private String fullname;
 
     public Landlord() {
     }
 
-    public Landlord(String username, String password, String gender, String fullname) {
+    public Landlord(String username, String password, String fullname) {
         this.username = username;
         this.password = password;
-        this.gender = gender;
         this.fullname = fullname;
     }
 
@@ -65,21 +61,12 @@ public class Landlord implements User {
         this.password = password;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     @Override
     public String toString() {
         return "Landlord{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", gender='" + gender + '\'' +
                 ", fullname='" + fullname + '\'' +
                 '}';
     }
