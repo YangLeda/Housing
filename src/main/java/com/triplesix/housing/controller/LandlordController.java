@@ -49,7 +49,7 @@ public class LandlordController {
 
         // get current id from session
         Integer landlordid = (Integer) session.getAttribute("id");
-
+        //call function 
         houseDAO.addHouse(address, description, price, bedrooms, bathrooms, carparks, "", landlordid);
 
         return "redirect:/landlord";
