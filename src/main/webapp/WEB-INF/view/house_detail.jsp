@@ -26,27 +26,31 @@
     <h2>${house.address} &#124; $${house.price}</h2>
     <img src="${house.pic}">
 
-    <div class="container">
+    <h5>Address</h5> ${house.address}
 
-        <h5>Address</h5> ${house.address}
+    <h5>Price</h5> ${house.price}
 
-        <h5>Price</h5> ${house.price}
+    <h5> Bedrooms:</h5> ${house.bedrooms}
 
-        <h5> Bedrooms:</h5> ${house.bedrooms}
+    <h5>Bathrooms:</h5> ${house.bathrooms}
 
-        <h5>Bathrooms:</h5> ${house.bathrooms}
+    <h5>Carparks:</h5> ${house.carparks}
 
-        <h5>Carparks:</h5> ${house.carparks}
+    <h5>Description:</h5> ${house.description}
 
-        <h5>Description:</h5> ${house.description}
+    <h5>Leave a Message</h5>
+    <textarea rows="10" cols="50"></textarea>
 
-        <h5>Leave a Message</h5>
-        <textarea rows="10" cols="50"></textarea>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Apply this house</button>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Apply this house</button>
 
-    </div>
+    <!-- footer -->
+    <jsp:include page="footer.jsp"></jsp:include>
+    <!-- footer -->
+
 </div>
+<!-- /container -->
+
 <!-- Optional JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

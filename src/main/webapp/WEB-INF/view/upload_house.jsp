@@ -44,7 +44,7 @@
                 <input type="text" name="price" class="form-control" placeholder="price" required autofocus>
             </div>
 
-            <div >
+            <div>
                 <div class="form-check form-check-inline">
                     <h5> Bedrooms:</h5>
                 </div>
@@ -101,7 +101,12 @@
             </div>
         </form>
 
+        <!-- footer -->
+        <jsp:include page="footer.jsp"></jsp:include>
+        <!-- footer -->
+
     </div>
+    <!-- /container -->
 
     <!-- Optional JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

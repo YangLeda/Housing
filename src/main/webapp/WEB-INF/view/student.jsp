@@ -26,7 +26,12 @@
 
     <h2>List of applied houses:</h2>
 
-</div> <!-- /container -->
+    <!-- footer -->
+    <jsp:include page="footer.jsp"></jsp:include>
+    <!-- footer -->
+
+</div>
+<!-- /container -->
 
 
 <!-- Optional JavaScript -->
