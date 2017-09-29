@@ -5,6 +5,7 @@ import com.triplesix.housing.entity.House;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,10 +20,9 @@ public class LandlordController {
 
 
     @RequestMapping("/landlord")
-    public String showMain(HttpSession session, Model model) {
-        // get from session
-        String as = (String) session.getAttribute("as");
-        Integer id = (Integer) session.getAttribute("id");
+    public String showMain(@CookieValue(value = "as", required = false) String as,
+                           @CookieValue(value = "id", required = false) Integer id,
+                           Model model) {
 
         if (as != null && as.equals("Landlord")) {
             List<House> houses = houseDAO.getLandlordHouses(id);

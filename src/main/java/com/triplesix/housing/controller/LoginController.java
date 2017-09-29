@@ -7,8 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class LoginController {
@@ -27,14 +28,18 @@ public class LoginController {
     }
 
     @RequestMapping("/logout")
-    public String logout(HttpSession session) {
-        session.removeAttribute("as");
-        session.removeAttribute("id");
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        for (Cookie c : cookies) {
+            c.setMaxAge(0);
+            response.addCookie(c);
+        }
+
         return "redirect:/";
     }
 
     @RequestMapping("/login_process")
-    public String loginProcess(HttpServletRequest request, HttpSession session, Model model) {
+    public String loginProcess(HttpServletRequest request, HttpServletResponse response, Model model) {
 
         // get parameters from form
         String as = request.getParameter("as");
@@ -45,18 +50,31 @@ public class LoginController {
         // get result from dao
         Integer loginResult = loginDAO.checkLogin(as, username, password);
 
-        if (loginResult > 0 && as.equals("Student")) {
-            session.setAttribute("id", loginResult);
-            session.setAttribute("as", as);
-            return "redirect:/";
-        } else if (loginResult > 0 && as.equals("Landlord")) {
-            session.setAttribute("id", loginResult);
-            session.setAttribute("as", as);
-            return "redirect:/landlord";
-        } else {
-            model.addAttribute("loginResult", false);
-            return "login_process";
-        }
+        if (loginResult > 0) { // correct username and password
+            Cookie idCookie = new Cookie("id", loginResult.toString());
+            Cookie asCookie = new Cookie("as", as);
 
+            // remember me for one day or current session life
+            if (remember != null) {
+                idCookie.setMaxAge(24 * 60 * 60);
+                asCookie.setMaxAge(24 * 60 * 60);
+            } else {
+                idCookie.setMaxAge(-1);
+                asCookie.setMaxAge(-1);
+            }
+
+            response.addCookie(idCookie);
+            response.addCookie(asCookie);
+
+            if (as.equals("Student")) {
+                return "redirect:/";
+            } else {
+                return "redirect:/landlord";
+            }
+        } else { // wrong username or password
+            model.addAttribute("loginResult", false);
+            return "login_error";
+        }
     }
 }
+

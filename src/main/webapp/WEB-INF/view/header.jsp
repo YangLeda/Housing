@@ -22,8 +22,20 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <%
-                    Integer id = (Integer) session.getAttribute("id");
-                    String as = (String) session.getAttribute("as");
+                    Integer id = null;
+                    String as = null;
+                    Cookie[] cookies = request.getCookies();
+
+                    if (cookies != null) {
+                        for (Cookie c : cookies) {
+                            if (c.getName().equals("id")) {
+                                id = Integer.parseInt(c.getValue());
+                            }
+                            if (c.getName().equals("as")) {
+                                as = c.getValue();
+                            }
+                        }
+                    }
 
                     if (id != null && id > 0) {
                         out.println("Logged in as:&nbsp" + as + "&nbsp");

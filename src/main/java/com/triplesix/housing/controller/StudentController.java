@@ -5,11 +5,10 @@ import com.triplesix.housing.entity.House;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class StudentController {
@@ -18,10 +17,7 @@ public class StudentController {
     private HouseDAO houseDAO;
 
     @RequestMapping("/student")
-    public String showLoginPage(HttpSession session) {
-        // get from session
-        String as = (String) session.getAttribute("as");
-
+    public String showLoginPage(@CookieValue(value = "as", required = false) String as) {
         if (as != null && as.equals("Student")) {
             return "student";
         } else {
