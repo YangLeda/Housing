@@ -69,7 +69,7 @@ CREATE TABLE `house` (
 
 LOCK TABLES `house` WRITE;
 /*!40000 ALTER TABLE `house` DISABLE KEYS */;
-INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,3),(2,'51 Cowper Street',3,1,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',550,3),(3,'49-51 Loch St',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',600,1),(9,'11',1,1,1,'','11',11,1),(10,'1',1,1,1,'','1',1,1),(11,'test address',1,3,4,'','test desc',550,3),(12,'test1',1,3,1,'','222',555,3);
+INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,2),(2,'51 Cowper Street',3,1,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',550,2),(3,'49-51 Loch St',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',600,2);
 /*!40000 ALTER TABLE `house` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +96,7 @@ CREATE TABLE `landlord` (
 
 LOCK TABLES `landlord` WRITE;
 /*!40000 ALTER TABLE `landlord` DISABLE KEYS */;
-INSERT INTO `landlord` VALUES (1,'landlord','c4a11b3a02a7908b51baf438f5024526f2bde971b3024d058420b737dc61e93f','landlord'),(4,'a','ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb','yangleda');
+INSERT INTO `landlord` VALUES (1,'landlord','c4a11b3a02a7908b51baf438f5024526f2bde971b3024d058420b737dc61e93f','landlord'),(2,'a','ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb','yangleda');
 /*!40000 ALTER TABLE `landlord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-29 18:42:18
+-- Dump completed on 2017-09-29 21:07:59
