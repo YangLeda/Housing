@@ -60,7 +60,7 @@ CREATE TABLE `house` (
   `landlordid` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `house` (
 
 LOCK TABLES `house` WRITE;
 /*!40000 ALTER TABLE `house` DISABLE KEYS */;
-INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,0),(2,'51 Cowper Street',3,1,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',550,0),(3,'49-51 Loch St',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',600,0);
+INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,3),(2,'51 Cowper Street',3,1,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',550,3),(3,'49-51 Loch St',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',600,1),(9,'11',1,1,1,'','11',11,1),(10,'1',1,1,1,'','1',1,1),(11,'test address',1,3,4,'','test desc',550,3),(12,'test1',1,3,1,'','222',555,3);
 /*!40000 ALTER TABLE `house` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,12 +83,11 @@ DROP TABLE IF EXISTS `landlord`;
 CREATE TABLE `landlord` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `gender` varchar(45) DEFAULT NULL,
+  `password` varchar(64) NOT NULL,
   `fullname` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +96,7 @@ CREATE TABLE `landlord` (
 
 LOCK TABLES `landlord` WRITE;
 /*!40000 ALTER TABLE `landlord` DISABLE KEYS */;
-INSERT INTO `landlord` VALUES (1,'landlord','landlord','male','landlord'),(3,'abc','abc','male','landlord');
+INSERT INTO `landlord` VALUES (1,'landlord','c4a11b3a02a7908b51baf438f5024526f2bde971b3024d058420b737dc61e93f','landlord'),(4,'a','ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb','yangleda');
 /*!40000 ALTER TABLE `landlord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,7 +136,7 @@ DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(64) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -149,7 +148,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'123','123');
+INSERT INTO `student` VALUES (1,'123','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -162,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-27 21:37:00
+-- Dump completed on 2017-09-29 18:42:18
