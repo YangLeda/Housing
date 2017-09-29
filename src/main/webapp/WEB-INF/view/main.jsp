@@ -15,10 +15,27 @@
     <!-- Custom CSS -->
     <link href="/resources/css/main.css" rel="stylesheet">
 
-    <title>For Rent</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <title>Housing</title>
 </head>
 
 <body>
+
+<script>
+    <!-- select searching choices -->
+    $(document).ready(function () {
+        document.getElementById('min_bedrooms').value="${min_bedrooms}";
+        document.getElementById('min_bathrooms').value="${min_bathrooms}";
+        document.getElementById('min_carparks').value="${min_carparks}";
+        document.getElementById('min_price').value="${min_price}";
+        document.getElementById('max_price').value="${max_price}";
+    });
+</script>
+
 <!-- container -->
 <div class="container">
 
@@ -36,7 +53,7 @@
                 <div class="row">
                     <div class="col">
                         <h5>Min Beds</h5>
-                        <select class="" name="min_bedrooms">
+                        <select class="" name="min_bedrooms" id="min_bedrooms">
                             <option value="0">any</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -47,7 +64,7 @@
                     </div>
                     <div class="col">
                         <h5>Min Baths</h5>
-                        <select class="" name="min_bathrooms">
+                        <select class="" name="min_bathrooms" id="min_bathrooms">
                             <option value="0">any</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -61,7 +78,7 @@
                 <div class="row">
                     <div class="col">
                         <h5>Min Carparks</h5>
-                        <select class="" name="min_carparks">
+                        <select class="" name="min_carparks" id="min_carparks">
                             <option value="0">any</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -73,7 +90,7 @@
                 <div class="row">
                     <div class="col">
                         <h5>Min Price</h5>
-                        <select class="" name="min_price">
+                        <select class="" name="min_price" id="min_price">
                             <option value="0">any</option>
                             <option value="100">$100</option>
                             <option value="200">$200</option>
@@ -89,7 +106,7 @@
                     </div>
                     <div class="col">
                         <h5>Max Price</h5>
-                        <select class="" name="max_price">
+                        <select class="" name="max_price" id="max_price">
                             <option value="9999">any</option>
                             <option value="100">$100</option>
                             <option value="200">$200</option>
@@ -116,6 +133,10 @@
 
         <!-- list -->
         <div class="col-md-9">
+            <div class="alert alert-success" role="alert">
+                100 results found.
+            </div>
+
             <c:forEach var="house" items="${houses}">
                 <div class="card">
                     <img class="card-img-top" src="${house.pic}">
@@ -149,5 +170,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
         integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
+
 </body>
 </html>
