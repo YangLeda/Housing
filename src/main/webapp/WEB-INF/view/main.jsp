@@ -134,7 +134,7 @@
         <!-- list -->
         <div class="col-md-9">
             <div class="alert alert-success" role="alert">
-                100 results found.
+                ${num} results found.
             </div>
 
             <c:forEach var="house" items="${houses}">

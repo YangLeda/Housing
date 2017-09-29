@@ -20,6 +20,7 @@ public class MainController {
     public String showMain(Model model) {
         List<House> houses = houseDAO.getHouses();
         model.addAttribute("houses", houses);
+        model.addAttribute("num", houses.size());
 
         model.addAttribute("min_bedrooms", 0);
         model.addAttribute("min_bathrooms", 0);
@@ -40,6 +41,7 @@ public class MainController {
 
         List<House> houses = houseDAO.searchHouses(minBedrooms, minBathrooms, minCarparks, minPrice, maxPrice);
         model.addAttribute("houses", houses);
+        model.addAttribute("num", houses.size());
 
         model.addAttribute("min_bedrooms", minBedrooms);
         model.addAttribute("min_bathrooms", minBathrooms);
