@@ -18,7 +18,7 @@
 
 <div class="container">
 
-    <form class="form-signin" action="#">
+    <form class="form-signin" method="post" action="#">
         <h2 class="form-signin-heading">Staff/Admin Login</h2>
         <div class="form-check form-check-inline">
             <label class="form-check-label">

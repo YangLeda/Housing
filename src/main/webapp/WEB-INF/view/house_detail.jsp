@@ -23,47 +23,28 @@
     <jsp:include page="header.jsp"></jsp:include>
     <!-- header -->
 
-    <h2>33 lakeside rd eastwood</h2>
-    <img src="/resources/img/house2.jpg">
+    <h2>${house.address} &#124; $${house.price}</h2>
+    <img src="${house.pic}">
 
     <div class="container">
 
-        <div class="spacefix">
-            <h5>Address</h5>\
-        </div>
+        <h5>Address</h5> ${house.address}
 
-        <div class="spacefix">
-            <h5>Price</h5>
-        </div>
+        <h5>Price</h5> ${house.price}
 
-        <div class="online">
-            <div class="spacefix">
-                <h5> Bedrooms:</h5>
-            </div>
-            <div class="spacefix">
-            </div>
+        <h5> Bedrooms:</h5> ${house.bedrooms}
 
-            <div class="spacefix">
-                <h5>Bathrooms:</h5>
-            </div>
-            <div class="spacefix">
-            </div>
+        <h5>Bathrooms:</h5> ${house.bathrooms}
 
-            <div class="spacefix">
-                <h5>Carparks:</h5>
-            </div>
-            <div class="spacefix">
-            </div>
-        </div>
+        <h5>Carparks:</h5> ${house.carparks}
 
-        <div class="spacefix">
-            <h5>Leave a Message</h5>
-            <textarea rows="10" cols="50"></textarea>
-        </div>
+        <h5>Description:</h5> ${house.description}
 
-        <div class="spacefix">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">contact me!</button>
-        </div>
+        <h5>Leave a Message</h5>
+        <textarea rows="10" cols="50"></textarea>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Apply this house</button>
+
     </div>
 </div>
 <!-- Optional JavaScript -->

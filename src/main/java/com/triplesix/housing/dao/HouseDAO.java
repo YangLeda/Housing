@@ -9,5 +9,7 @@ public interface HouseDAO {
 
     List<House> getLandlordHouses(Integer id);
 
+    House getHouseById(Integer id);
+
     void addHouse(String address, String description, Integer price, Integer bedrooms, Integer bathrooms, Integer carparks, String pic, Integer landlordid);
 }

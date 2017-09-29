@@ -18,7 +18,7 @@
 
 <div class="container">
 
-    <form class="form-signin" action="login_process">
+    <form class="form-signin" method="post" action="login_process">
         <h2 class="form-signin-heading">Sign in</h2>
         <div class="form-check form-check-inline">
             <label class="form-check-label">

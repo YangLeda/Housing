@@ -33,15 +33,6 @@
             <h5>Full name:</h5>
             <input class="form-control" type="text" name="fullname">
 
-
-            <h5>Gender:</h5>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" value="male">Male
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" value="Female">Femal
-            </div>
-
             <h5>Submit your photo ID:</h5>
             <input type="file">
         </div>

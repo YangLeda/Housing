@@ -103,7 +103,7 @@
                     <div class="card-body">
                         <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
                         <p class="card-text">${house.description}</p>
-                        <a href="/detail" class="btn btn-primary">More detail</a>
+                        <a href="/house_detail?id=${house.id}" class="btn btn-primary">More Detail</a>
                     </div>
                 </div>
                 <br><br>

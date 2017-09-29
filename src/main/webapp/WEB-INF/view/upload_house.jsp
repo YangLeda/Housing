@@ -32,7 +32,7 @@
     <!-- header -->
 
     <div class="container">
-        <form action="upload_house_process">
+        <form method="post" action="upload_house_process">
             <div>
                 <h5>Address</h5>
                 <input type="text" name="address" class="form-control" placeholder="Enter the address" required
