@@ -90,7 +90,7 @@
                     <div class="col">
                         <h5>Max Price</h5>
                         <select class="" name="max_price">
-                            <option value="0">any</option>
+                            <option value="9999">any</option>
                             <option value="100">$100</option>
                             <option value="200">$200</option>
                             <option value="300">$300</option>

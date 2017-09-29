@@ -27,15 +27,19 @@ public class HouseDAOImpl implements HouseDAO {
 
     @Override
     @Transactional
-    public List<House> searchHouses() {
+    public List<House> searchHouses(Integer minBedrooms, Integer minBathrooms, Integer minCarparks,
+                                    Integer minPrice, Integer maxPrice) {
         Session currentSession = sessionFactory.getCurrentSession();
         String query = "from House";
         Query<House> q = currentSession.createQuery(query, House.class);
         List<House> houses = q.getResultList();
 
-        //
+        // todo
+        System.out.println(minBathrooms);
+        System.out.println(maxPrice);
         System.out.println(houses);
         houses = null;
+
         return houses;
     }
 
