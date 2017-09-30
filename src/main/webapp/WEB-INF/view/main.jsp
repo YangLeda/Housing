@@ -28,11 +28,11 @@
 <script>
     <!-- select searching choices -->
     $(document).ready(function () {
-        document.getElementById('min_bedrooms').value="${min_bedrooms}";
-        document.getElementById('min_bathrooms').value="${min_bathrooms}";
-        document.getElementById('min_carparks').value="${min_carparks}";
-        document.getElementById('min_price').value="${min_price}";
-        document.getElementById('max_price').value="${max_price}";
+        document.getElementById('min_bedrooms').value = "${min_bedrooms}";
+        document.getElementById('min_bathrooms').value = "${min_bathrooms}";
+        document.getElementById('min_carparks').value = "${min_carparks}";
+        document.getElementById('min_price').value = "${min_price}";
+        document.getElementById('max_price').value = "${max_price}";
     });
 </script>
 
@@ -45,7 +45,6 @@
 
     <div class="row">
         <!-- search -->
-
         <div class="col-md-3">
             <form method="get" action="/search">
                 <h4>Search</h4>

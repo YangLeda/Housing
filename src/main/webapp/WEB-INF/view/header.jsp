@@ -1,4 +1,3 @@
-<!-- header -->
 <div class="header">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
@@ -58,4 +57,3 @@
     <!-- banner -->
 
 </div>
-<!-- header -->
