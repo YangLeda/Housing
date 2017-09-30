@@ -7,8 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class StudentController {
@@ -26,10 +25,9 @@ public class StudentController {
     }
 
     @RequestMapping("/house_detail")
-    public String showHouseDetail(HttpServletRequest request, Model model) {
+    public String showHouseDetail(@RequestParam("id") Integer id,
+                                  Model model) {
 
-        // parse house id
-        Integer id = Integer.parseInt(request.getParameter("id"));
         // dao
         House house = houseDAO.getHouseById(id);
 

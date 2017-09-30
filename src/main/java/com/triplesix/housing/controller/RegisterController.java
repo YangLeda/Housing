@@ -4,8 +4,7 @@ import com.triplesix.housing.dao.RegisterDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RegisterController {
@@ -19,10 +18,9 @@ public class RegisterController {
     }
 
     @RequestMapping("/register_process")
-    public String showRegisterProcess(HttpServletRequest request) {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String fullname = request.getParameter("fullname");
+    public String showRegisterProcess(@RequestParam("username") String username,
+                                      @RequestParam("password") String password,
+                                      @RequestParam("fullname") String fullname) {
 
         // DAO add landlord data
         registerDAO.register(username, password, fullname);

@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -32,12 +32,12 @@ public class MainController {
     }
 
     @RequestMapping("/search")
-    public String showSearchMain(HttpServletRequest request, Model model) {
-        Integer minBedrooms = Integer.parseInt(request.getParameter("min_bedrooms"));
-        Integer minBathrooms = Integer.parseInt(request.getParameter("min_bathrooms"));
-        Integer minCarparks = Integer.parseInt(request.getParameter("min_carparks"));
-        Integer minPrice = Integer.parseInt(request.getParameter("min_price"));
-        Integer maxPrice = Integer.parseInt(request.getParameter("max_price"));
+    public String showSearchMain(@RequestParam("min_bedrooms") Integer minBedrooms,
+                                 @RequestParam("min_bathrooms") Integer minBathrooms,
+                                 @RequestParam("min_carparks") Integer minCarparks,
+                                 @RequestParam("min_price") Integer minPrice,
+                                 @RequestParam("max_price") Integer maxPrice,
+                                 Model model) {
 
         List<House> houses = houseDAO.searchHouses(minBedrooms, minBathrooms, minCarparks, minPrice, maxPrice);
         model.addAttribute("houses", houses);

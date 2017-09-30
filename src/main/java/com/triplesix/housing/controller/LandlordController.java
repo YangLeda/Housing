@@ -7,9 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -39,19 +39,21 @@ public class LandlordController {
     }
 
     @RequestMapping("/upload_house_process")
-    public String uploadHouseProcess(HttpServletRequest request, HttpSession session) {
-        String address = request.getParameter("address");
-        Integer price = Integer.parseInt(request.getParameter("price"));
-        Integer bedrooms = Integer.valueOf(request.getParameter("bedrooms"));
-        Integer bathrooms = Integer.valueOf(request.getParameter("bathrooms"));
-        Integer carparks = Integer.valueOf(request.getParameter("carparks"));
-        String description = request.getParameter("description");
+    public String uploadHouseProcess(@RequestParam("address") String address,
+                                     @RequestParam("price") Integer price,
+                                     @RequestParam("bedrooms") Integer bedrooms,
+                                     @RequestParam("bathrooms") Integer bathrooms,
+                                     @RequestParam("carparks") Integer carparks,
+                                     @RequestParam("description") String description,
+                                     @RequestParam("file") MultipartFile file,
+                                     @CookieValue(value = "id", defaultValue = "0") Integer landlordid) {
 
-        // get current id from session
-        Integer landlordid = (Integer) session.getAttribute("id");
+        String pic = "";
+        //file
 
-        houseDAO.addHouse(address, description, price, bedrooms, bathrooms, carparks, "", landlordid);
+        houseDAO.addHouse(address, description, price, bedrooms, bathrooms, carparks, pic, landlordid);
 
         return "redirect:/landlord";
     }
+
 }

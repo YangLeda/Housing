@@ -32,7 +32,7 @@
     <!-- header -->
 
     <div class="container">
-        <form method="post" action="upload_house_process">
+        <form method="post" action="upload_house_process" enctype="multipart/form-data">
             <div>
                 <h5>Address</h5>
                 <input type="text" name="address" class="form-control" placeholder="Enter the address" required
@@ -87,7 +87,7 @@
 
             <div>
                 <h5>Picture</h5>
-                <input type="file">
+                <input type="file" name="file">
             </div>
 
             <div class="form-check form-check-inline">
