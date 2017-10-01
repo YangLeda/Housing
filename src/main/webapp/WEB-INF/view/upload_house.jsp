@@ -113,6 +113,7 @@
             <div>
                 <h5>Picture</h5>
                 <input type="file" name="file" id="file" multiple>
+                <p>.jpg or .png files under 5MB only.</p>
             </div>
 
             <div class="form-check form-check-inline">
