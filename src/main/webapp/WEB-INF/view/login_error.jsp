@@ -10,23 +10,35 @@
     <!-- Custom CSS -->
     <link href="/resources/css/login_error.css" rel="stylesheet">
     <link href="/resources/css/main.css" rel="stylesheet">
+
     <title>Login fail</title>
 </head>
 <body>
 <div class="container">
-     <!-- header -->
+    <!-- header -->
     <jsp:include page="header.jsp"></jsp:include>
     <!-- header -->
 
-     <div class="center-in-center">
-         <div>
-         <h1 class="text-center"> ERROR: Login fail! Please chick your username and password.</h1>
+    <div class="center-in-center">
+        <div>
+            <h1 class="text-center"> ERROR: Login fail! Please check your username and password.</h1>
+        </div>
+        <div class="center-in-row">
+            <a class="btn btn-primary" href="/login" role="button">Go back</a>
+        </div>
+    </div>
+</div>
 
-      </div>
-         <div class="center-in-row">
-         <button href="/login" type="button" class="btn btn-primary btn- btn-lg" >Go back</button>
-     </div>
-     </div>
-     </div>
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>

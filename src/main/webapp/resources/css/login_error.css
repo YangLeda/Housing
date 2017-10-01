@@ -1,35 +1,17 @@
-.banner {
-    background: url(../img/banner.jpg) no-repeat 0px 0px;
-    background-size: cover;
-    min-height: 180px;
-    text-align: center;
-    padding: 5em 0 0;
-    color: white;
-}
-
-.footer {
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
-}
-
-.right {
-    float: right;
-    margin-right: 20px;
-}
-.center-in-center{
+.center-in-center {
     position: absolute;
     margin-top: 15%;
     margin-left: 30%;
 
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
 }
-.center-in-row{
+
+.center-in-row {
     position: absolute;
     margin-top: 10%;
     margin-left: 50%;
