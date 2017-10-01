@@ -14,5 +14,5 @@ public interface HouseDAO {
 
     House getHouseById(Integer id);
 
-    void addHouse(String address, String description, Integer price, Integer bedrooms, Integer bathrooms, Integer carparks, String pic, Integer landlordid);
+    Integer addHouse(String address, String description, Integer price, Integer bedrooms, Integer bathrooms, Integer carparks, String pic, Integer landlordid);
 }

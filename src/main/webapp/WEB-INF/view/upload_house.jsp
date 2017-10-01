@@ -34,12 +34,17 @@
 
 <script>
     $(document).ready(function () {
-        $('input[type=file]').change(function () {
-            var val = $(this).val().toLowerCase();
-            var regex = new RegExp("(.*?)\.(jpg|png)$");
-            if (!(regex.test(val))) {
-                $(this).val('');
-                alert('Please upload only .jpg or .png file!');
+        $("input#file").change(function () {
+            var ele = document.getElementById($(this).attr('id'));
+            var result = ele.files;
+            for (var x = 0; x < result.length; x++) {
+                var fle = result[x];
+                var val = fle.name.toLowerCase();
+                var regex = new RegExp("(.*?)\.(jpg|png)$");
+                if (!(regex.test(val))) {
+                    $(this).val('');
+                    alert('Please upload only .jpg or .png file!');
+                }
             }
         });
     });
@@ -107,7 +112,7 @@
 
             <div>
                 <h5>Picture</h5>
-                <input type="file" name="file">
+                <input type="file" name="file" id="file" multiple>
             </div>
 
             <div class="form-check form-check-inline">
