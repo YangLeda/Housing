@@ -17,7 +17,7 @@
 
 <body>
 <div class="container">
-    <form  class="form-signin" method="post" action="register_process">
+    <form class="form-signin" method="post" action="register_process">
         <h2>Create an account</h2>
 
         <div class="form-check form-check-inline">
@@ -32,9 +32,6 @@
 
             <h5>Full name:</h5>
             <input class="form-control" type="text" name="fullname">
-
-            <h5>Submit your photo ID:</h5>
-            <input type="file">
         </div>
 
         <div>
@@ -42,8 +39,6 @@
         </div>
     </form>
 </div>
-
-
 
 
 <!-- Optional JavaScript -->

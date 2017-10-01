@@ -22,9 +22,34 @@
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link href="/resources/css/main.css" rel="stylesheet">
-    <title>Release New House</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <title>Upload New House</title>
 </head>
 <body>
+
+<script>
+    $(document).ready(function () {
+        $("input#file").change(function () {
+            var ele = document.getElementById($(this).attr('id'));
+            var result = ele.files;
+            for (var x = 0; x < result.length; x++) {
+                var fle = result[x];
+                var val = fle.name.toLowerCase();
+                var regex = new RegExp("(.*?)\.(jpg|png)$");
+                if (!(regex.test(val))) {
+                    $(this).val('');
+                    alert('Please upload only .jpg or .png file!');
+                }
+            }
+        });
+    });
+</script>
+
 <!-- container -->
 <div class="container">
     <!-- header -->
@@ -87,7 +112,7 @@
 
             <div>
                 <h5>Picture</h5>
-                <input type="file" name="file">
+                <input type="file" name="file" id="file" multiple>
             </div>
 
             <div class="form-check form-check-inline">

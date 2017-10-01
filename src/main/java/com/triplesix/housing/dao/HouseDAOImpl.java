@@ -71,9 +71,11 @@ public class HouseDAOImpl implements HouseDAO {
 
     @Override
     @Transactional
-    public void addHouse(String address, String description, Integer price, Integer bedrooms, Integer bathrooms, Integer carparks, String pic, Integer landlordid) {
+    public Integer addHouse(String address, String description, Integer price, Integer bedrooms, Integer bathrooms, Integer carparks, String pic, Integer landlordid) {
         House house = new House(address, description, price, bedrooms, bathrooms, carparks, pic, landlordid);
         Session currentSession = sessionFactory.getCurrentSession();
         currentSession.persist(house);
+        currentSession.flush();
+        return house.getId();
     }
 }

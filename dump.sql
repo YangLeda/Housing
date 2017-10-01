@@ -50,17 +50,17 @@ DROP TABLE IF EXISTS `house`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `house` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `address` varchar(100) NOT NULL,
+  `address` varchar(200) NOT NULL,
   `bedrooms` int(11) DEFAULT NULL,
   `bathrooms` int(11) DEFAULT NULL,
   `carparks` int(11) DEFAULT NULL,
-  `pic` varchar(100) DEFAULT NULL,
+  `pic` varchar(200) DEFAULT NULL,
   `description` text,
   `price` int(11) NOT NULL,
   `landlordid` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,8 +69,33 @@ CREATE TABLE `house` (
 
 LOCK TABLES `house` WRITE;
 /*!40000 ALTER TABLE `house` DISABLE KEYS */;
-INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,2),(2,'51 Cowper Street',3,1,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',550,2),(3,'49-51 Loch St',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',600,2);
+INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,2),(2,'51 Cowper Street',3,1,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',550,2),(3,'49-51 Loch St',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',600,2),(22,'38 Bridge Street',5,5,3,'/resources/img/1506853533881house1.jpg','Bridgeport is a well maintained security building with gymnasium located moments to Circular Quay, The Botanical Gardens and all that the City has to offer.  For private inspections please contact: Vicheka Yoeun on: W: 9241 3327 M: 0424 360 484',650,2),(23,'127 Kent St',4,3,2,'/resources/img/1506854205232image4.jpg','* Bright and airy living area with floor to ceiling glass doors * Two large bedrooms, master with ensuite and walk-through-robe  * Galley kitchen with gas appliances, granite finishes and parquetry flooring * Featuring large balcony, and second balcony off main bedroom * Views capturing Darling Harbour and Barangaroo * Prestigious entry foyer with 24hr concierge plus residents lounge',900,1);
 /*!40000 ALTER TABLE `house` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `img`
+--
+
+DROP TABLE IF EXISTS `img`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `img` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `path` varchar(200) NOT NULL,
+  `houseid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `img`
+--
+
+LOCK TABLES `img` WRITE;
+/*!40000 ALTER TABLE `img` DISABLE KEYS */;
+INSERT INTO `img` VALUES (1,'/resources/img/1506853265145house1.jpg',222),(2,'/resources/img/1506853265152house2.jpg',222),(3,'/resources/img/1506853265155house3.jpg',222),(4,'/resources/img/1506853350215house1.jpg',21),(5,'/resources/img/1506853350238house2.jpg',21),(6,'/resources/img/1506853350242house3.jpg',21),(7,'/resources/img/1506853533881house1.jpg',22),(8,'/resources/img/1506853533889house2.jpg',22),(9,'/resources/img/1506853533892house3.jpg',22),(10,'/resources/img/house1.jpg',1),(11,'/resources/img/pic1.jpg',1),(12,'/resources/img/pic2.jpg',1),(13,'/resources/img/house2.jpg',2),(14,'/resources/img/pic3.jpg',2),(15,'/resources/img/pic4.jpg',2),(16,'/resources/img/house3.jpg',3),(17,'/resources/img/pic5.jpg',3),(18,'/resources/img/pic6.jpg',3),(19,'/resources/img/1506854205232image4.jpg',23),(20,'/resources/img/1506854205251image3.jpg',23),(21,'/resources/img/1506854205254image2.jpg',23),(22,'/resources/img/1506854205257main.jpg',23);
+/*!40000 ALTER TABLE `img` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -87,7 +112,7 @@ CREATE TABLE `landlord` (
   `fullname` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-30  1:51:36
+-- Dump completed on 2017-10-01 21:40:34

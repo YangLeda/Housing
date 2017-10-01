@@ -24,7 +24,11 @@
     <!-- header -->
 
     <h2>${house.address} &#124; $${house.price}</h2>
-    <img src="${house.pic}">
+
+    <c:forEach var="img" items="${imgs}">
+        <img src="${img.path}">
+        <br><br>
+    </c:forEach>
 
     <h5>Address</h5> ${house.address}
 

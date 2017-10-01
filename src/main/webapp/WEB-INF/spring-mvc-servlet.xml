@@ -27,7 +27,7 @@
 
     <!-- File upload -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="10000000"/>
+        <property name="maxUploadSize" value="5300000"/>
     </bean>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
