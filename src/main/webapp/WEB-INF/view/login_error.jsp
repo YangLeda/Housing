@@ -4,12 +4,29 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link href="/resources/css/login_error.css" rel="stylesheet">
+    <link href="/resources/css/main.css" rel="stylesheet">
+    <title>Login fail</title>
 </head>
 <body>
+<div class="container">
+     <!-- header -->
+    <jsp:include page="header.jsp"></jsp:include>
+    <!-- header -->
 
-<h3>Wrong username or password.</h3>
-<a href="/">Homepage</a>
+     <div class="center-in-center">
+         <div>
+         <h1 class="text-center"> ERROR: Login fail! Please chick your username and password.</h1>
 
+      </div>
+         <div class="center-in-row">
+         <button href="/login" type="button" class="btn btn-primary btn- btn-lg" >Go back</button>
+     </div>
+     </div>
+     </div>
 </body>
 </html>
