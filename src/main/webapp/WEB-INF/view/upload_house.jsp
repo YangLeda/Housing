@@ -22,9 +22,29 @@
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link href="/resources/css/main.css" rel="stylesheet">
-    <title>Release New House</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <title>Upload New House</title>
 </head>
 <body>
+
+<script>
+    $(document).ready(function () {
+        $('input[type=file]').change(function () {
+            var val = $(this).val().toLowerCase();
+            var regex = new RegExp("(.*?)\.(jpg|png)$");
+            if (!(regex.test(val))) {
+                $(this).val('');
+                alert('Please upload only .jpg or .png file!');
+            }
+        });
+    });
+</script>
+
 <!-- container -->
 <div class="container">
     <!-- header -->

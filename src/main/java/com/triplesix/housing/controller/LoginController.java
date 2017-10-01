@@ -43,7 +43,7 @@ public class LoginController {
     public String loginProcess(@RequestParam("as") String as,
                                @RequestParam("username") String username,
                                @RequestParam("password") String password,
-                               @RequestParam("remember") String[] remember,
+                               HttpServletRequest request,
                                HttpServletResponse response,
                                Model model) {
 
@@ -55,7 +55,7 @@ public class LoginController {
             Cookie asCookie = new Cookie("as", as);
 
             // remember me for one day or current session life
-            if (remember != null) {
+            if (request.getParameter("remember") != null) {
                 idCookie.setMaxAge(24 * 60 * 60);
                 asCookie.setMaxAge(24 * 60 * 60);
             } else {
