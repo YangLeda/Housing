@@ -75,9 +75,18 @@
             <h5>Description:</h5> ${house.description}
 
             <br><br>
-            <h5>Leave a Message</h5>
-            <textarea rows="10" cols="60"></textarea>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Apply</button>
+            <form method="post" action="submit_application">
+                <input type="hidden" name="houseid" value="${house.id}">
+                <h5>Leave a Message</h5>
+                <textarea style="min-width: 100%" rows="10" name="message"></textarea>
+                <h5>Your phone number</h5>
+                <input type="text" name="phone" class="form-control" required>
+                <h5>Your email</h5>
+                <input type="text" name="email" class="form-control" required>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Apply</button>
+            </form>
+
         </div>
         <!-- detail -->
     </div>
