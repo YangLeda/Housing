@@ -25,6 +25,7 @@
     <!-- header -->
 
     <h2>List of applied houses:</h2>
+    ${applications}
 
     <!-- footer -->
     <jsp:include page="footer.jsp"></jsp:include>

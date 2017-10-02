@@ -3,6 +3,7 @@ package com.triplesix.housing.controller;
 import com.triplesix.housing.dao.ApplicationDAO;
 import com.triplesix.housing.dao.HouseDAO;
 import com.triplesix.housing.dao.ImgDAO;
+import com.triplesix.housing.entity.Application;
 import com.triplesix.housing.entity.House;
 import com.triplesix.housing.entity.Img;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,16 @@ public class StudentController {
     private ApplicationDAO applicationDAO;
 
     @RequestMapping("/student")
-    public String showLoginPage(@CookieValue(value = "as", required = false) String as) {
+    public String showLoginPage(@CookieValue(value = "as", required = false) String as,
+                                @CookieValue(value = "id", required = false) Integer id,
+                                Model model) {
         if (as != null && as.equals("Student")) {
+            List<Application> applications = applicationDAO.getApplicationsByStudentId(id);
+            model.addAttribute("applications", applications);
             return "student";
-        } else {
-            return "redirect:/login";
         }
+
+        return "redirect:/login";
     }
 
     @RequestMapping("/house_detail")
@@ -71,7 +76,7 @@ public class StudentController {
         // dao
         applicationDAO.addApplication(phone, email, message, time, houseid, id);
 
-        model.addAttribute("message","Submit success!");
+        model.addAttribute("message", "Submit success!");
         return "information";
     }
 }

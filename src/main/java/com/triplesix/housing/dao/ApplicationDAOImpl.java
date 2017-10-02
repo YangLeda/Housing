@@ -3,11 +3,13 @@ package com.triplesix.housing.dao;
 import com.triplesix.housing.entity.Application;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 @Repository
 public class ApplicationDAOImpl implements ApplicationDAO {
@@ -21,5 +23,15 @@ public class ApplicationDAOImpl implements ApplicationDAO {
         Application application = new Application(phone, email, message, time, houseid, studentid);
         Session currentSession = sessionFactory.getCurrentSession();
         currentSession.persist(application);
+    }
+
+    @Override
+    @Transactional
+    public List<Application> getApplicationsByStudentId(Integer studentid) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Application> q = currentSession.createQuery("Select a from Application a where a.studentid=:id", Application.class);
+        q.setParameter("id", studentid);
+        List<Application> applications = q.getResultList();
+        return applications;
     }
 }
