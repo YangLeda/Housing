@@ -42,6 +42,36 @@ INSERT INTO `admin` VALUES (1,'admin','admin');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `application`
+--
+
+DROP TABLE IF EXISTS `application`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `application` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `phone` varchar(45) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `message` varchar(500) DEFAULT NULL,
+  `time` datetime DEFAULT NULL,
+  `houseid` int(11) DEFAULT NULL,
+  `studentid` int(11) DEFAULT NULL,
+  `landlordid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `application`
+--
+
+LOCK TABLES `application` WRITE;
+/*!40000 ALTER TABLE `application` DISABLE KEYS */;
+INSERT INTO `application` VALUES (5,'12345678','aaaaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1);
+/*!40000 ALTER TABLE `application` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `house`
 --
 
@@ -94,7 +124,7 @@ CREATE TABLE `img` (
 
 LOCK TABLES `img` WRITE;
 /*!40000 ALTER TABLE `img` DISABLE KEYS */;
-INSERT INTO `img` VALUES (1,'/resources/img/1506853265145house1.jpg',222),(2,'/resources/img/1506853265152house2.jpg',222),(3,'/resources/img/1506853265155house3.jpg',222),(4,'/resources/img/1506853350215house1.jpg',21),(5,'/resources/img/1506853350238house2.jpg',21),(6,'/resources/img/1506853350242house3.jpg',21),(7,'/resources/img/1506853533881house1.jpg',22),(8,'/resources/img/1506853533889house2.jpg',22),(9,'/resources/img/1506853533892house3.jpg',22),(10,'/resources/img/house1.jpg',1),(11,'/resources/img/pic1.jpg',1),(12,'/resources/img/pic2.jpg',1),(13,'/resources/img/house2.jpg',2),(14,'/resources/img/pic3.jpg',2),(15,'/resources/img/pic4.jpg',2),(16,'/resources/img/house3.jpg',3),(17,'/resources/img/pic5.jpg',3),(18,'/resources/img/pic6.jpg',3),(19,'/resources/img/1506854205232image4.jpg',23),(20,'/resources/img/1506854205251image3.jpg',23),(21,'/resources/img/1506854205254image2.jpg',23),(22,'/resources/img/1506854205257main.jpg',23);
+INSERT INTO `img` VALUES (7,'/resources/img/1506853533881house1.jpg',22),(8,'/resources/img/1506853533889house2.jpg',22),(9,'/resources/img/1506853533892house3.jpg',22),(10,'/resources/img/house1.jpg',1),(11,'/resources/img/pic1.jpg',1),(12,'/resources/img/pic2.jpg',1),(13,'/resources/img/house2.jpg',2),(14,'/resources/img/pic3.jpg',2),(15,'/resources/img/pic4.jpg',2),(16,'/resources/img/house3.jpg',3),(17,'/resources/img/pic5.jpg',3),(18,'/resources/img/pic6.jpg',3),(19,'/resources/img/1506854205232image4.jpg',23),(20,'/resources/img/1506854205251image3.jpg',23),(21,'/resources/img/1506854205254image2.jpg',23),(22,'/resources/img/1506854205257main.jpg',23);
 /*!40000 ALTER TABLE `img` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,4 +216,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-01 21:40:34
+-- Dump completed on 2017-10-03 15:14:08
