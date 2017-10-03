@@ -25,7 +25,19 @@
     <!-- header -->
 
     <h2>List of applied houses:</h2>
-    ${applications}
+    <c:forEach var="application" items="${applications}">
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Application ID: ${application.id}, Time: ${application.time}</h4>
+                <p class="card-text">House ID: ${application.houseid} <br>
+                    Landlord ID: ${application.landlordid} <br>
+                    Email: ${application.email} <br>
+                    Message: ${application.message}</p>
+            </div>
+        </div>
+        <br>
+    </c:forEach>
 
     <!-- footer -->
     <jsp:include page="footer.jsp"></jsp:include>
