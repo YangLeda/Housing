@@ -61,8 +61,9 @@ public class StudentController {
                                     @RequestParam("email") String email,
                                     @RequestParam("message") String message,
                                     @RequestParam("houseid") Integer houseid,
+                                    @RequestParam("landlordid") Integer landlordid,
                                     @CookieValue(value = "as", required = false) String as,
-                                    @CookieValue(value = "id", required = false) Integer id,
+                                    @CookieValue(value = "id", required = false) Integer studentid,
                                     Model model) {
 
         // ask to log in if not a student
@@ -74,7 +75,7 @@ public class StudentController {
         Date time = new Date();
 
         // dao
-        applicationDAO.addApplication(phone, email, message, time, houseid, id);
+        applicationDAO.addApplication(phone, email, message, time, houseid, studentid, landlordid);
 
         model.addAttribute("message", "Submit success!");
         return "information";

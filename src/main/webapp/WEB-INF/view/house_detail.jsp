@@ -77,6 +77,7 @@
             <br><br>
             <form method="post" action="submit_application">
                 <input type="hidden" name="houseid" value="${house.id}">
+                <input type="hidden" name="landlordid" value="${house.landlordid}">
                 <h5>Leave a Message</h5>
                 <textarea style="min-width: 100%" rows="10" name="message"></textarea>
                 <h5>Your phone number</h5>

@@ -1,7 +1,9 @@
 package com.triplesix.housing.controller;
 
+import com.triplesix.housing.dao.ApplicationDAO;
 import com.triplesix.housing.dao.HouseDAO;
 import com.triplesix.housing.dao.ImgDAO;
+import com.triplesix.housing.entity.Application;
 import com.triplesix.housing.entity.House;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,15 +28,22 @@ public class LandlordController {
     @Autowired
     private ImgDAO imgDAO;
 
+    @Autowired
+    private ApplicationDAO applicationDAO;
+
 
     @RequestMapping("/landlord")
     public String showMain(@CookieValue(value = "as", required = false) String as,
-                           @CookieValue(value = "id", required = false) Integer id,
+                           @CookieValue(value = "id", required = false) Integer landlordid,
                            Model model) {
 
         if (as != null && as.equals("Landlord")) {
-            List<House> houses = houseDAO.getLandlordHouses(id);
+            List<House> houses = houseDAO.getLandlordHouses(landlordid);
             model.addAttribute("houses", houses);
+
+            List<Application> applications = applicationDAO.getApplicationsByLandlordId(landlordid);
+            model.addAttribute("applications", applications);
+
             return "landlord";
         } else {
             return "redirect:/login";

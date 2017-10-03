@@ -30,17 +30,21 @@ public class Application {
     @Column(name = "studentid")
     private Integer studentid;
 
+    @Column(name = "landlordid")
+    private Integer landlordid;
+
 
     public Application() {
     }
 
-    public Application(String phone, String email, String message, Date time, Integer houseid, Integer studentid) {
+    public Application(String phone, String email, String message, Date time, Integer houseid, Integer studentid, Integer landlordid) {
         this.phone = phone;
         this.email = email;
         this.message = message;
         this.time = time;
         this.houseid = houseid;
         this.studentid = studentid;
+        this.landlordid = landlordid;
     }
 
     public Integer getId() {
@@ -99,6 +103,14 @@ public class Application {
         this.studentid = studentid;
     }
 
+    public Integer getLandlordid() {
+        return landlordid;
+    }
+
+    public void setLandlordid(Integer landlordid) {
+        this.landlordid = landlordid;
+    }
+
     @Override
     public String toString() {
         return "Application{" +
@@ -109,6 +121,7 @@ public class Application {
                 ", time=" + time +
                 ", houseid=" + houseid +
                 ", studentid=" + studentid +
+                ", landlordid=" + landlordid +
                 '}';
     }
 }

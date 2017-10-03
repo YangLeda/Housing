@@ -37,6 +37,11 @@
         <br><br>
     </c:forEach>
 
+    <h2>List of received applications:</h2>
+    <br>
+    ${applications}
+
+
     <!-- footer -->
     <jsp:include page="footer.jsp"></jsp:include>
     <!-- footer -->
