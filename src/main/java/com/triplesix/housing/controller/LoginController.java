@@ -56,8 +56,8 @@ public class LoginController {
 
             // remember me for one day or current session life
             if (request.getParameter("remember") != null) {
-                idCookie.setMaxAge(24 * 60 * 60);
-                asCookie.setMaxAge(24 * 60 * 60);
+                idCookie.setMaxAge(24 * 60 * 60 * 7);
+                asCookie.setMaxAge(24 * 60 * 60 * 7);
             } else {
                 idCookie.setMaxAge(-1);
                 asCookie.setMaxAge(-1);

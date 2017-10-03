@@ -38,7 +38,6 @@
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <a href="login_admin">Staff/Admin Login</a><br/>
 
         <a href="register">Register</a> as a landlord
 

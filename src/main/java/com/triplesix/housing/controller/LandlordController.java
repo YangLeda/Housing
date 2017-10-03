@@ -45,9 +45,9 @@ public class LandlordController {
             model.addAttribute("applications", applications);
 
             return "landlord";
-        } else {
-            return "redirect:/login";
         }
+
+        return "redirect:/login";
     }
 
     @RequestMapping("/upload_house")

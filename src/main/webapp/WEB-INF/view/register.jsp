@@ -19,16 +19,19 @@
 <div class="container">
     <form class="form-signin" method="post" action="register_process">
         <h2>Create an account</h2>
+        <br>
 
         <div class="form-check form-check-inline">
             <h5> Email:</h5>
             <input class="form-control" type="text" name="username">
+            <br>
 
             <h5>Password:</h5>
             <div>
                 <input class="form-control" type="password" name="password">
-                <h7>The password must be less than 6 digits</h7>
+                <h7>Password must be at least 6 characters.</h7>
             </div>
+            <br>
 
             <h5>Full name:</h5>
             <input class="form-control" type="text" name="fullname">
