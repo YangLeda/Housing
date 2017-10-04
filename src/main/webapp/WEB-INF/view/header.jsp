@@ -19,6 +19,8 @@
                     <a class="nav-link" href="/landlord">Landlord</a>
                 </li>
             </ul>
+
+
             <form class="form-inline my-2 my-lg-0">
                 <%
                     Integer id = null;

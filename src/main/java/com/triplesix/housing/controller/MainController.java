@@ -28,7 +28,7 @@ public class MainController {
         model.addAttribute("min_price", 0);
         model.addAttribute("max_price", 9999);
 
-        return "main";
+        return "new";
     }
 
     @RequestMapping("/search")
