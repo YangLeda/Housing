@@ -86,9 +86,10 @@
                 <input type="text" name="email" class="form-control" required>
                 <br>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Apply</button>
+                <br><br>
             </form>
-
         </div>
+
         <!-- detail -->
     </div>
 

@@ -11,3 +11,12 @@
     float: right;
     margin-right: 20px;
 }
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer p {
+    margin-bottom: .25rem;
+}
