@@ -12,7 +12,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
     <!-- Custom CSS -->
     <link href="/resources/css/main.css" rel="stylesheet">
     <link href="/resources/css/album.css" rel="stylesheet">
@@ -47,9 +46,9 @@
 
     <div class="row">
         <!-- search -->
-        <div class="col-md-3">
+        <div class="col-md-12">
             <form method="get" action="/search">
-                <h4>Search</h4>
+                <h3>Search</h3>
                 <br>
                 <div class="row">
                     <div class="col">
@@ -74,9 +73,6 @@
                             <option value="5">5</option>
                         </select>
                     </div>
-                </div>
-                <br>
-                <div class="row">
                     <div class="col">
                         <h5>Min Carparks</h5>
                         <select class="" name="min_carparks" id="min_carparks">
@@ -86,79 +82,81 @@
                             <option value="3">3</option>
                         </select>
                     </div>
-                </div>
-                <br>
-                <div class="row">
+                        <div class="col">
+                            <h5>Min Price</h5>
+                            <select class="" name="min_price" id="min_price">
+                                <option value="0">any</option>
+                                <option value="100">$100</option>
+                                <option value="200">$200</option>
+                                <option value="300">$300</option>
+                                <option value="400">$400</option>
+                                <option value="500">$500</option>
+                                <option value="600">$600</option>
+                                <option value="700">$700</option>
+                                <option value="800">$800</option>
+                                <option value="900">$900</option>
+                                <option value="1000">$1000</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <h5>Max Price</h5>
+                            <select class="" name="max_price" id="max_price">
+                                <option value="9999">any</option>
+                                <option value="100">$100</option>
+                                <option value="200">$200</option>
+                                <option value="300">$300</option>
+                                <option value="400">$400</option>
+                                <option value="500">$500</option>
+                                <option value="600">$600</option>
+                                <option value="700">$700</option>
+                                <option value="800">$800</option>
+                                <option value="900">$900</option>
+                                <option value="1000">$1000</option>
+                            </select>
+                        </div>
                     <div class="col">
-                        <h5>Min Price</h5>
-                        <select class="" name="min_price" id="min_price">
-                            <option value="0">any</option>
-                            <option value="100">$100</option>
-                            <option value="200">$200</option>
-                            <option value="300">$300</option>
-                            <option value="400">$400</option>
-                            <option value="500">$500</option>
-                            <option value="600">$600</option>
-                            <option value="700">$700</option>
-                            <option value="800">$800</option>
-                            <option value="900">$900</option>
-                            <option value="1000">$1000</option>
-                        </select>
+                        <input class="btn btn-primary" type="submit" value="Go">
                     </div>
-                    <div class="col">
-                        <h5>Max Price</h5>
-                        <select class="" name="max_price" id="max_price">
-                            <option value="9999">any</option>
-                            <option value="100">$100</option>
-                            <option value="200">$200</option>
-                            <option value="300">$300</option>
-                            <option value="400">$400</option>
-                            <option value="500">$500</option>
-                            <option value="600">$600</option>
-                            <option value="700">$700</option>
-                            <option value="800">$800</option>
-                            <option value="900">$900</option>
-                            <option value="1000">$1000</option>
-                        </select>
-                    </div>
-                </div>
-                <br>
-                <div class="">
-                    <input class="btn btn-primary" type="submit" value="Go">
                 </div>
             </form>
         </div>
+        <br><br
+
         <!-- search -->
 
-        <div class="album text-muted">
-            <div class="container">
 
-                <div class="row">
-                    <c:forEach var="house" items="${houses}">
-                        <div class="card">
-                            <img class="card-img-top" src="${house.pic}">
-                            <div class="card-body">
-                                <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
-                                <p class="card-text">${house.description}</p>
-                                <h5>${house.bedrooms} Bedroomes &#124; ${house.bathrooms} Bathrooms
-                                    &#124; ${house.carparks}
-                                    Carparks</h5>
-                                <a href="/house_detail?id=${house.id}" class="btn btn-primary">More Detail</a>
-                            </div>
-                        </div>
-                        <br><br>
-                    </c:forEach>
-                </div>
-
+        <!-- list -->
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert">
+                ${num} results found.
             </div>
         </div>
+        <div class="col-md-12">
+            <c:forEach var="house" items="${houses}">
+                <div class="card">
+                    <img class="card-img-top" src="${house.pic}">
+                    <div class="card-body">
+                        <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
+                        <p class="card-text">${house.description}</p>
+                        <h5>${house.bedrooms} Bedroomes &#124; ${house.bathrooms} Bathrooms &#124; ${house.carparks} Carparks</h5>
+                        <a href="/house_detail?id=${house.id}" class="btn btn-primary">More Detail</a>
+                    </div>
+                </div>
+
+            </c:forEach>
+        </div>
+        <!-- list -->
     </div>
+
     <!-- footer -->
     <jsp:include page="footer.jsp"></jsp:include>
     <!-- footer -->
-</div>
 
-<!-- Bootstrap -->
+</div>
+<!-- container -->
+
+
+<!-- Optional JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -168,13 +166,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
         integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-
-<script>
-    $(function () {
-        Holder.addTheme("thumb", {background: "#55595c", foreground: "#eceeef", text: "Thumbnail"});
-    });
-</script>
 
 </body>
 </html>
