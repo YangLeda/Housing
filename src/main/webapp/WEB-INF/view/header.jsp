@@ -1,6 +1,6 @@
 <div class="header">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">UTS Housing</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,10 +39,10 @@
                     }
 
                     if (id != null && id > 0) {
-                        out.println("Logged in as:&nbsp" + as + "&nbsp");
-                        out.println("<a href=\"/logout\">Logout</a>");
+                        out.println("<span hidden>Logged in as:" + as + "</span>");
+                        out.println("<a style=\"color: white;\" class=\"nav-link\" href=\"/logout\">Logout</a>");
                     } else {
-                        out.println("<a href=\"login\">Login</a>");
+                        out.println("<a style=\"color: white;\" class=\"nav-link\" href=\"login\">Login</a>");
                     }
                 %>
             </form>
