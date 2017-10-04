@@ -12,6 +12,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<<<<<<< HEAD
     <!-- Custom CSS -->
     <link href="/resources/css/main.css" rel="stylesheet">
     <link href="/resources/css/album.css" rel="stylesheet">
@@ -23,6 +24,11 @@
             crossorigin="anonymous"></script>
 
     <title>Housing</title>
+=======
+
+    <!-- Custom styles for this template -->
+    <link href="/resources/css/album.css" rel="stylesheet">
+>>>>>>> e45d375a32665e5befc0985ca332a4f0c79caf3b
 </head>
 
 <body>
