@@ -16,7 +16,7 @@
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="/resources/css/main.css" rel="stylesheet">
+    <link href="/resources/css/album.css" rel="stylesheet">
 </head>
 
 <body>
