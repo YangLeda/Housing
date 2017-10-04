@@ -21,8 +21,12 @@
     <!-- header -->
     <jsp:include page="header.jsp"></jsp:include>
     <!-- header -->
-
-    <a href="/upload_house"> Upload Property</a>
+    <br>
+    <p>
+        <a href="/upload_house" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-plus"></span> Upload Property
+        </a>
+    </p>
     <br>
     <h2>List of uploaded houses:</h2>
     <br>
