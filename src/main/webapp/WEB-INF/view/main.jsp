@@ -120,11 +120,11 @@
 
 
     <!-- list -->
-    <div class="row">
-        <div class="alert alert-success" role="alert">
-            ${num} results found.
-        </div>
+
+    <div class="alert alert-success" role="alert">
+        ${num} results found.
     </div>
+
     <div class="row">
         <c:forEach var="house" items="${houses}">
             <div class="card">
@@ -132,7 +132,7 @@
                 <div class="card-body">
                     <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
                     <p class="card-text">${house.description}</p>
-                    <h5>${house.bedrooms} Bedroomes &#124; ${house.bathrooms} Bathrooms &#124; ${house.carparks}
+                    <h5>${house.bedrooms} Bedroomes &#124; ${house.bathrooms} Bathrooms &#124;<br>${house.carparks}
                         Carparks</h5>
                     <a href="/house_detail?id=${house.id}" class="btn btn-primary">More Detail</a>
                 </div>
