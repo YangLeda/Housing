@@ -1,69 +1,138 @@
+<%@ page contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Album example for Bootstrap</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-    <!-- Custom styles for this template -->
+    <!-- Custom CSS -->
     <link href="/resources/css/main.css" rel="stylesheet">
+    <link href="/resources/css/album.css" rel="stylesheet">
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <title>Housing</title>
 </head>
 
 <body>
 
-<div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 py-4">
-                <h4 class="text-white">About</h4>
-                <p class="text-muted">Add some information about the album below, the author, or any other background
-                    context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them
-                    off to some social networking sites or contact information.</p>
-            </div>
-            <div class="col-sm-4 py-4">
-                <h4 class="text-white">Contact</h4>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                    <li><a href="#" class="text-white">Like on Facebook</a></li>
-                    <li><a href="#" class="text-white">Email me</a></li>
-                </ul>
-            </div>
+<script>
+    <!-- select searching choices -->
+    $(document).ready(function () {
+        document.getElementById('min_bedrooms').value = "${min_bedrooms}";
+        document.getElementById('min_bathrooms').value = "${min_bathrooms}";
+        document.getElementById('min_carparks').value = "${min_carparks}";
+        document.getElementById('min_price').value = "${min_price}";
+        document.getElementById('max_price').value = "${max_price}";
+    });
+</script>
+
+<!-- container -->
+<div class="container">
+
+    <!-- header -->
+    <jsp:include page="header.jsp"></jsp:include>
+    <!-- header -->
+
+    <div class="row">
+        <!-- search -->
+        <div class="col-md-3">
+            <form method="get" action="/search">
+                <h4>Search</h4>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <h5>Min Beds</h5>
+                        <select class="" name="min_bedrooms" id="min_bedrooms">
+                            <option value="0">any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <h5>Min Baths</h5>
+                        <select class="" name="min_bathrooms" id="min_bathrooms">
+                            <option value="0">any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <h5>Min Carparks</h5>
+                        <select class="" name="min_carparks" id="min_carparks">
+                            <option value="0">any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <h5>Min Price</h5>
+                        <select class="" name="min_price" id="min_price">
+                            <option value="0">any</option>
+                            <option value="100">$100</option>
+                            <option value="200">$200</option>
+                            <option value="300">$300</option>
+                            <option value="400">$400</option>
+                            <option value="500">$500</option>
+                            <option value="600">$600</option>
+                            <option value="700">$700</option>
+                            <option value="800">$800</option>
+                            <option value="900">$900</option>
+                            <option value="1000">$1000</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <h5>Max Price</h5>
+                        <select class="" name="max_price" id="max_price">
+                            <option value="9999">any</option>
+                            <option value="100">$100</option>
+                            <option value="200">$200</option>
+                            <option value="300">$300</option>
+                            <option value="400">$400</option>
+                            <option value="500">$500</option>
+                            <option value="600">$600</option>
+                            <option value="700">$700</option>
+                            <option value="800">$800</option>
+                            <option value="900">$900</option>
+                            <option value="1000">$1000</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="">
+                    <input class="btn btn-primary" type="submit" value="Go">
+                </div>
+            </form>
         </div>
-    </div>
-</div>
-<div class="navbar navbar-dark bg-dark">
-    <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand">Album</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
 
-<section class="jumbotron text-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
-            etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        <p>
-            <a href="#" class="btn btn-primary">Main call to action</a>
-            <a href="#" class="btn btn-secondary">Secondary action</a>
-        </p>
-    </div>
-</section>
+        <!-- search -->
 
-<div class="album text-muted">
+
+        <div class="album text-muted">
     <div class="container">
 
         <div class="row">
@@ -85,16 +154,9 @@
     </div>
 </div>
 
-<footer class="text-muted">
-    <div class="container">
-        <p class="float-right">
-            <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting
-            started guide</a>.</p>
-    </div>
-</footer>
+        <!-- footer -->
+        <jsp:include page="footer.jsp"></jsp:include>
+        <!-- footer -->
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
