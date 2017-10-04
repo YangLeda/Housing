@@ -12,11 +12,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-<<<<<<< HEAD
+
     <!-- Custom CSS -->
     <link href="/resources/css/main.css" rel="stylesheet">
     <link href="/resources/css/album.css" rel="stylesheet">
-
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -24,11 +23,6 @@
             crossorigin="anonymous"></script>
 
     <title>Housing</title>
-=======
-
-    <!-- Custom styles for this template -->
-    <link href="/resources/css/album.css" rel="stylesheet">
->>>>>>> e45d375a32665e5befc0985ca332a4f0c79caf3b
 </head>
 
 <body>
@@ -134,39 +128,37 @@
                 </div>
             </form>
         </div>
-
         <!-- search -->
 
-
         <div class="album text-muted">
-    <div class="container">
+            <div class="container">
 
-        <div class="row">
-            <c:forEach var="house" items="${houses}">
-                <div class="card">
-                    <img class="card-img-top" src="${house.pic}">
-                    <div class="card-body">
-                        <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
-                        <p class="card-text">${house.description}</p>
-                        <h5>${house.bedrooms} Bedroomes &#124; ${house.bathrooms} Bathrooms &#124; ${house.carparks}
-                            Carparks</h5>
-                        <a href="/house_detail?id=${house.id}" class="btn btn-primary">More Detail</a>
-                    </div>
+                <div class="row">
+                    <c:forEach var="house" items="${houses}">
+                        <div class="card">
+                            <img class="card-img-top" src="${house.pic}">
+                            <div class="card-body">
+                                <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
+                                <p class="card-text">${house.description}</p>
+                                <h5>${house.bedrooms} Bedroomes &#124; ${house.bathrooms} Bathrooms
+                                    &#124; ${house.carparks}
+                                    Carparks</h5>
+                                <a href="/house_detail?id=${house.id}" class="btn btn-primary">More Detail</a>
+                            </div>
+                        </div>
+                        <br><br>
+                    </c:forEach>
                 </div>
-                <br><br>
-            </c:forEach>
-        </div>
 
+            </div>
+        </div>
     </div>
+    <!-- footer -->
+    <jsp:include page="footer.jsp"></jsp:include>
+    <!-- footer -->
 </div>
 
-        <!-- footer -->
-        <jsp:include page="footer.jsp"></jsp:include>
-        <!-- footer -->
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+<!-- Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
