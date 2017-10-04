@@ -29,21 +29,30 @@
     </p>
     <br>
     <h2>List of uploaded houses:</h2>
-    <br>
-
     <c:forEach var="house" items="${houses}">
+        <br>
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
                 <p class="card-text">${house.description}</p>
             </div>
         </div>
-        <br><br>
+        <br>
     </c:forEach>
-
+    <br><br>
     <h2>List of received applications:</h2>
-    <br>
-    ${applications}
+    <c:forEach var="application" items="${applications}">
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Student ID: ${application.studentid}, Time: ${application.time}</h4>
+                <p class="card-text">House ID: ${application.houseid} <br>
+                    Email: ${application.email} <br>
+                    Message: ${application.message}</p>
+            </div>
+        </div>
+        <br>
+    </c:forEach>
 
 
     <!-- footer -->

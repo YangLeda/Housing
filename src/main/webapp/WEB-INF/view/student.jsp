@@ -29,9 +29,8 @@
         <br>
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Application ID: ${application.id}, Time: ${application.time}</h4>
+                <h4 class="card-title">Student ID: ${application.studentid}, Time: ${application.time}</h4>
                 <p class="card-text">House ID: ${application.houseid} <br>
-                    Landlord ID: ${application.landlordid} <br>
                     Email: ${application.email} <br>
                     Message: ${application.message}</p>
             </div>
