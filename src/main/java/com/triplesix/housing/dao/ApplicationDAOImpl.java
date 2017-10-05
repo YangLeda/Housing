@@ -49,14 +49,15 @@ public class ApplicationDAOImpl implements ApplicationDAO {
         List<Application> applications = q.getResultList();
         return applications;
     }
+
     @Override
     @Transactional
-    public void Send_mail(){
+    public void Send_mail(String fromMail, String toMail, String subject, String text){
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom("utshousing@163.com");
-        mailMessage.setTo("zrb123123@163.com");
-        mailMessage.setSubject("UTS Housing");
-        mailMessage.setText("One student have leave a message to you,");
+        mailMessage.setFrom(fromMail);
+        mailMessage.setTo(toMail);
+        mailMessage.setSubject(subject);
+        mailMessage.setText(text);
         mailSender.send(mailMessage);
     }
 }

@@ -39,7 +39,7 @@
         <property name="javaMailProperties">
             <props>
 
-                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.auth">false</prop>
 
                 <prop key="mail.debug">true</prop>
 

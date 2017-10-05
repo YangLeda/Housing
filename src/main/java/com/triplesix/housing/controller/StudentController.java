@@ -80,7 +80,9 @@ public class StudentController {
 
         model.addAttribute("message", "Submit success!");
 
-        applicationDAO.Send_mail();
+        String text = new String();
+        text = "One Student have live the magress to you";
+        applicationDAO.Send_mail("utshousing@163.com","zrb123123@163.com","UTS Housing",text);
         return "information";
     }
 
