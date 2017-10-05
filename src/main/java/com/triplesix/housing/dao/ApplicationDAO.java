@@ -11,4 +11,6 @@ public interface ApplicationDAO {
     List<Application> getApplicationsByStudentId(Integer studentid);
 
     List<Application> getApplicationsByLandlordId(Integer landlordid);
+
+    void Send_mail();
 }
