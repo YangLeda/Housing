@@ -1,10 +1,13 @@
 package com.triplesix.housing.dao;
 
+
 import com.triplesix.housing.entity.Application;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +20,8 @@ public class ApplicationDAOImpl implements ApplicationDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
+    @Autowired
+    MailSender mailSender;
     @Override
     @Transactional
     public void addApplication(String phone, String email, String message, Date time, Integer houseid, Integer studentid, Integer landlordid) {
@@ -43,5 +48,16 @@ public class ApplicationDAOImpl implements ApplicationDAO {
         q.setParameter("id", landlordid);
         List<Application> applications = q.getResultList();
         return applications;
+    }
+
+    @Override
+    @Transactional
+    public void Send_mail(String fromMail, String toMail, String subject, String text){
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setFrom(fromMail);
+        mailMessage.setTo(toMail);
+        mailMessage.setSubject(subject);
+        mailMessage.setText(text);
+        mailSender.send(mailMessage);
     }
 }

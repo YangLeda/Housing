@@ -28,6 +28,7 @@ public class StudentController {
     @Autowired
     private ApplicationDAO applicationDAO;
 
+
     @RequestMapping("/student")
     public String showLoginPage(@CookieValue(value = "as", required = false) String as,
                                 @CookieValue(value = "id", required = false) Integer id,
@@ -78,6 +79,11 @@ public class StudentController {
         applicationDAO.addApplication(phone, email, message, time, houseid, studentid, landlordid);
 
         model.addAttribute("message", "Submit success!");
+
+        String text = new String();
+        text = "One Student have live the magress to you";
+        applicationDAO.Send_mail("utshousing@163.com","zrb123123@163.com","UTS Housing",text);
         return "information";
     }
+
 }
