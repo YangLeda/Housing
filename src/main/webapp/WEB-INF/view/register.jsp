@@ -22,7 +22,7 @@
         <br>
 
         <div class="form-check form-check-inline">
-            <h5> Email:</h5>
+            <h5> Username:</h5>
             <input class="form-control" type="text" name="username">
             <br>
 
@@ -35,6 +35,9 @@
 
             <h5>Full name:</h5>
             <input class="form-control" type="text" name="fullname">
+
+            <h5>Email:</h5>
+            <input class="form-control" type="email" name="email">
         </div>
 
         <div>
