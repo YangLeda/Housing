@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link href="/resources/css/register.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/register.css"/>" rel="stylesheet">
     <title>Register</title>
 </head>
 
@@ -22,7 +23,7 @@
         <br>
 
         <div class="form-check form-check-inline">
-            <h5> Email:</h5>
+            <h5> Username:</h5>
             <input class="form-control" type="text" name="username">
             <br>
 
@@ -35,6 +36,9 @@
 
             <h5>Full name:</h5>
             <input class="form-control" type="text" name="fullname">
+
+            <h5>Email:</h5>
+            <input class="form-control" type="email" name="email">
         </div>
 
         <div>

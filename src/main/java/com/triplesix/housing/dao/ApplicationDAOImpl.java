@@ -1,10 +1,12 @@
 package com.triplesix.housing.dao;
 
+
 import com.triplesix.housing.entity.Application;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +15,7 @@ import java.util.List;
 
 @Repository
 public class ApplicationDAOImpl implements ApplicationDAO {
+
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -44,4 +47,5 @@ public class ApplicationDAOImpl implements ApplicationDAO {
         List<Application> applications = q.getResultList();
         return applications;
     }
+
 }

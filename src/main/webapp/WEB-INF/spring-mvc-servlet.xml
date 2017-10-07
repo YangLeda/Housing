@@ -30,6 +30,21 @@
         <property name="maxUploadSize" value="5300000"/>
     </bean>
 
+    <!--mail-->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="host" value="smtp.163.com"/>
+        <property name="username" value="utshousing@163.com"/>
+        <property name="password" value="163utshousing"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">false</prop>
+                <prop key="mail.debug">true</prop>
+                <prop key="mail.smtp.timeout">0</prop>
+            </props>
+        </property>
+    </bean>
+
     <!-- Step 1: Define Database DataSource / connection pool -->
     <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">

@@ -18,14 +18,14 @@ public class RegisterDAOImpl implements RegisterDAO {
 
     @Override
     @Transactional
-    public void register(String username, String password, String fullname) {
+    public void register(String username, String password, String fullname, String email) {
 
         // Create SHA256 password
         password = Hashing.sha256()
                 .hashString(password, StandardCharsets.UTF_8)
                 .toString();
 
-        Landlord landlord = new Landlord(username, password, fullname);
+        Landlord landlord = new Landlord(username, password, fullname, email);
         Session currentSession = sessionFactory.getCurrentSession();
         currentSession.persist(landlord);
     }

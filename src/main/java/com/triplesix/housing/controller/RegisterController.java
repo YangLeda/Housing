@@ -20,10 +20,11 @@ public class RegisterController {
     @RequestMapping("/register_process")
     public String showRegisterProcess(@RequestParam("username") String username,
                                       @RequestParam("password") String password,
-                                      @RequestParam("fullname") String fullname) {
+                                      @RequestParam("fullname") String fullname,
+                                      @RequestParam("email") String email) {
 
         // DAO add landlord data
-        registerDAO.register(username, password, fullname);
+        registerDAO.register(username, password, fullname, email);
 
         return "register_process";
     }
