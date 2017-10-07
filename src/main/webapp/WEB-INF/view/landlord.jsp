@@ -48,7 +48,9 @@
                 <h4 class="card-title">Student ID: ${application.studentid}, Time: ${application.time}</h4>
                 <p class="card-text">House ID: ${application.houseid} <br>
                     Email: ${application.email} <br>
-                    Message: ${application.message}</p>
+                    Message: ${application.message}
+                    <a href="/delete?id=xxx" onclick="return confirm('are you sure to delete？！')">delete</a>
+                </p>
             </div>
         </div>
         <br>
