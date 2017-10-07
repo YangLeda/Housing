@@ -7,8 +7,9 @@ import com.triplesix.housing.dao.LandlordDAO;
 import com.triplesix.housing.entity.Application;
 import com.triplesix.housing.entity.House;
 import com.triplesix.housing.entity.Img;
-import com.triplesix.housing.util.EmailHandler;
+import com.triplesix.housing.util.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -19,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@EnableAsync
 public class StudentController {
 
     @Autowired
@@ -34,7 +36,7 @@ public class StudentController {
     private LandlordDAO landlordDAO;
 
     @Autowired
-    private EmailHandler emailHandler;
+    private EmailService emailService;
 
 
     @RequestMapping("/student")
@@ -86,12 +88,12 @@ public class StudentController {
         // dao
         applicationDAO.addApplication(phone, email, message, time, houseid, studentid, landlordid);
 
-        model.addAttribute("message", "Submit success!");
+        model.addAttribute("message", "Submit success! Landlord will receive notification.");
 
         // send email
         String landlordEmail = landlordDAO.getLandlordEmailById(landlordid);
         String text = "You have received a new application!";
-        emailHandler.sendEmail(landlordEmail, text);
+        emailService.sendEmail(landlordEmail, text);
 
         return "information";
     }

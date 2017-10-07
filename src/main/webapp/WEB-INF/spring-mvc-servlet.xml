@@ -45,8 +45,6 @@
         </property>
     </bean>
 
-    <bean class="com.triplesix.housing.util.EmailHandler"/>
-
     <!-- Step 1: Define Database DataSource / connection pool -->
     <bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
