@@ -3,9 +3,11 @@ package com.triplesix.housing.controller;
 import com.triplesix.housing.dao.ApplicationDAO;
 import com.triplesix.housing.dao.HouseDAO;
 import com.triplesix.housing.dao.ImgDAO;
+import com.triplesix.housing.dao.LandlordDAO;
 import com.triplesix.housing.entity.Application;
 import com.triplesix.housing.entity.House;
 import com.triplesix.housing.entity.Img;
+import com.triplesix.housing.util.EmailHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +29,12 @@ public class StudentController {
 
     @Autowired
     private ApplicationDAO applicationDAO;
+
+    @Autowired
+    private LandlordDAO landlordDAO;
+
+    @Autowired
+    private EmailHandler emailHandler;
 
 
     @RequestMapping("/student")
@@ -80,9 +88,11 @@ public class StudentController {
 
         model.addAttribute("message", "Submit success!");
 
-        String text = new String();
-        text = "One Student have live the magress to you";
-        applicationDAO.Send_mail("utshousing@163.com","zrb123123@163.com","UTS Housing",text);
+        // send email
+        String landlordEmail = landlordDAO.getLandlordEmailById(landlordid);
+        String text = "You have received a new application!";
+        emailHandler.sendEmail(landlordEmail, text);
+
         return "information";
     }
 

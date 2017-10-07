@@ -93,7 +93,7 @@
             <version>4.12</version>
         </dependency>
 
-        <!-- hhhhhht -->
+        <!-- mail -->
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
