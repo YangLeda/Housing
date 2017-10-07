@@ -58,7 +58,7 @@ CREATE TABLE `application` (
   `studentid` int(11) DEFAULT NULL,
   `landlordid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (5,'12345678','aaaaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1);
+INSERT INTO `application` VALUES (5,'12345678','aaaaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1),(6,'0401111111','122','message from class','2017-10-05 14:42:10',2,1,2),(7,'1','1','111','2017-10-07 19:37:48',2,1,2),(8,'1','1','111','2017-10-07 19:46:56',2,1,2),(9,'11','11','11','2017-10-07 19:51:40',2,1,2);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,9 +140,10 @@ CREATE TABLE `landlord` (
   `username` varchar(45) NOT NULL,
   `password` varchar(64) NOT NULL,
   `fullname` varchar(45) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,7 +152,7 @@ CREATE TABLE `landlord` (
 
 LOCK TABLES `landlord` WRITE;
 /*!40000 ALTER TABLE `landlord` DISABLE KEYS */;
-INSERT INTO `landlord` VALUES (1,'landlord','c4a11b3a02a7908b51baf438f5024526f2bde971b3024d058420b737dc61e93f','landlord'),(2,'a','ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb','yangleda');
+INSERT INTO `landlord` VALUES (1,'landlord','c4a11b3a02a7908b51baf438f5024526f2bde971b3024d058420b737dc61e93f','landlord','yangledaa@gmail.com'),(2,'a','ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb','yangleda','yangledaa@gmail.com'),(3,'l','acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0','leda','yangledaa@gmail.com');
 /*!40000 ALTER TABLE `landlord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-04 23:00:16
+-- Dump completed on 2017-10-07 20:13:03
