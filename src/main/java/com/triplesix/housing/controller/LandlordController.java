@@ -31,11 +31,6 @@ public class LandlordController {
     @Autowired
     private ApplicationDAO applicationDAO;
 
-    @RequestMapping("/delete")
-    public String showDeletePage() {
-        return "redirect:/landlord";
-    }
-
     @RequestMapping("/landlord")
     public String showMain(@CookieValue(value = "as", required = false) String as,
                            @CookieValue(value = "id", required = false) Integer landlordid,
