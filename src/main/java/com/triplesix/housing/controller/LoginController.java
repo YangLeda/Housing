@@ -68,6 +68,8 @@ public class LoginController {
 
             if (as.equals("Student")) {
                 return "redirect:/";
+            } else if (as.equals("Admin")) {
+                return "redirect:/admin";
             } else {
                 return "redirect:/landlord";
             }

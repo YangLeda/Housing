@@ -19,25 +19,11 @@
 
 <div class="container">
 
-    <form class="form-signin" method="post" action="#">
-        <h2 class="form-signin-heading">Staff/Admin Login</h2>
-        <div class="form-check form-check-inline">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="as" value="Staff" checked> Staff
-            </label>
-        </div>
-        <div class="form-check form-check-inline">
-            <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="as" value="Admin"> Admin
-            </label>
-        </div>
+    <form class="form-signin" method="post" action="login_process">
+        <input type="text" name="as" value="Admin" hidden>
+        <h2 class="form-signin-heading">Admin Login</h2>
         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" name="remember" value="remember-me"> Remember me
-            </label>
-        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
 
