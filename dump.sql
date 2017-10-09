@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(64) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'admin','admin');
+INSERT INTO `admin` VALUES (1,'admin','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +67,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (5,'12345678','aaaaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1),(6,'0401111111','122','message from class','2017-10-05 14:42:10',2,1,2),(7,'1','1','111','2017-10-07 19:37:48',2,1,2),(8,'1','1','111','2017-10-07 19:46:56',2,1,2),(9,'11','11','11','2017-10-07 19:51:40',2,1,2);
+INSERT INTO `application` VALUES (5,'12345678','aaaaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1),(6,'0401111111','122','message from class','2017-10-05 14:42:10',2,1,2),(7,'1','1','111','2017-10-07 19:37:48',2,1,2);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,32 +157,6 @@ INSERT INTO `landlord` VALUES (1,'landlord','c4a11b3a02a7908b51baf438f5024526f2b
 UNLOCK TABLES;
 
 --
--- Table structure for table `staff`
---
-
-DROP TABLE IF EXISTS `staff`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `staff` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `staff`
---
-
-LOCK TABLES `staff` WRITE;
-/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-INSERT INTO `staff` VALUES (1,'staff','staff');
-/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `student`
 --
 
@@ -217,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-07 20:13:03
+-- Dump completed on 2017-10-09 20:09:32
