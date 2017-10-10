@@ -32,7 +32,9 @@
                 <h4 class="card-title">Student ID: ${application.studentid}, Time: ${application.time}</h4>
                 <p class="card-text">House ID: ${application.houseid} <br>
                     Email: ${application.email} <br>
-                    Message: ${application.message}</p>
+                    Message: ${application.message}<br>
+                    Status: ${application.status}
+                </p>
                 <a href="/delete_application?applicationId=${application.id}" onclick="return confirm('Delete this application?')">delete</a>
             </div>
         </div>

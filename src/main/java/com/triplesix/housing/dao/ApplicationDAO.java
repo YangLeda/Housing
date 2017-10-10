@@ -14,4 +14,6 @@ public interface ApplicationDAO {
 
     void deleteApplicationById(Integer id);
 
+    void setStatusById(Integer applicationId, String status);
+
 }

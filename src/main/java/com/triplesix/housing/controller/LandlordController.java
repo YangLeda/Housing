@@ -103,6 +103,15 @@ public class LandlordController {
         return "redirect:/landlord";
     }
 
+    @RequestMapping("/decide")
+    public String decide(@RequestParam("applicationid") Integer applicationId,
+                         @RequestParam("decision") String decision) {
+
+        applicationDAO.setStatusById(applicationId, decision);
+
+        return "redirect:/landlord";
+    }
+
     @ControllerAdvice
     public class GlobalExceptionHandler {
         //CommonsMultipartResolver

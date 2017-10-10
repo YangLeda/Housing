@@ -49,7 +49,15 @@
                 <h4 class="card-title">Student ID: ${application.studentid}, Time: ${application.time}</h4>
                 <p class="card-text">House ID: ${application.houseid} <br>
                     Email: ${application.email} <br>
-                    Message: ${application.message}
+                    Message: ${application.message}<br>
+                    Status: ${application.status}<br>
+                    <c:set var="status" value="${application.status}" scope="request"/>
+                    <c:if test="${ status  == 'Pending'}">
+                        <a href="/decide?decision=Approved&applicationid=${application.id}"
+                           onclick="return confirm('Approve this application?')">Approve</a>
+                        <a href="/decide?decision=Rejected&applicationid=${application.id}"
+                           onclick="return confirm('Reject this application?')">Reject</a>
+                    </c:if>
                 </p>
             </div>
         </div>

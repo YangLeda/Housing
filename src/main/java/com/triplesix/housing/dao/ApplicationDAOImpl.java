@@ -23,7 +23,7 @@ public class ApplicationDAOImpl implements ApplicationDAO {
     @Override
     @Transactional
     public void addApplication(String phone, String email, String message, Date time, Integer houseid, Integer studentid, Integer landlordid) {
-        Application application = new Application(phone, email, message, time, houseid, studentid, landlordid);
+        Application application = new Application(phone, email, message, time, houseid, studentid, landlordid, "Pending");
         Session currentSession = sessionFactory.getCurrentSession();
         currentSession.persist(application);
     }
@@ -54,6 +54,16 @@ public class ApplicationDAOImpl implements ApplicationDAO {
         Session currentSession = sessionFactory.getCurrentSession();
         Query query = currentSession.createQuery("delete from Application where id=:id");
         query.setParameter("id", id);
+        query.executeUpdate();
+    }
+
+    @Override
+    @Transactional
+    public void setStatusById(Integer applicationId, String status) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query query = currentSession.createQuery("update Application set status=:status where id=:id");
+        query.setParameter("id", applicationId);
+        query.setParameter("status", status);
         query.executeUpdate();
     }
 
