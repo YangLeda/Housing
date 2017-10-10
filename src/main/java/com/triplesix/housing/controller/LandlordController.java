@@ -36,11 +36,6 @@ public class LandlordController {
     private EmailService emailService;
 
 
-    @RequestMapping("/delete")
-    public String showDeletePage() {
-        return "redirect:/landlord";
-    }
-
     @RequestMapping("/landlord")
     public String showMain(@CookieValue(value = "as", required = false) String as,
                            @CookieValue(value = "id", required = false) Integer landlordid,

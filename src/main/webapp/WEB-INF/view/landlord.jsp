@@ -35,7 +35,7 @@
             <div class="card-body">
                 <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
                 <p class="card-text">${house.description}</p>
-                <a href="/delete_house?houseId=${house.id}" onclick="return confirm('Delete this house?')">delete</a>
+                <a href="/delete_house?houseId=${house.id}" onclick="return confirm('Delete this house?')">Delete</a>
             </div>
         </div>
         <br>

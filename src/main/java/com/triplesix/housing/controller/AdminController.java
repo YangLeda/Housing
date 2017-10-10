@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,5 +40,17 @@ public class AdminController {
         }
 
         return "redirect:/login_admin";
+    }
+
+    @RequestMapping("/admindelete_house")
+    public String deleteHouse(@RequestParam("houseId") Integer houseId) {
+        houseDAO.deleteHouseById(houseId);
+        return "redirect:/admin";
+    }
+
+    @RequestMapping("/admindelete_application")
+    public String deleteApplication(@RequestParam("applicationId") Integer applicationId) {
+        applicationDAO.deleteApplicationById(applicationId);
+        return "redirect:/admin";
     }
 }

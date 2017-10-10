@@ -44,7 +44,8 @@
                 <td>${house.description}</td>
                 <td>${house.price}</td>
                 <td>${house.landlordid}</td>
-                <td>Delete</td>
+                <td><a href="/admindelete_house?houseId=${house.id}"
+                       onclick="return confirm('Delete this house?')">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
@@ -78,7 +79,8 @@
                 <td>${application.studentid}</td>
                 <td>${application.landlordid}</td>
                 <td>${application.status}</td>
-                <td>Delete</td>
+                <td><a href="/admindelete_application?applicationId=${application.id}"
+                       onclick="return confirm('Delete this application?')">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
