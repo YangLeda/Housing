@@ -10,6 +10,8 @@ public interface ApplicationDAO {
 
     List<Application> getApplicationsByStudentId(Integer studentid);
 
+    List<Application> getAllApplications();
+
     List<Application> getApplicationsByLandlordId(Integer landlordid);
 
     void deleteApplicationById(Integer id);

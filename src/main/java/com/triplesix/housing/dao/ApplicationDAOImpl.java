@@ -2,6 +2,7 @@ package com.triplesix.housing.dao;
 
 
 import com.triplesix.housing.entity.Application;
+import com.triplesix.housing.entity.House;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -33,6 +34,15 @@ public class ApplicationDAOImpl implements ApplicationDAO {
         Session currentSession = sessionFactory.getCurrentSession();
         Query<Application> q = currentSession.createQuery("Select a from Application a where a.studentid=:id", Application.class);
         q.setParameter("id", studentid);
+        List<Application> applications = q.getResultList();
+        return applications;
+    }
+
+    @Override
+    @Transactional
+    public List<Application> getAllApplications() {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Application> q = currentSession.createQuery("from Application", Application.class);
         List<Application> applications = q.getResultList();
         return applications;
     }
