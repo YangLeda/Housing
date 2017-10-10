@@ -57,8 +57,9 @@ CREATE TABLE `application` (
   `houseid` int(11) DEFAULT NULL,
   `studentid` int(11) DEFAULT NULL,
   `landlordid` int(11) DEFAULT NULL,
+  `status` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +68,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (5,'12345678','aaaaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1),(6,'0401111111','122','message from class','2017-10-05 14:42:10',2,1,2),(7,'1','1','111','2017-10-07 19:37:48',2,1,2);
+INSERT INTO `application` VALUES (5,'0401334789','yangledaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1,'Approved'),(6,'0401323367','yangledaa@gmail.com','Hi. I want to apply.','2017-10-05 14:42:10',2,1,2,'Rejected'),(7,'0401327539','yangledaa@gmail.com','I want to apply.','2017-10-07 19:37:48',2,1,2,'Approved'),(10,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-10 21:12:35',2,1,2,'Pending'),(11,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-11 21:12:35',2,1,2,'Pending');
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +91,7 @@ CREATE TABLE `house` (
   `landlordid` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +116,7 @@ CREATE TABLE `img` (
   `path` varchar(200) NOT NULL,
   `houseid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +125,7 @@ CREATE TABLE `img` (
 
 LOCK TABLES `img` WRITE;
 /*!40000 ALTER TABLE `img` DISABLE KEYS */;
-INSERT INTO `img` VALUES (7,'/resources/img/1506853533881house1.jpg',22),(8,'/resources/img/1506853533889house2.jpg',22),(9,'/resources/img/1506853533892house3.jpg',22),(10,'/resources/img/house1.jpg',1),(11,'/resources/img/pic1.jpg',1),(12,'/resources/img/pic2.jpg',1),(13,'/resources/img/house2.jpg',2),(14,'/resources/img/pic3.jpg',2),(15,'/resources/img/pic4.jpg',2),(16,'/resources/img/house3.jpg',3),(17,'/resources/img/pic5.jpg',3),(18,'/resources/img/pic6.jpg',3),(19,'/resources/img/1506854205232image4.jpg',23),(20,'/resources/img/1506854205251image3.jpg',23),(21,'/resources/img/1506854205254image2.jpg',23),(22,'/resources/img/1506854205257main.jpg',23);
+INSERT INTO `img` VALUES (7,'/resources/img/1506853533881house1.jpg',22),(8,'/resources/img/1506853533889house2.jpg',22),(9,'/resources/img/1506853533892house3.jpg',22),(10,'/resources/img/house1.jpg',1),(11,'/resources/img/pic1.jpg',1),(12,'/resources/img/pic2.jpg',1),(13,'/resources/img/house2.jpg',2),(14,'/resources/img/pic3.jpg',2),(15,'/resources/img/pic4.jpg',2),(16,'/resources/img/house3.jpg',3),(17,'/resources/img/pic5.jpg',3),(18,'/resources/img/pic6.jpg',3),(19,'/resources/img/1506854205232image4.jpg',23),(20,'/resources/img/1506854205251image3.jpg',23),(21,'/resources/img/1506854205254image2.jpg',23),(22,'/resources/img/1506854205257main.jpg',23),(23,'/resources/img/1507629514605',24);
 /*!40000 ALTER TABLE `img` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-09 20:09:32
+-- Dump completed on 2017-10-10 22:07:45
