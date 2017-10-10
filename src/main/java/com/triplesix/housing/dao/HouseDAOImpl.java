@@ -78,4 +78,14 @@ public class HouseDAOImpl implements HouseDAO {
         currentSession.flush();
         return house.getId();
     }
+
+    @Override
+    @Transactional
+    public void deleteHouseById(Integer id) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query query = currentSession.createQuery("delete from House where id=:id");
+        query.setParameter("id", id);
+        query.executeUpdate();
+    }
+
 }
