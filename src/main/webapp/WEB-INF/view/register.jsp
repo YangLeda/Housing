@@ -29,8 +29,8 @@
 
             <h5>Password:</h5>
             <div>
-                <input class="form-control" type="password" name="password">
-                <h7>Password must be at least 6 characters.</h7>
+                <input class="form-control" type="password" name="password" pattern=".{6,}" title="Six or more characters">
+                <h7>Password must be 6 or more characters.</h7>
             </div>
             <br>
 
