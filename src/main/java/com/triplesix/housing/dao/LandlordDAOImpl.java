@@ -24,4 +24,13 @@ public class LandlordDAOImpl implements LandlordDAO {
 
         return email;
     }
+
+    @Override
+    @Transactional
+    public void deleteApplicationById(Integer id) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query query = currentSession.createQuery("delete from Application where id=:id");
+        query.setParameter("id", id);
+        query.executeUpdate();
+    }
 }

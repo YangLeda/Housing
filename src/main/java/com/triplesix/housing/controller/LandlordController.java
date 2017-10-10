@@ -31,6 +31,16 @@ public class LandlordController {
     @Autowired
     private ApplicationDAO applicationDAO;
 
+<<<<<<< HEAD
+    @RequestMapping("/delete")
+    public String showDeletePage() {
+        return "redirect:/landlord";
+    }
+
+
+
+=======
+>>>>>>> 09036b224a4dd1926e40ee9386f5a47a17b88ac5
     @RequestMapping("/landlord")
     public String showMain(@CookieValue(value = "as", required = false) String as,
                            @CookieValue(value = "id", required = false) Integer landlordid,
@@ -53,6 +63,14 @@ public class LandlordController {
     @RequestMapping("/upload_house")
     public String uploadHouse() {
         return "upload_house";
+    }
+
+
+
+    @RequestMapping("/delete_application")
+    public String deleteApplication(@RequestParam("applicationId") Integer applicationId) {
+        applicationDAO.deleteApplicationById(applicationId);
+        return "redirect:/landlord";
     }
 
     @RequestMapping("/upload_house_process")
