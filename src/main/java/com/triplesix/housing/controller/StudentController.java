@@ -98,4 +98,10 @@ public class StudentController {
         return "information";
     }
 
+    @RequestMapping("/delete_application")
+    public String deleteApplication(@RequestParam("applicationId") Integer applicationId) {
+        applicationDAO.deleteApplicationById(applicationId);
+        return "redirect:/student";
+    }
+
 }

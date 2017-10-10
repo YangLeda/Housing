@@ -33,6 +33,7 @@
                 <p class="card-text">House ID: ${application.houseid} <br>
                     Email: ${application.email} <br>
                     Message: ${application.message}</p>
+                <a href="/delete_application?applicationId=${application.id}" onclick="return confirm('Delete this application?')">delete</a>
             </div>
         </div>
         <br>

@@ -12,4 +12,6 @@ public interface ApplicationDAO {
 
     List<Application> getApplicationsByLandlordId(Integer landlordid);
 
+    void deleteApplicationById(Integer id);
+
 }
