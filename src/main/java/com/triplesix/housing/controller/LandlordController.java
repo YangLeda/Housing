@@ -5,6 +5,7 @@ import com.triplesix.housing.dao.HouseDAO;
 import com.triplesix.housing.dao.ImgDAO;
 import com.triplesix.housing.entity.Application;
 import com.triplesix.housing.entity.House;
+import com.triplesix.housing.util.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +31,9 @@ public class LandlordController {
 
     @Autowired
     private ApplicationDAO applicationDAO;
+
+    @Autowired
+    private EmailService emailService;
 
 
     @RequestMapping("/delete")
@@ -108,6 +112,11 @@ public class LandlordController {
                          @RequestParam("decision") String decision) {
 
         applicationDAO.setStatusById(applicationId, decision);
+
+        // send email
+        String email = applicationDAO.getEmailById(applicationId);
+        String text = "Your application status has changed! Please visit UTS Online Housing website to see more detail.";
+        emailService.sendEmail(email, text);
 
         return "redirect:/landlord";
     }

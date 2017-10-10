@@ -21,6 +21,6 @@ public class EmailService {
         mailMessage.setText(text);
 
         //mailSender.send(mailMessage);
-        System.out.println("Email not sent: " + mailMessage);
+        System.out.println("Email not sent: " + mailMessage.getText());
     }
 }

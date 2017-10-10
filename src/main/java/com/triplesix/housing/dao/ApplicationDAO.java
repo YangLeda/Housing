@@ -16,4 +16,6 @@ public interface ApplicationDAO {
 
     void setStatusById(Integer applicationId, String status);
 
+    String getEmailById(Integer id);
+
 }

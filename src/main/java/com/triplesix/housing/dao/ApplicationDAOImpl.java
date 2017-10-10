@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -65,6 +64,17 @@ public class ApplicationDAOImpl implements ApplicationDAO {
         query.setParameter("id", applicationId);
         query.setParameter("status", status);
         query.executeUpdate();
+    }
+
+    @Override
+    @Transactional
+    public String getEmailById(Integer id) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query<Application> q = currentSession.createQuery("Select a from Application a where a.id=:id", Application.class);
+        q.setParameter("id", id);
+        String email = q.getResultList().get(0).getEmail();
+
+        return email;
     }
 
 }
