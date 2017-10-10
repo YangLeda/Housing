@@ -46,7 +46,8 @@ public class LandlordController {
             return "landlord";
         }
 
-        return "redirect:/login";
+        model.addAttribute("intend_as", "Landlord");
+        return "redirect:/login?ias=Landlord";
     }
 
     @RequestMapping("/upload_house")

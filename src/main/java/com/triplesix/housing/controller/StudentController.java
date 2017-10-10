@@ -48,8 +48,7 @@ public class StudentController {
             model.addAttribute("applications", applications);
             return "student";
         }
-
-        return "redirect:/login";
+        return "redirect:/login?ias=Student";
     }
 
     @RequestMapping("/house_detail")

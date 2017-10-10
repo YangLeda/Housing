@@ -42,7 +42,7 @@
                         out.println("<span hidden>Logged in as:" + as + "</span>");
                         out.println("<a style=\"color: white;\" class=\"nav-link\" href=\"/logout\">Logout</a>");
                     } else {
-                        out.println("<a style=\"color: white;\" class=\"nav-link\" href=\"login\">Login</a>");
+                        out.println("<a style=\"color: white;\" class=\"nav-link\" href=\"login?ias=Student\">Login</a>");
                     }
                 %>
             </form>

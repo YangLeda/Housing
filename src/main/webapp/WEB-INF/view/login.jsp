@@ -14,9 +14,19 @@
           integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link href="<c:url value="/resources/css/login.css"/>" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
 </head>
 <body>
-
+<script>
+    <!-- select as choice -->
+    $(document).ready(function () {
+        $("input[name=as][value='${param.ias}']").prop("checked", true);
+    });
+</script>
 
 <div class="container">
 
@@ -24,7 +34,7 @@
         <h2 class="form-signin-heading">Sign in</h2>
         <div class="form-check form-check-inline">
             <label class="form-check-label">
-                <input class="form-check-input" type="radio" name="as" value="Student" checked> Student
+                <input class="form-check-input" type="radio" name="as" value="Student"> Student
             </label>
         </div>
         <div class="form-check form-check-inline">
