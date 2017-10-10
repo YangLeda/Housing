@@ -35,7 +35,11 @@
                     Message: ${application.message}<br>
                     Status: ${application.status}
                 </p>
-                <a href="/delete_application?applicationId=${application.id}" onclick="return confirm('Delete this application?')">delete</a>
+                <c:set var="status" value="${application.status}" scope="request"/>
+                <c:if test="${ status  == 'Pending'}">
+                    <a href="/delete_application?applicationId=${application.id}"
+                       onclick="return confirm('Withdraw this application?')">Withdraw</a>
+                </c:if>
             </div>
         </div>
         <br>
