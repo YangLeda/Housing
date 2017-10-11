@@ -56,20 +56,20 @@
 
         <form method="post" action="upload_house_process" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="address">Address</label>
+                <label for="address"><b>Address</b></label>
                 <input type="text" class="form-control" id="address" name="address" placeholder="Enter the address"
                        required
                        autofocus>
             </div>
 
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price"><b>Price</b></label>
                 <input type="text" id="price" name="price" class="form-control" placeholder="price" required autofocus>
             </div>
 
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <label for="bedrooms">Bedrooms</label>
+                    <label for="bedrooms"><b>Bedrooms&nbsp;</b></label>
                     <select id="bedrooms" name="bedrooms">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -79,7 +79,7 @@
                     </select>
                 </div>
                 <div class="col-auto">
-                    <label for="bathrooms">Bathrooms</label>
+                    <label for="bathrooms"><b>Bathrooms&nbsp;</b></label>
                     <select id="bathrooms" name="bathrooms">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -89,7 +89,7 @@
                     </select>
                 </div>
                 <div class="col-auto">
-                    <label for="bedrooms">Carparks</label>
+                    <label for="bedrooms"><b>Carparks</b></label>
                     <select id="carparks" name="carparks">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -100,20 +100,20 @@
                 </div>
             </div>
             <br>
-            <div>
-                <h5>Picture</h5>
-                <input type="file" name="file" id="file" multiple>
+
+            <div class="form-group">
+                <label for="file"><b>Upload photos</b></label>
+                <input type="file" class="form-control-file" name="file" id="file" multiple>
                 <p>.jpg or .png files under 5MB only.</p>
             </div>
             <br>
-            <div class="form-check form-check-inline">
-                <h5>Description</h5>
-                <textarea style="min-width: 100%" rows="10" cols="100" name="description"></textarea>
+
+            <div class="form-group">
+                <label for="description"><b>Description</b></label>
+                <textarea class="form-control" id="description" name="description" rows="10"></textarea>
             </div>
-            <br>
-            <div class="spacefix">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
             <br>
         </form>
 
