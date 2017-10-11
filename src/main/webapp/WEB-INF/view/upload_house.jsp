@@ -50,24 +50,27 @@
     <!-- header -->
 
     <div class="container">
+        <br>
+        <h2>Upload Your Property</h2>
+        <br>
+
         <form method="post" action="upload_house_process" enctype="multipart/form-data">
-            <div>
-                <h5>Address</h5>
-                <input type="text" name="address" class="form-control" placeholder="Enter the address" required
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Enter the address"
+                       required
                        autofocus>
             </div>
-            <br>
-            <div>
-                <h5>Price</h5>
-                <input type="text" name="price" class="form-control" placeholder="price" required autofocus>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price" class="form-control" placeholder="price" required autofocus>
             </div>
-            <br>
-            <div>
-                <div class="form-check form-check-inline">
-                    <h5> Bedrooms:</h5>
-                </div>
-                <div class="form-check form-check-inline">
-                    <select name="bedrooms">
+
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label for="bedrooms">Bedrooms</label>
+                    <select id="bedrooms" name="bedrooms">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -75,12 +78,9 @@
                         <option value="5">5</option>
                     </select>
                 </div>
-
-                <div class="form-check form-check-inline">
-                    <h5>Bathrooms:</h5>
-                </div>
-                <div class="form-check form-check-inline">
-                    <select name="bathrooms">
+                <div class="col-auto">
+                    <label for="bathrooms">Bathrooms</label>
+                    <select id="bathrooms" name="bathrooms">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -88,12 +88,9 @@
                         <option value="5">5</option>
                     </select>
                 </div>
-
-                <div class="form-check form-check-inline">
-                    <h5>Carparks:</h5>
-                </div>
-                <div class="form-check form-check-inline">
-                    <select name="carparks">
+                <div class="col-auto">
+                    <label for="bedrooms">Carparks</label>
+                    <select id="carparks" name="carparks">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
