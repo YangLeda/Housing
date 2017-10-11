@@ -1,0 +1,225 @@
+/*************************************MAIN*************************************/
+#nav-gallery nav{
+  padding: 90px 0 50px;
+}
+#nav-gallery nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#nav-gallery nav ul li{
+  display:inline-block;
+  /*width: 130px;*/
+}
+#nav-gallery nav li a {
+  display: block;
+  text-transform: uppercase;
+  text-decoration:none;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #8a9bad;
+  text-align: center;
+  padding-left:18px;
+  padding-right: 18px; 
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s ;
+}
+#nav-gallery nav li a:hover{
+  color:#0f3556;
+  font-weight: 700;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s ;
+}
+#img-story{
+  padding-bottom: 70px;
+}
+#img-story img {
+  border: 0 none;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.portfolioFilter a { 
+  margin-right: 10px; 
+  color:#666;
+  text-decoration:none;
+}
+
+.portfolioFilter a.current { 
+  font-weight:bold;
+}
+.portfolioContainer img{
+  margin: 0 30px 30px 0;
+}
+.isotope-item {
+  z-index: 2;
+}
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  transition-property: height, width;
+}
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  transition-property: transform, opacity;
+}
+
+/************RATING*************/
+#rating {
+  background: #d4f5ff;
+  padding-bottom: 70px;
+  padding-top:100px;
+}
+#rating .col-xs-12{
+  padding-bottom: 30px;
+}
+#rating h3{
+  padding-bottom: 20px;
+  padding-top: 7px;
+}
+#rating i{
+  color: #8a9bad;
+}
+.text-col{
+  margin-bottom: 20px;
+}
+.pr-vote{
+  margin-bottom:50px; 
+}
+.vote {
+  border: 3px dotted #c7ced5;
+  height: 128px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 45px;
+  text-align: center;
+  width: 130px;
+  z-index: 9;
+  display: block;
+  border-radius: 3px;
+}
+.vote span {
+  font-size: 38px;
+  font-weight: 900;
+  font-family: "Lato", serif;
+}
+.vote img{
+  margin-top: 15px;
+}
+.group-vote img {
+  margin-left: -10px;
+}
+.readmore {
+  font-size: 14px;
+  color: #8a9bad;
+  text-transform: capitalize;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+.text-col p{
+  padding-bottom: 25px;
+}
+
+
+.side-panel-wrap ul li a{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+/*********************RESPONSIVE**************************/
+@media screen and (min-width: 1200px) and (max-width: 1253px) { 
+  .portfolioContainer {
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /*.item.active > img {
+  margin-left: auto;
+  margin-right: auto;
+  height: 498px;
+}*/
+
+}
+@media screen and (min-width: 992px) and (max-width: 1008px) { 
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .inner{
+    width: 300px;
+    float: left;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+  .portfolioContainer{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+  .inner{
+    width: 220px;
+    margin: 0 20px 30px 0;
+    float: left;
+    overflow: hidden;
+  }
+  .portfolioContainer{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 767px) {
+
+}
+@media (min-width: 480px) and (max-width: 767px) {
+
+  #nav-gallery nav ul li {
+    display: inline-block;
+    padding-bottom: 25px;
+  }
+  .portfolioContainer {
+    margin-left: 0px;
+  }
+  .inner{
+    width: 220px;
+    float: left;
+    overflow: hidden;
+    margin-right: 5px;
+  }
+
+}
+@media (max-width: 479px) {
+
+  #nav-gallery nav ul li {
+    display: block;
+    padding: 15px;
+  }
+  .isotope-item{
+    width: 100%;
+  }
+  .isotope-item img{
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
