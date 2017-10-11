@@ -1,9 +1,11 @@
 package com.triplesix.housing.controller;
 
 import com.triplesix.housing.dao.ApplicationDAO;
+import com.triplesix.housing.dao.ApplicationShowDAO;
 import com.triplesix.housing.dao.HouseDAO;
 import com.triplesix.housing.dao.ImgDAO;
 import com.triplesix.housing.entity.Application;
+import com.triplesix.housing.entity.ApplicationShow;
 import com.triplesix.housing.entity.House;
 import com.triplesix.housing.util.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,9 @@ public class LandlordController {
     private ApplicationDAO applicationDAO;
 
     @Autowired
+    private ApplicationShowDAO applicationShowDAO;
+
+    @Autowired
     private EmailService emailService;
 
 
@@ -46,7 +51,10 @@ public class LandlordController {
             model.addAttribute("houses", houses);
 
             List<Application> applications = applicationDAO.getApplicationsByLandlordId(landlordid);
-            model.addAttribute("applications", applications);
+
+            List<ApplicationShow> applicationShows = applicationShowDAO.getApplicationShowsList(applications);
+
+            model.addAttribute("applicationShows", applicationShows);
 
             return "landlord";
         }

@@ -48,7 +48,7 @@
     <form method="get" action="/search">
         <div class="form-row">
             <div class="form-group col-md-2">
-                <label for="min_bedrooms" class="col-form-label">Min Beds</label>
+                <label for="min_bedrooms" class="col-form-label">Minimum Bedrooms</label>
                 <select name="min_bedrooms" id="min_bedrooms" class="form-control">
                     <option value="0">any</option>
                     <option value="1">1</option>
@@ -59,7 +59,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label for="min_bathrooms" class="col-form-label">Min Baths</label>
+                <label for="min_bathrooms" class="col-form-label">Minimum Bathrooms</label>
                 <select name="min_bathrooms" id="min_bathrooms" class="form-control">
                     <option value="0">any</option>
                     <option value="1">1</option>
@@ -70,7 +70,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label for="min_carparks" class="col-form-label">Min Carparks</label>
+                <label for="min_carparks" class="col-form-label">Minimum Carparks</label>
                 <select name="min_carparks" id="min_carparks" class="form-control">
                     <option value="0">any</option>
                     <option value="1">1</option>
@@ -79,7 +79,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label for="min_price" class="col-form-label">Min Price</label>
+                <label for="min_price" class="col-form-label">Minimum Price</label>
                 <select name="min_price" id="min_price" class="form-control">
                     <option value="0">any</option>
                     <option value="100">$100</option>
@@ -95,7 +95,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label for="max_price" class="col-form-label">Max Price</label>
+                <label for="max_price" class="col-form-label">Maximum Price</label>
                 <select name="max_price" id="max_price" class="form-control">
                     <option value="9999">any</option>
                     <option value="100">$100</option>
@@ -132,7 +132,7 @@
                 <div class="card-body">
                     <h4 class="card-title">${house.address} &#124; $${house.price}</h4>
                     <p class="card-text">${house.description}</p>
-                    <h5>${house.bedrooms} Bedroomes &#124; ${house.bathrooms} Bathrooms &#124;<br>${house.carparks}
+                    <h5>${house.bedrooms} Bedrooms &#124; ${house.bathrooms} Bathrooms &#124;<br>${house.carparks}
                         Carparks</h5>
                     <a href="/house_detail?id=${house.id}" class="btn btn-primary">More Detail</a>
                 </div>
