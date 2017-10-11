@@ -65,7 +65,13 @@ public class HouseDAOImpl implements HouseDAO {
         Session currentSession = sessionFactory.getCurrentSession();
         Query<House> q = currentSession.createQuery("Select h from House h where h.id=:id", House.class);
         q.setParameter("id", id);
-        House house = q.getResultList().get(0);
+        House house = null;
+        if (q.getResultList().size() > 0) {
+            house = q.getResultList().get(0);
+        } else {
+            // error: if the house has been deleted by landlord
+            house = new House();
+        }
         return house;
     }
 

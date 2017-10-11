@@ -23,31 +23,71 @@
     <!-- header -->
     <jsp:include page="header.jsp"></jsp:include>
     <!-- header -->
-
-    <h2>List of applied houses:</h2>
-    <c:forEach var="application" items="${applications}">
+    <br>
+    <h2>Your Applications:</h2>
+    <c:forEach var="application" items="${applicationShows}">
+        <c:set var="status" value="${application.status}" scope="request"/>
         <br>
         <div class="card">
+            <div class="card-header">
+                <b>${application.address}</b>
+            </div>
             <div class="card-body">
-                <h4 class="card-title">Student ID: ${application.studentid}, Time: ${application.time}</h4>
-                <p class="card-text">House ID: ${application.houseid} <br>
-                    Email: ${application.email} <br>
-                    Message: ${application.message}<br>
-                    Status: ${application.status}
+                <p class="card-text">
+                    <b>Bedrooms: </b>${application.bedrooms}<br>
+                    <b>Bathrooms: </b>${application.bathrooms}<br>
+                    <b>Carparks: </b>${application.carparks}<br>
+                    <b>Price: </b>${application.price}<br>
+                    <b>Message: </b>${application.message}<br>
+                    <b>Apply time: </b>${application.time}<br>
+                    <b>Status:</b>
+                    <c:if test="${ status  == 'Pending'}">
+                        <span class="badge badge-secondary">${application.status}</span>
+                    </c:if>
+                    <c:if test="${ status  == 'Approved'}">
+                        <span class="badge badge-success">${application.status}</span>
+                    </c:if>
+                    <c:if test="${ status  == 'Rejected'}">
+                        <span class="badge badge-danger">${application.status}</span>
+                    </c:if>
                 </p>
-                <c:set var="status" value="${application.status}" scope="request"/>
                 <c:if test="${ status  == 'Pending'}">
-                    <a href="/delete_application?applicationId=${application.id}"
-                       onclick="return confirm('Withdraw this application?')">Withdraw</a>
+                    <a class="btn btn-danger"
+                       href="#"
+                       data-toggle="modal" data-target="#modal_${application.id}">Withdraw</a>
                 </c:if>
             </div>
         </div>
         <br>
+        <!-- Modal -->
+        <div class="modal fade" id="modal_${application.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Withdraw this application?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-danger"
+                           href="/delete_application?applicationId=${application.id}">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </c:forEach>
+
 
     <!-- footer -->
     <jsp:include page="footer.jsp"></jsp:include>
     <!-- footer -->
+
 
 </div>
 <!-- /container -->

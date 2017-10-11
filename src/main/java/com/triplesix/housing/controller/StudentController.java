@@ -1,10 +1,8 @@
 package com.triplesix.housing.controller;
 
-import com.triplesix.housing.dao.ApplicationDAO;
-import com.triplesix.housing.dao.HouseDAO;
-import com.triplesix.housing.dao.ImgDAO;
-import com.triplesix.housing.dao.LandlordDAO;
+import com.triplesix.housing.dao.*;
 import com.triplesix.housing.entity.Application;
+import com.triplesix.housing.entity.ApplicationShow;
 import com.triplesix.housing.entity.House;
 import com.triplesix.housing.entity.Img;
 import com.triplesix.housing.util.EmailService;
@@ -33,6 +31,9 @@ public class StudentController {
     private ApplicationDAO applicationDAO;
 
     @Autowired
+    private ApplicationShowDAO applicationShowDAO;
+
+    @Autowired
     private LandlordDAO landlordDAO;
 
     @Autowired
@@ -45,7 +46,11 @@ public class StudentController {
                                 Model model) {
         if (as != null && as.equals("Student")) {
             List<Application> applications = applicationDAO.getApplicationsByStudentId(id);
-            model.addAttribute("applications", applications);
+
+            List<ApplicationShow> applicationShows = applicationShowDAO.getApplicationShowsList(applications);
+
+            model.addAttribute("applicationShows", applicationShows);
+
             return "student";
         }
         return "redirect:/login?ias=Student";
