@@ -1,0 +1,786 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+2. Header / .main-header
+2.1. Top Header / .top-header
+2.2. Navigation / .main-nav
+3. Slider / .slider-box
+4. Main 
+4.1. Reservation / #check-reservation
+4.2. Calendar / #pr-calendar
+5. Footer 
+5.1. Footer Top / #prefooter
+5.2. Footer Bottom / #footer
+-------------------------------------------------------------------*/
+/***************BOOKING -1****************/
+
+body {
+  line-height: 1;
+  color: #0f3556;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: "Playfair Display";
+  text-transform: capitalize;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+  color: #8a9bad;
+}
+
+input,
+textarea,
+select {
+  line-height: 40px;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0px 25px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select {
+    padding-right: 18px
+  }
+}
+
+.step i {
+  -webkit-transition: opacity .3s;
+  -moz-transition: opacity .3s;
+  -ms-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.step:hover i {
+  color: #F4D025;
+}
+
+.size-12 {
+  font-size: 12px;
+}
+
+.size-14 {
+  font-size: 14px;
+}
+
+.size-16 {
+  font-size: 16px;
+}
+
+.size-18 {
+  font-size: 18px;
+}
+
+.size-21 {
+  font-size: 21px;
+}
+
+.size-24 {
+  font-size: 24px;
+}
+
+.size-32 {
+  font-size: 32px;
+}
+
+.size-48 {
+  font-size: 48px;
+}
+
+.size-64 {
+  font-size: 64px;
+}
+
+.size-96 {
+  font-size: 96px;
+}
+
+.dk {
+  background: #ffffff;
+  margin: 0;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999;
+}
+
+i {
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+#booking-1 {
+  padding: 88px 0 100px;
+}
+
+
+/*****************RESERVATION*****************/
+
+.check-heading {
+  padding-bottom: 25px;
+}
+
+.check-heading h4 {
+  padding-bottom: 10px;
+}
+
+.check-date {
+  padding-bottom: 30px;
+}
+
+.hr {
+  border-bottom: 1px solid rgba(236, 219, 228, 0.2);
+  width: 100%;
+}
+
+.check-room {
+  background: #0f3556 none repeat scroll 0 0;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+.check-room .group {
+  margin-top: 8px;
+}
+.check-room p {
+  padding-bottom: 10px!important;
+}
+.group {
+  margin-top: 15px;
+  padding: 0px;
+}
+
+.group1 {
+  margin-top: 25px;
+}
+
+.group_room h4 {
+  margin-left: 18px;
+  padding-top: 42px;
+}
+
+.group h4 {
+  color: #fff;
+  font-size: 16px;
+  padding-bottom: 14px;
+}
+
+.pa-left {
+  padding-left: 5px;
+}
+
+.pa-right {
+  padding-right: 5px;
+}
+.last-row{
+  margin-top:5px;
+}
+#check-reservation select, #check-reservation input{
+  font-size: 14px;
+  font-family: "Lato";
+}
+#check-reservation .check-date input{
+  line-height: 20px;
+}
+#check-reservation p {
+  color: #8a9bad;
+  padding-bottom: 15px;
+}
+
+#check-reservation {
+  background-color: #0f3556;
+  padding: 32px 25px 30px;
+  border-radius: 5px;
+}
+
+#check-reservation h4,
+h5 {
+  color: #fff;
+  font-weight: 700;
+}
+
+#check-reservation span {
+  font-style: italic;
+  color: #8a9bad;
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+}
+
+#check-reservation .row {
+  margin: 0;
+}
+
+.btn-more {
+  background-color: #f4d025;
+  padding: 12px;
+  border-radius: 80px;
+  margin: 0 auto;
+  text-align: center;
+  width: 66%;
+  margin-top: 30px;
+}
+
+.btn-more a {
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0f3556;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  opacity: 1;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+
+.btn-more a:hover {
+  color: #f3f3f3;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+
+#check-room {
+  position: relative;
+  width: 100%;
+  z-index: 6;
+  top: -85px;
+}
+
+#datetimepicker1,
+#datetimepicker2 {
+  font-size: 14px;
+}
+
+form div i {
+  position: absolute;
+  right: 20px;
+  line-height: 35px !important;
+  color: #0f3556;
+  top: 33px;
+}
+
+.group input,
+select {
+  background: #546e85 none repeat scroll 0 0;
+  box-shadow: 0 0 0;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.group i {
+  color: #f3f3f3;
+}
+
+
+/*.group ul.dk li{
+padding: 0.5em 1em;
+border-top: 1px solid #f3f3f3;
+}*/
+
+i.plus-circle {
+  left: 0;
+  position: absolute;
+  color: #f4d025;
+  margin-right: 4px;
+  padding-top: 11px;
+  top: 31%;
+  font-size: 14px;
+}
+
+.dk li:hover {
+  background-color: #f4f4f4;
+}
+
+.i-left {
+  right: 25px;
+}
+
+*::-webkit-input-placeholder {
+  color: #fff;
+}
+
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: #fff;
+}
+
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: #fff;
+}
+
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff;
+}
+
+
+/******************CALENDAR*********************/
+
+#pr-calendar {
+  border: 1px solid #e1e1e1;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.image {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1px;
+}
+
+.date-picker {
+  background: #f3f3f3;
+  width: 100%;
+  float: left;
+  font-size: 14px;
+}
+
+.image img {
+  overflow: hidden;
+  border-radius: 5px;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.border-right {
+  border-right: 1px solid #e1e1e1;
+}
+
+.month {
+  padding: 25px 35px 25px 35px;
+  text-align: center;
+}
+
+.month h4 {
+  text-transform: uppercase;
+  font-family: "Lato";
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.cal-row-head {
+  border-bottom: 1px solid #e1e1e1;
+  border-top: 1px solid #e1e1e1;
+  padding-right: 35px!important;
+  padding-left: 35px!important;
+}
+
+.cal-row-head [class*="cal-cell"]:first-child,
+.cal-row-head [class*="cal-cell"] {
+  padding: 15px 0px!important;
+}
+
+.cal-year-box [class*="span"],
+.cal-month-box [class*="cal-cell"] {
+  border-right: 1px solid #f3f3f3!important;
+  min-height: 43px!important;
+  position: relative;
+}
+
+.cal-month-day {
+  height: 43px!important;
+  text-align: center;
+  line-height: 3.3;
+}
+
+.selected {
+  background-color: #f4d025;
+  color: #fff;
+}
+
+.normal {
+  background-color: #e1e1e1;
+  color: #202935;
+}
+
+.available {
+  background-color: #fff;
+  color: #202935;
+}
+
+.unvailable {
+  background-color: #0f3556;
+  color: #fff;
+}
+
+.cal-year-box .row-fluid,
+.cal-month-box .cal-row-fluid {
+  border-bottom: 1px solid #f3f3f3!important;
+}
+
+.cal-month-box {
+  border: none!important;
+  padding: 15px 35px 30px 35px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.line-choose {
+  border-top: 1px solid #e1e1e1;
+  padding: 30px 5px;
+  float: left;
+  width: 100%;
+}
+
+.line-choose a {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
+.cell-choose {
+  padding-left: 31px;
+  display: inline-block;
+}
+
+.cell-choose .fa {
+  width: 15px;
+  height: 15px;
+  border-radius: none;
+  border: none;
+}
+
+.cell-choose .available {
+  border: 1px solid #e1e1e1;
+}
+.date-picker table.table-condensed tbody tr td.day{
+  height: 23px!important;
+  width: 23px!important;
+  line-height: 23px!important;
+}
+
+
+.no-left {
+  padding-left: 0px;
+}
+
+.no-right {
+  padding-right: 0px;
+}
+
+.myactive {
+  background-color: #F4D025 !important;
+  border: 1px solid #fff;
+  border-radius: 0px !important;
+  margin: 3px 3px;
+  color: #fff;
+}
+
+td.day.new.myactive,
+td.day.old.myactive {
+  color: #f3f3f3 !important;
+}
+.day.old.myactive {
+  background: #f3f3f3 none repeat scroll 0 0 !important;
+  color: #f3f3f3 !important;
+}
+td.day {
+  padding: 10px !important;
+}
+
+.datepicker td.active:hover,
+.datepicker td.active:hover:hover,
+.datepicker td.active:focus,
+.datepicker td.active:hover:focus,
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active,
+.datepicker td.active.disabled,
+.datepicker td.active:hover.disabled,
+.datepicker td.active[disabled],
+.datepicker td.active:hover[disabled] {
+  color: #ffffff;
+  background-color: #f4d025 !important;
+  border-radius: 0px !important;
+  border: 1px solid #fff !important;
+}
+
+.datepicker-days {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+
+.datepicker td.day.disabled {
+  color: #888 !important;
+  background: #dedede !important;
+  border-radius: 0px !important;
+}
+
+.bootstrap-datetimepicker-widget table td.day {
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #F5F5F5;
+}
+
+.datepicker-days .glyphicon-chevron-right:before {
+  content: "\e250" !important;
+  border-radius: 50% !important;
+  background: #f4d025 !important;
+  font-size: 14px !important;
+  padding: 3px 4px 3px 6px !important;
+  color: #fff !important;
+}
+
+.datepicker-days .glyphicon-chevron-left:before {
+  content: "\e251" !important;
+  border-radius: 50% !important;
+  background: #0F3556 !important;
+  font-size: 14px !important;
+  padding: 3px 6px 3px 4px !important;
+  color: #fff !important;
+  text-align: center;
+}
+
+th.prev.disabled > span {
+  display: block;
+}
+
+#datepicker12 th.next {
+  visibility: hidden;
+}
+
+#datepicker13 th.prev {
+  visibility: hidden;
+}
+
+#datepicker12:hover #datepicker12 th.next{
+  visibility: inherit;
+}
+table.table-condensed thead tr:nth-child(2) {
+  border-top: 0px solid #e1e1e1;
+}
+
+.date-picker table.table-condensed thead {
+  /*  border-top: 2px solid #dedede;
+  */
+  border-bottom: 17px solid #f3f3f3;
+  z-index: 1;
+}
+
+.date-picker .col-md-6 {
+  border-right: 1px solid #dedede;
+  margin-bottom: 0px;
+}
+
+.date-picker .form-group {
+  margin-bottom: 0px !important;
+  position: relative;
+}
+.side-panel-wrap ul li a{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+/******CALENDAR********/
+th.picker-switch {
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+}
+.date-picker .datepicker{
+  padding: 0px;
+  padding-bottom: 30px;
+}
+.date-picker th.dow{
+  padding: 9px;
+}
+.date-picker th.picker-switch{
+  padding: 25px;
+}
+.date-picker .bootstrap-datetimepicker-widget table td, .bootstrap-datetimepicker-widget table th{
+  border-radius: 0px;
+}
+.date-picker .bootstrap-datetimepicker-widget table td.old, .bootstrap-datetimepicker-widget table td.new{
+  background: #f3f3f3;
+  color: #f3f3f3;
+  pointer-events: none;
+}
+.date-picker .day.new {
+  background: #f3f3f3 none repeat scroll 0 0 !important;
+  color: #f3f3f3 !important;
+}
+.date-picker td.day.old.myold {
+  background: #f3f3f3!important;
+  color: #f3f3f3!important;
+}
+.date-picker td.day.myold{
+  background: #e1e1e1!important;
+  pointer-events: none;
+}
+.date-picker td.day.active.today.myold{
+  background: #fff!important;
+  color: #0F3556;
+  border: 1px solid #f5f5f5!important;
+  pointer-events: auto;
+}
+.date-picker td.day.active.today.myold:hover{
+  background: #eee!important;
+}
+.bootstrap-datetimepicker-widget table td.today:before{
+  content: '';
+  display: inline-block;
+  border: solid transparent;
+  border-width: 0 0 7px 7px;
+  border-bottom-color: #f3f3f3!important;
+  border-top-color: rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+/* The CSS Select Box*/
+.reservation  .mylabel {position:relative}
+.reservation  .mylabel:after {
+  font-family: "Ionicons";
+  content:'\f35f';
+  font-size: 21px;
+  color:#fff;
+  right:15px; top:10px;
+  position:absolute;
+  pointer-events:none;
+}
+.line-left{
+  position: absolute;
+  height: 40px;
+  border-top: 1px solid #e1e1e1;
+  width: 97%;
+  border-bottom: 1px solid #e1e1e1;
+  top: 71px;
+  z-index: 99;
+}
+/***************RESPONSIVE******************/
+@media screen and (min-width: 1200px) and (max-width: 1253px) { 
+
+}
+@media (min-width: 1200px) {
+  #check-reservation .check-date input{
+    margin-top: -16px;
+  }
+  .datepicker-days {
+    display: block;
+    max-width: 305px;
+    margin: auto;
+  }
+  .date-picker th.prev span{
+    margin-left: -20px;
+  }
+  .date-picker th.next span{
+    margin-right: -20px;
+  }
+  #check-reservation{
+    background-color: #0f3556;
+    padding: 32px 30px 30px;
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1008px) { 
+}
+@media (max-width: 1199px) {}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+@media (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (max-width: 767px) {
+  .pa-left {
+    padding-left: 0px;
+  }
+  .no-res .pa-right {
+    padding-right: 0px;
+  }
+  .i-left {
+    right: 20px;
+  }
+  #pr-calendar{
+    margin-top: 50px;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .check-room .group {
+    margin-top: 0;
+  }
+  .check-room {
+    background: #0f3556 none repeat scroll 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 auto 25px;
+    padding: 0;
+    width: 100%;
+  }
+
+}
+@media (max-width: 479px) {
+  .check-room {
+    background: #0f3556 none repeat scroll 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 auto 25px;
+    padding: 0;
+    width: 100%;
+  }
+  .check-room .group {
+    margin-top: 0;
+  }
+
+  #button-ok{
+    width: 70%;
+  }
+}
+@media (max-width: 382px){
+  .last-cell{
+    margin-top: 10px;
+  }
+}
+@media (max-width: 320px) {
+  #button-ok{
+    width: 100%;
+  }
+}

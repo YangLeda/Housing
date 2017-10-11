@@ -1,0 +1,259 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+2. Header / .main-header
+2.1. Top Header / .top-header
+2.2. Navigation / .main-nav
+3. Slider / .slider-box
+4. Main / #faqs
+4.1. Sidebar Left / .sidebar-left
+4.2. Question Content / #questions
+5. Footer 
+5.1. Footer Top / #prefooter
+5.2. Footer Bottom / #footer
+-------------------------------------------------------------------*/
+
+/***********FAQs**************/
+h4, h5{
+  font-weight: 700;
+}
+#faqs{
+  padding: 90px 0 70px;
+}
+.sidebar-left{
+  border-radius: 5px;
+  background-color: #0f3556;
+  color: #fff;
+  padding: 10px 0px 35px;
+  width: 89%;
+  margin-bottom: 20px;
+}
+.row-faqs{
+  position: relative;
+  margin: 0 30px;
+  border-bottom: 1px solid #345470;
+  transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+}
+.row-faqs h5{
+  padding: 30px 0px;
+
+}
+.row-faqs:hover{
+  margin: 0;
+  color: #0f3556;
+  background-color: #f4d025;
+  padding: 0 30px;
+  border: none;
+  transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+}
+.row-faqs:hover h5{
+  color: #0f3556;
+  padding-left: 20px;
+}
+.row-faqs:hover i{
+  opacity: 1;
+  padding-left: 30px;
+}
+.row-faqs i{
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  opacity: 0;
+  color: #0f3556;
+
+}
+
+/*********questions**********/
+#questions h3 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 15px;
+  margin-bottom: 4px;
+}
+
+.question{
+  padding: 30px 0 23px;
+  border-bottom: 1px solid #eef0f3;
+  margin-left: 15px;
+  margin-right: 0px;
+}
+.question h4{
+  padding-bottom: 18px;
+  padding-top: 7px;
+}
+.asked-question{
+  padding:0 10px 0 30px;
+}
+.box-date{
+  width: 70px;
+  height: 70px;
+  border-radius:5px;
+  background-color: #8a9bad;
+  text-align: center;
+  display: block;
+  line-height: 70px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s ;
+}
+.box-date:hover{
+  background: #f4d025;
+  color: #0f3556;
+  -webkit-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+}
+.box-date:hover .border-dotted{
+  display: block;
+  position: absolute;
+  opacity: 1;
+}
+.border-dotted{
+  border: 1px dotted #aebac4;
+  width: 60px;
+  height: 70px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+  z-index: -1;
+  opacity: 0;
+}
+.show-page{
+  margin-top: 38px;
+}
+.show-page p{
+  color: #8a9bad;
+
+}
+.pagination{
+  border-radius: 0;
+  float: right;
+  margin: 30px 0;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+  background: #fff;
+  color: #0f3556;
+  border: #fff;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s ;
+}
+.pagination > li > a, .pagination > li > span{
+  border: #fff;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s ;
+}
+.pa-right{
+  margin-right: 0px!important;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+  background-color: #f4d025;
+  border-color: #f4d025;
+  color: #0f3556;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus{
+  color: #0f3556;
+  background: #f4d025
+}
+#pagination .no-right{
+  padding-right: 0px;
+}
+
+.no-left{
+  padding-left: 0px;
+}
+.side-panel-wrap ul li a{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+/**************************RESPONSIVE********************************/
+@media screen and (min-width: 1200px) and (max-width: 1253px) { 
+
+}
+@media (min-width: 1200px) {
+
+  .pr-questions{
+    padding-left: 0px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1008px) { 
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+
+  #questions .asked-question {
+    padding: 0 15px 0 60px;
+  }
+}
+@media (max-width: 767px) {
+
+  .sidebar-left {
+    background-color: #0f3556;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 10px 0 35px;
+    width: 100%;
+  }
+  #questions h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 0px;
+  }
+  #questions .question.row {
+    margin-left: 0;
+  }
+  #questions .asked-question {
+    padding: 0 15px 0 0px;
+  }
+  #pagination .show-page {
+    margin-top: 38px;
+    padding-left: 0;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+
+
+}
+@media (max-width: 479px) {
+
+}
