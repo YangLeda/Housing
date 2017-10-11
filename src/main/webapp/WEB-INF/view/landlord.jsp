@@ -57,15 +57,61 @@
                 </p>
                 <c:if test="${ status  == 'Pending'}">
                     <a class="btn btn-success"
-                       href="/decide?decision=Approved&applicationid=${application.id}"
-                       onclick="return confirm('Approve this application?')">Approve</a>
+                       href="#"
+                       data-toggle="modal" data-target="#approvemodal_${application.id}">Approve</a>
                     <a class="btn btn-danger"
-                       href="/decide?decision=Rejected&applicationid=${application.id}"
-                       onclick="return confirm('Reject this application?')">Reject</a>
+                       href="#"
+                       data-toggle="modal" data-target="#rejectmodal_${application.id}">Reject</a>
                 </c:if>
             </div>
         </div>
         <br>
+        <!-- Modal approve-->
+        <div class="modal fade" id="approvemodal_${application.id}" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Approve this application?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-success"
+                           href="/decide?decision=Approved&applicationid=${application.id}">Approve</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal reject-->
+        <div class="modal fade" id="rejectmodal_${application.id}" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Reject this application?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-danger"
+                           href="/decide?decision=Rejected&applicationid=${application.id}">Reject</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </c:forEach>
 
     <br><br>
@@ -89,7 +135,8 @@
         </div>
         <br>
         <!-- Modal -->
-        <div class="modal fade" id="housemodal_${house.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="housemodal_${house.id}" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
