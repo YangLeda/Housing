@@ -1,0 +1,317 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+2. Header / .main-header
+2.1. Top Header / .top-header
+2.2. Navigation / .main-nav
+3. Slider / .slider-box
+4. Main / #main-container
+4.1. Section Icon Service / #icon-service
+4.2. Section Img Service / #img-service
+5. Footer 
+5.1. Footer Top / #prefooter
+5.2. Footer Bottom / #footer
+-------------------------------------------------------------------*/
+/*************SERVICE***************/
+h2{
+  font-family: "Playfair Display";
+  font-size: 38px;
+  text-transform: uppercase;
+}
+h3{
+  font-size: 32px;
+  font-family: "Playfair Display";
+  text-transform: capitalize;
+}
+h4{
+  font-family: "Playfair Display";
+  font-size: 20px;
+  text-transform: capitalize;
+  padding-bottom: 15px;
+}
+h5{
+  font-size: 16px;
+  color: #8a9bad;
+}
+
+.service {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.service h2 {
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 38px;
+  text-transform: uppercase;
+  color: #0f3556;
+  font-weight: 900;
+}
+#icon-service h2::after{
+  background: url("../../images/symbol.png") no-repeat scroll 50% 0%;
+  position: relative;
+  display: block;
+  margin-top: 45px;
+  margin-bottom: 54px;
+  content: "";
+  width: 100%;
+  height: 10px;
+}
+.ourservice i {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background-color: #8a9bad;
+  color: #FFF;
+  font-size: 30px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 15px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+}
+.box-dotted:hover{
+  background: #f4d025;
+  color: #0f3556;
+  -webkit-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+}
+.box-dotted:hover .border-dotted{
+  display: block;
+  position: absolute;
+  opacity: 1;
+}
+.border-dotted{
+  border: 1px dotted #aebac4;
+  width: 60px;
+  height: 70px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+  z-index: -1;
+  opacity: 0;
+}
+.border-dotted.active{
+  opacity: 1 !important;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+}
+
+.ourservice h4{
+  padding-bottom: 18px;
+  padding-top: 3px;
+}
+.ourservice h4:hover{
+  color: #8a9bad;
+}
+.pi{
+  font-family: "Lato";
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+  color: #697d93;
+}
+
+.ourservice p{
+  padding-top: 15px;
+  line-height: 24px;
+}
+.ourservice .row2{
+  margin-top: 25px;
+}
+.pd-col{
+  margin-bottom: 30px;
+}
+h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+section h1, h2, h3, h4 {
+  color: #0f3556;
+}
+#icon-service{
+  padding-top: 81px;
+}
+/*****************IMG SERVICE*****************/
+.info-service{
+  text-align: center;
+}
+h4.name{
+  padding: 22px 0 18px;
+}
+#img-service{
+  padding: 55px 0 70px;
+}
+#img-service h2::after{
+  background: url("../../images/symbol.png") no-repeat scroll 50% 0%;
+  position: relative;
+  display: block;
+  margin-top: 45px;
+  margin-bottom: 50px;
+  content: "";
+  width: 100%;
+  height: 10px;
+}
+.img-service{
+  width: 270px;
+  height: 200px;
+  overflow: hidden;
+}
+.img-service img{
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  border-radius:5px; 
+}
+.image-service .carousel{
+  position: absolute;
+  width: 0px!important;
+  height: 0px !important;
+  top: 0;
+  display: none!important;
+  z-index: -9999;
+}
+.image-service .col-xs-12{
+  padding-bottom: 30px;
+}
+/*************MODAL**************/
+.modal-content .modal-header{
+  border-bottom: none;
+}
+.modal-body{
+  padding: 15px !important;
+}
+.modal-content .item img{
+  width: 100%;
+  height: 280px;
+}
+.img-service{
+  position: relative;
+
+}
+.img-service a {
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 20px;
+}
+.img-service:hover .quick-view{
+  opacity: 1;
+  visibility:visible;
+  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+.quick-view {
+  position: absolute;
+  height: 70px;
+  line-height: 70px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s, background-color 0.5s;
+  -moz-transition: opacity 0.5s, background-color 0.5s;
+  -o-transition: opacity 0.5s, background-color 0.5s;
+  -ms-transition: opacity 0.5s, background-color 0.5s;
+  transition: opacity 0.5s, background-color 0.5s;
+}
+.side-panel-wrap ul li a{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+/**********RESPONSIVE**********/
+@media screen and (min-width: 1200px) and (max-width: 1253px) { 
+
+}
+@media (min-width: 1200px) {
+  .item.active > img {
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+}
+@media screen and (min-width: 992px) and (max-width: 1008px) { 
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .image-service .img-service {
+    overflow: hidden;
+    width: 100%;
+  }
+  .ourservice i{
+    margin-right: 0px;
+  }
+}
+@media (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+  .image-service .img-service{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .service1{
+    float: left;
+    max-width: 68%;
+    padding-right: 0;
+  }
+  .ourservice i{
+    margin-right: 0px;
+  }
+}
+@media (max-width: 767px) {
+
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .image-service .img-service{
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}
+@media (max-width: 479px) {
+  #icon-service {
+    padding-top: 40px;
+  }
+  .image-service .img-service {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ourservice i {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    margin-right: 0;
+  }
+  #img-service {
+    padding: 55px 0 30px;
+  }
+}

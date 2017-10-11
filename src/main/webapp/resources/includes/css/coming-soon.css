@@ -1,0 +1,450 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+2. Header / #header
+3. CoutDown / #coutdown
+4. Social / .content 
+-------------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+body {
+  line-height:1;
+  color: #fff;
+  -webkit-font-smoothing: antialiased !important;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+  display:block;
+}
+ol, ul {
+  list-style: none;
+}
+a {
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+a:hover{
+  text-decoration: none;
+}
+hr {
+  display:block;
+  height:1px;
+  border:0; 
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+input, select {
+  vertical-align:middle;
+}
+i{
+  cursor: pointer;
+}
+h1, h2, h3, h4, h5{
+  font-family:"Playfair Display", serif;
+  font-weight: 900;
+}
+h2{
+
+  font-size: 36px;
+}
+h3 {
+  font-size: 30px;
+}
+h4{
+  font-size:18px;
+}
+h5{
+  font-size: 16px;
+}
+p{
+  font-family:"Playfair Display", serif;
+  font-size: 18px;
+  height: auto;
+}
+em{
+  font-weight: normal;
+}
+/***********************PANEL***************************/
+
+.body-overlay {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: -1;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+#side-panel {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  z-index: 399;
+  width: 300px;
+  height: 100%;
+  background-color: #F5F5F5;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+}
+#side-panel .side-panel-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 330px;
+  height: 100%;
+  overflow: auto;
+  padding: 50px 70px 50px 40px;
+  display: block;
+}
+#side-panel-trigger-close a {
+  display: block;
+}
+#side-panel .widget:first-child {
+  padding-top: 0;
+  border-top: 0;
+  margin: 0;
+}
+#side-panel .widget {
+  margin-top: 40px;
+  padding-top: 40px;
+  width: 220px;
+  border-top: 1px solid #E5E5E5;
+}
+.widget:first-child {
+  margin-top: 0;
+}
+.widget {
+  position: relative;
+  margin-top: 50px;
+}
+.side-panel-trigger {
+  position: relative;
+  z-index: 999;
+}
+.widget h4{
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+input, textarea, select{
+  line-height: 1.3em;
+  height: 2.5em;
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 100%;
+  border-radius: 3px;
+  margin: 0;
+  border:none;
+  outline:none;
+  display: inline-block;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  padding: 10px 5px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select {padding-right:18px}
+}
+/**************Responsive***************/
+#mobile-bar {
+  background: #fff none repeat scroll 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  display: :block;
+  height: 48px;
+  padding: 15px 10px 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+#offcanvas-togglers, #offcanvas-togglers:focus, #offcanvas-toggler, #offcanvas-toggler:focus {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #333;
+  cursor: pointer;
+  height: 21px;
+  right: 15px;
+  margin: 0;
+  opacity: 0.85;
+  outline: medium none;
+  position: absolute;
+  top: 12px;
+  width: 24px;
+}
+#offcanvas-togglers, #offcanvas-toggler {
+  font-size: 20px;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
+#offcanvas-togglers{
+  right: 10px;
+}
+.mm-panel{
+  transition-delay: 0s;
+  transition-duration: 0.4s;
+  transition-property: top, right, bottom, border;
+  transition-timing-function: ease;
+}
+.mm-panel li{
+  border-color: rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: block;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: block;
+  width: 100%;
+}
+.mm-panel li a{
+  color: inherit;
+  display: block;
+  line-height: 20px;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 10px 10px 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition:all 0.4s;
+  color: #0f3556;
+}
+.mm-panel li:hover a{
+  margin-left: 10px;
+  transition: all 0.7s;
+  color: #F4D025;
+}
+.mob-title a{
+  color: #0f3556;
+  font-weight: normal;
+}
+#bs-example-navbar-collapse-1{
+  display: none;
+}
+
+
+#wrapper{
+  background: rgba(0, 0, 0, 0) url("../../images/bg-coming-soon.jpg") no-repeat scroll center 0;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  background-size: 100% 100%;
+}
+#header{
+  padding-top: 146px;
+  float: left;
+  width: 100%;
+}
+img.img-center {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+#countdown{
+  text-align: center;
+  padding-top: 130px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.cusday{
+  margin-right: 53px;
+  padding:25px 32px 38px;
+  border: 3px dotted #ffffff;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  width: 19%;
+  border-radius: 5px;
+}
+.no-right{
+  margin-right: 0px;
+}
+.cusday span {
+  font-weight: 900;
+  font-size: 48px;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 10px;
+  font-style: normal;
+  line-height: 1.2;
+
+}
+#wrapper h3{
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+#wrapper h3:after{
+  background: url("../../images/shape-coming-soon.png") no-repeat scroll 50% 0%;
+  position: relative;
+  display: block;
+  margin-top: 45px;
+  margin-bottom: 50px;
+  content: "";
+  width: 100%;
+  height: 10px;
+  color: #fff;
+}
+.content{
+  text-align: center;
+  float: left;
+  width: 100%;
+  padding-bottom: 124px;
+  padding-top: 92px;
+}
+.pi{
+  font-family: "Lato";
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.iconicons{
+  text-align: center;
+  display: inline-block;
+  margin-top: 22px;
+  margin-bottom: 25px;
+}
+.iconicons ul{
+  display: block;
+}
+.iconicons ul li {
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  margin: 0px 14px;
+  padding: 0;
+  position: relative;
+  width: 37px;
+}
+.iconicons ul li.no-margin{
+  margin-left: 0px;
+}
+.iconicons ul li i{
+  font-size: 36px;
+  color: #fff;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+.iconicons li:hover {
+  background: transparent none repeat scroll 0 0;
+}
+.iconicons li:last-child{
+  padding-right: 0;
+}
+.iconicons li:hover i {
+  color: #ad9b49;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+.clear{
+  clear:both;
+}
+.side-panel-wrap ul li a{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+/**************RESPONSIVE***************/
+@media (min-width: 1200px) {
+  #clock{
+    margin-left: 18px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #clock{
+    margin-left: 0px;
+  }
+  .cusday{
+    margin-right: 5%;
+    padding:35px 32px;
+    border: 3px dotted #ffffff;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    width: 21%;
+    border-radius: 5px;
+  }
+  li.no-right{
+    margin-right: 0px;
+  }
+}
+@media (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+  #clock{
+    margin-left: 1%;
+  }
+}
+@media (max-width: 767px) {}
+@media (min-width: 480px) and (max-width: 767px) {
+  .cusday{
+    width: 44%;
+    margin-right: 15px;
+    margin-bottom: 15px
+  }
+  #clock{
+    margin-left: 7%;
+  }
+}
+@media (min-width: 331px) and (max-width: 479px) {
+  #clock{
+    margin-left: 17px;
+  }
+  .cusday{
+    width: 44%;
+    margin-right: 15px;
+    margin-bottom: 15px
+  }
+}
+@media (max-width: 330px){
+  #clock {
+    margin-left: 20%;
+  }
+  .cusday{
+    width: 65%;
+    margin-bottom: 10px;
+  }
+}
+
+
+

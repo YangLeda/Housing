@@ -1,0 +1,449 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Body
+2. Header / .main-header
+2.1. Top Header / .top-header
+2.2. Navigation / .main-nav
+3. Slider / .slider-box
+4. Main 
+4.1. Reservation / #check-reservation
+4.2. Rooms / #rooms
+5. Footer 
+5.1. Footer Top / #prefooter
+5.2. Footer Bottom / #footer
+-------------------------------------------------------------------*/
+/****************************BOOKING -2****************************/
+body {
+  line-height:1;
+  color: #0f3556;
+}
+h2{
+  text-transform: uppercase;
+}
+h3{
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+  text-transform: capitalize;
+}
+h4{
+  font-size: 18px;
+}
+
+section span{
+  font-style: italic;
+  color: #8a9bad;
+  font-family: "Playfair Display", serif;
+}
+#booking-1{
+  padding: 90px 0px 100px;
+}
+/******************ROOMS*********************/
+#rooms{
+  background-color: #f3f3f3;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+#rooms h4 {
+  font-weight: 700;
+  margin-top: 5px;
+  padding-bottom: 9px;
+}
+.detail-room .btn-more {
+  margin: 22px 0 0 0;
+  padding: 8px;
+  width: 41%;
+}
+.image{
+  opacity: 0.9;
+  border-bottom: 1px solid #e1e1e1;
+  padding:1px;
+}
+.detail-room{
+  padding: 30px 35px 30px 13px;
+  line-height: 1.5;
+  border-bottom: 1px solid #e1e1e1;
+  margin-right: 0;
+  margin-left: 0;
+}
+.image-room{
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.image-room img{
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+.detail-room span {
+  font-size: 14px;
+}
+.text-room{
+  padding: 15px 0 13px;
+}
+.text-room p{
+  line-height: 1.8;
+}
+.see-room a{
+  color: #0f3556;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.see-room i{
+  margin-right: 5px;
+}
+
+.first-image {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  bottom: -100%;
+  transition: all 0.5s ease-out 0s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.image-room:hover .first-image{
+  bottom: 0;
+  opacity: 1;
+  transition: bottom 0.3s ease-out;
+  -webkit-transition: bottom 0.5s ease-out;
+  -moz-transition: bottom 0.5s ease-out;
+  -o-transition: bottom 0.5s ease-out;
+}
+#rooms .btn-more:hover{
+  background-color: #0f3556;
+  transition: all 0.5s ease-out 0s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+#rooms .btn-more:hover a{
+  color: #fff;
+  transition: all 0.5s ease-out 0s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+#rooms .btn-more a{
+  font-size: 14px;
+  transition: all 0.5s ease-out 0s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+/*#rooms .col-xs-12.col-sm-5.col-md-5.pr-image.wow.zoomIn {
+width: 36%;
+}
+#rooms .col-xs-12.col-sm-7.col-md-7.infor-room{
+width: 63.3333%;
+}*/
+/*****************RESERVATION*****************/
+.check-heading{
+  padding-bottom: 25px;
+}
+.check-heading h4{
+  padding-bottom: 10px;
+}
+.check-date {
+  padding-bottom: 30px;
+}
+.hr {
+  border-bottom: 1px solid rgba(236,219,228,0.2);
+  width: 100%;
+}
+.check-room {
+  background: #0f3556 none repeat scroll 0 0;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+.check-room .group {
+  margin-top: 8px;
+}
+.check-room p {
+  padding-bottom: 10px!important;
+}
+#check-reservation .last-row{
+  margin-top: 5px!important;
+}
+.group {
+  margin-top: 15px;
+  padding: 0px;
+}
+.group1{
+  margin-top: 25px;
+}
+.group_room h4 {
+  margin-left: 18px;
+  padding-top: 42px;
+}
+.group h4 {
+  color: #fff;
+  font-size: 16px;
+  padding-bottom: 14px;
+}
+.pa-left{
+  padding-left:5px; 
+}
+.pa-right{
+  padding-right: 5px;
+}
+#check-reservation select, #check-reservation input{
+  font-size: 14px;
+  font-family: "Lato";
+}
+#check-reservation .check-date input{
+  line-height: 20px;
+}
+#check-reservation p {
+  color: #8a9bad;
+  padding-bottom: 15px;
+}
+#check-reservation{
+  background-color: #0f3556;
+  padding: 32px 25px 30px;
+  border-radius: 5px;
+}
+#check-reservation h4, h5{
+  color: #fff;
+  font-weight: 700;
+}
+#check-reservation span{
+  font-style: italic;
+  color: #8a9bad;
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+}
+#check-reservation .row{
+  margin: 0;
+}
+.btn-more{
+  background-color: #f4d025;
+  padding: 12px;
+  border-radius: 80px;
+  margin: 0 auto;
+  text-align:center;
+  width: 66%;
+  margin-top: 30px;
+}
+.btn-more a{
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0f3556;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+.btn-more a:hover{
+  color: #f3f3f3;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+
+}
+#check-room {
+  position: relative;
+  width: 100%;
+  z-index: 6;
+  top:-85px;
+}
+#datetimepicker1 , #datetimepicker2 {
+  font-size: 14px;
+}
+form div i{
+  position: absolute;
+  right: 20px;
+  line-height: 35px !important;
+  color: #0f3556;
+  top: 33px;
+}
+.group input, select{
+  background: #546e85 none repeat scroll 0 0;
+  box-shadow: 0 0 0;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.group i{
+  color: #f3f3f3;
+}
+i.plus-circle{
+  left: 0;
+  position: absolute;
+  color: #f4d025;
+  margin-right: 4px;
+  padding-top: 11px;
+  top: 31%;
+  font-size: 14px;
+}
+.dk li:hover{
+  background-color: #f4f4f4;
+}
+.i-left{
+  right: 25px;
+}
+*::-webkit-input-placeholder {
+  color: #fff;
+}
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: #fff;
+}
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: #fff;
+}
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff;
+}
+.side-panel-wrap ul li a{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+/* The CSS Select Box*/
+.reservation  .mylabel {position:relative}
+.reservation  .mylabel:after {
+  font-family: "Ionicons";
+  content:'\f35f';
+  color:#fff;
+  font-size: 21px;
+  right:15px; top:10px;
+  position:absolute;
+  pointer-events:none;
+}
+.parslide .item {
+  z-index: 1;
+}
+/**************RESPONSIVE**************/
+@media screen and (min-width: 1200px) and (max-width: 1253px) { 
+
+}
+@media (min-width: 1200px) {
+  #check-reservation{
+    background-color: #0f3556;
+    padding: 32px 30px 30px;
+    border-radius: 5px;
+  }
+  #check-reservation .check-date input{
+    margin-top: -16px;
+  }
+  #rooms .col-xs-12.col-sm-5.col-md-5.pr-image.wow.zoomIn {
+    width: 36%;
+  }
+  #rooms .col-xs-12.col-sm-7.col-md-7.infor-room{
+    width: 63.3333%;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1008px) { 
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .detail-room .btn-more {
+    margin: 22px 0 0;
+    padding: 8px;
+    width: 60%;
+  }
+}
+@media (max-width: 991px) {
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .detail-room .btn-more {
+    margin: 22px 0 0;
+    padding: 8px;
+    width: 47%;
+  }
+}
+@media (max-width: 767px) {
+  .check-room {
+    background: #0f3556 none repeat scroll 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 auto 25px;
+    padding: 0;
+    width: 100%;
+  }
+  .check-room .group {
+    margin-top: 0;
+  }
+  .pa-left {
+    padding-left: 0px;
+  }
+  .no-res .pa-right {
+    padding-right: 0px;
+  }
+  .i-left {
+    right: 20px;
+  }
+  #rooms{
+    margin-top: 50px; 
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .detail-room {
+    border-bottom: 1px solid #e1e1e1;
+    line-height: 1.5;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 30px 15px 30px 15px;
+  }
+  #rooms h4 {
+    font-weight: 700;
+    margin-top: 20px;
+    padding-bottom: 9px;
+  }
+  .image-room img {
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 479px) {
+  .detail-room {
+    border-bottom: 1px solid #e1e1e1;
+    line-height: 1.5;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 30px 15px 30px 15px;
+  }
+  #rooms h4 {
+    font-weight: 700;
+    margin-top: 20px;
+    padding-bottom: 9px;
+  }
+  .detail-room .btn-more {
+    margin: 22px 0 0;
+    padding: 8px;
+    width: 70%;
+  }
+  #button-ok{
+    width: 70%;
+  }
+}
+@media (max-width: 320px) {
+  #button-ok{
+    width: 100%;
+  }
+}
