@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +35,9 @@ public class ApplicationShowDAOImpl implements ApplicationShowDAO {
             a.setDescription(h.getDescription());
             a.setPrice(h.getPrice());
             a.setMessage(application.getMessage());
-            a.setTime(application.getTime());
             a.setStatus(application.getStatus());
+            LocalDateTime time = LocalDateTime.parse(application.getTime().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
+            a.setTime(time.format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm")));
 
             applicationShows.add(a);
         }
