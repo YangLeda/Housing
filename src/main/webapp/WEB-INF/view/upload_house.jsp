@@ -56,12 +56,12 @@
                 <input type="text" name="address" class="form-control" placeholder="Enter the address" required
                        autofocus>
             </div>
-
+            <br>
             <div>
                 <h5>Price</h5>
                 <input type="text" name="price" class="form-control" placeholder="price" required autofocus>
             </div>
-
+            <br>
             <div>
                 <div class="form-check form-check-inline">
                     <h5> Bedrooms:</h5>
@@ -102,22 +102,22 @@
                     </select>
                 </div>
             </div>
-
+            <br>
             <div>
                 <h5>Picture</h5>
                 <input type="file" name="file" id="file" multiple>
                 <p>.jpg or .png files under 5MB only.</p>
             </div>
-
+            <br>
             <div class="form-check form-check-inline">
                 <h5>Description</h5>
-                <input type="text" name="description" class="form-control" placeholder="Enter your description" required
-                       autofocus>
+                <textarea style="min-width: 100%" rows="10" cols="100" name="description"></textarea>
             </div>
-
+            <br>
             <div class="spacefix">
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
             </div>
+            <br>
         </form>
 
         <!-- footer -->
