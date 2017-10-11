@@ -34,6 +34,7 @@ public class ApplicationShowDAOImpl implements ApplicationShowDAO {
             a.setCarparks(h.getCarparks());
             a.setDescription(h.getDescription());
             a.setPrice(h.getPrice());
+            a.setId(application.getId());
             a.setMessage(application.getMessage());
             a.setStatus(application.getStatus());
             LocalDateTime time = LocalDateTime.parse(application.getTime().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
