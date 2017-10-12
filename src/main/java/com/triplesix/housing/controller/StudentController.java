@@ -97,7 +97,7 @@ public class StudentController {
 
         // send email
         String landlordEmail = landlordDAO.getLandlordEmailById(landlordid);
-        String text = "You have received a new application! Please visit UTS Online Housing website to see more detail.";
+        String text = "You have received a new application!<br>Please visit UTS Online Housing website to see more detail.";
         emailService.sendEmail(landlordEmail, text, null);
 
         return "information";
