@@ -64,10 +64,12 @@ public class StudentController {
         // dao
         House house = houseDAO.getHouseById(id);
         List<Img> imgs = imgDAO.getImgsByHouseId(id);
+        String landlordEmail = landlordDAO.getLandlordEmailById(house.getLandlordid());
 
         // add house to model
         model.addAttribute("house", house);
         model.addAttribute("imgs", imgs);
+        model.addAttribute("landlordEmail", landlordEmail);
 
         return "house_detail";
     }

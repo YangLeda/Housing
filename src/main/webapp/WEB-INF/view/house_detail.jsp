@@ -66,13 +66,15 @@
 
             <h5>Price</h5> ${house.price}
 
-            <h5> Bedrooms:</h5> ${house.bedrooms}
+            <h5>Bedrooms:</h5> ${house.bedrooms}
 
             <h5>Bathrooms:</h5> ${house.bathrooms}
 
             <h5>Carparks:</h5> ${house.carparks}
 
             <h5>Description:</h5> ${house.description}
+
+            <h5>Landlord Email:</h5> ${landlordEmail}
 
             <br><br>
             <form method="post" action="submit_application">
