@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Landlord</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
@@ -19,8 +19,10 @@
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/footer.css"/>
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/header.css"/>
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/blog-single.css">
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/ionicons.min.css">
 </head>
 
@@ -61,8 +63,8 @@
                             <div class="col-sm-4 col-md-8 nav-right  hidden-xs hidden-sm">
                                 <nav>
                                     <ul class="nav navbar-nav" id="main-nav">
-                                        <li ><a href="/">Home <span class="sr-only">(current)</span></a></li>
-                                        <li ><a href="/student">Student</a></li>
+                                        <li><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                                        <li><a href="/student">Student</a></li>
                                         <li class="active"><a href="/landlord">Landlord</a></li>
 
                                     </ul>
@@ -127,13 +129,14 @@
     </section> <!--.slider-box -->
     <main id="main-content">
         <div class="container">
-            <div class="row"  id="content"><!--Begin #content-->
+            <div class="row" id="content"><!--Begin #content-->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
-                    <a href="/upload_house" class="btn btn-info btn-lg" style=" margin-left: 15px; margin-bottom: 20px; ">
+                    <a href="/upload_house" class="btn btn-info btn-lg"
+                       style=" margin-left: 15px; margin-bottom: 20px; ">
                         <span class="glyphicon glyphicon-plus"></span> Upload Property
                     </a>
 
-                    <div  id="questions">
+                    <div id="questions">
                         <h3>Received Applications:</h3>
                         <c:forEach var="application" items="${applicationShows}" varStatus="i">
                             <c:set var="status" value="${application.status}" scope="request"/>
@@ -180,19 +183,27 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Approve application</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            Approve this application?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <a class="btn btn-success"
-                                               href="/decide?decision=Approved&applicationid=${application.id}">Approve</a>
-                                        </div>
+                                        <form method="post" action="decide?decision=Approved">
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="approve_message">Leave a message to the student:</label>
+                                                    <textarea class="form-control" id="approve_message" name="message"
+                                                              rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="hidden" name="applicationid" value="${application.id}">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                                <button type="submit" class="btn btn-success">Approve</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -203,19 +214,27 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Reject application</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            Reject this application?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <a class="btn btn-danger"
-                                               href="/decide?decision=Rejected&applicationid=${application.id}">Reject</a>
-                                        </div>
+                                        <form method="post" action="decide?decision=Rejected">
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="reject_message">Leave a message to the student:</label>
+                                                    <textarea class="form-control" id="reject_message" name="message"
+                                                              rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="hidden" name="applicationid" value="${application.id}">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Cancel
+                                                </button>
+                                                <button type="submit" class="btn btn-success">Reject</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -258,7 +277,9 @@
                                             Delete this property?
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                Cancel
+                                            </button>
                                             <a class="btn btn-danger"
                                                href="/delete_house?houseId=${house.id}">Confirm</a>
                                         </div>
@@ -305,12 +326,13 @@
                                 <p>(02) 9514 2000 </p>
                                 <p>info@gmail.com</p>
                             </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div id="footer">
-            <p>&copy; 2015 UTS Housing &amp; Resrot. Designed with  <i class="fa fa-heart"></i>  by UTS Housing</p>
-        </div>
+                <div id="footer">
+                    <p>&copy; 2015 UTS Housing &amp; Resrot. Designed with <i class="fa fa-heart"></i> by UTS Housing
+                    </p>
+                </div>
     </footer><!--End footer-->
 </div>
 <!-- Optional JavaScript -->
@@ -326,10 +348,10 @@
 <script type="text/javascript" src="/resources/boostrap/js/moment.js"></script>
 <script type="text/javascript" src="/resources/boostrap/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="/resources/includes/js/plugins.js"></script>
-<script type="text/javascript" src="/resources/includes/js/room-single-1.js" ></script>
+<script type="text/javascript" src="/resources/includes/js/room-single-1.js"></script>
 <script type="text/javascript" src="/resources/includes/js/functions.js"></script>
 <script type="text/javascript" src="/resources/includes/js/home.js"></script>
 <script type="text/javascript" src="/resources/includes/js/jquery.elevatezoom.js"></script>
-<script type="text/javascript" src="/resources/includes/js/room-1.js" ></script>
+<script type="text/javascript" src="/resources/includes/js/room-1.js"></script>
 </body>
 </html>
