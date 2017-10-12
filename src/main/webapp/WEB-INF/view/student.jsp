@@ -8,7 +8,9 @@
     <title>Student</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link type="text/css" rel="stylesheet" href="/resources/boostrap/css/bootstrap.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="/resources/boostrap/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="/resources/boostrap/css/datepicker.css">
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/style-room-single-1.css">
