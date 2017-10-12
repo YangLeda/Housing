@@ -13,6 +13,7 @@
     <link type="text/css" rel="stylesheet" href="/resources/boostrap/css/datepicker.css">
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/style-room-single-1.css">
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/booking-3.css">
+    <link type="text/css" rel="stylesheet" href="/resources/includes/css/faqs.css">
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/footer.css"/>
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/header.css"/>
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/blog-single.css">
@@ -122,21 +123,20 @@
         <div class="container">
             <div class="row"  id="content"><!--Begin #content-->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
-                    <a href="/upload_house" class="btn btn-info btn-lg">
+                    <a href="/upload_house" class="btn btn-info btn-lg" style=" margin-left: 15px; margin-bottom: 20px; ">
                         <span class="glyphicon glyphicon-plus"></span> Upload Property
                     </a>
-    </p>
-    <br><br>
-                    <h2>Received Applications:</h2>
-                    <c:forEach var="application" items="${applicationShows}">
-                        <c:set var="status" value="${application.status}" scope="request"/>
-                        <br>
-                        <div class="card">
-                            <div class="card-header">
-                                <b>${application.address}</b>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">
+
+                    <div  id="questions">
+                        <h3>Received Applications:</h3>
+                        <c:forEach var="application" items="${applicationShows}" varStatus="i">
+                            <c:set var="status" value="${application.status}" scope="request"/>
+                            <div class="question row">
+                                <div class="col-xs-12 col-sm-1 col-md-1 no-left animated zoomIn wow">
+                                    <div class="box-date ">${i.index + 1}<p class="border-dotted"></p></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-11 col-md-11 asked-question">
+                                    <h4>${application.address}</h4>
                                     <b>Bedrooms: </b>${application.bedrooms}<br>
                                     <b>Bathrooms: </b>${application.bathrooms}<br>
                                     <b>Carparks: </b>${application.carparks}<br>
@@ -153,111 +153,117 @@
                                     <c:if test="${ status  == 'Rejected'}">
                                         <span class="badge badge-danger">${application.status}</span>
                                     </c:if>
-                                </p>
-                                <c:if test="${ status  == 'Pending'}">
-                                    <a class="btn btn-success"
-                                       href="#"
-                                       data-toggle="modal" data-target="#approvemodal_${application.id}">Approve</a>
+                                    </p>
+                                    <br>
+                                    <c:if test="${ status  == 'Pending'}">
+                                        <a class="btn btn-success"
+                                           href="#"
+                                           data-toggle="modal" data-target="#approvemodal_${application.id}">Approve</a>
+                                        <a class="btn btn-danger"
+                                           href="#"
+                                           data-toggle="modal" data-target="#rejectmodal_${application.id}">Reject</a>
+                                    </c:if>
+
+                                </div>
+                            </div>
+                            <br>
+                            <!-- Modal approve-->
+                            <div class="modal fade" id="approvemodal_${application.id}" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Approve this application?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-success"
+                                               href="/decide?decision=Approved&applicationid=${application.id}">Approve</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal reject-->
+                            <div class="modal fade" id="rejectmodal_${application.id}" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Reject this application?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-danger"
+                                               href="/decide?decision=Rejected&applicationid=${application.id}">Reject</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+
+                    </div>
+                    <div id="questions">
+                        <h3>Your Properties:</h3>
+                        <c:forEach var="house" items="${houses}" varStatus="i">
+                            <div class="question row">
+                                <div class="col-xs-12 col-sm-1 col-md-1 no-left animated zoomIn wow">
+                                    <div class="box-date ">${i.index + 1}<p class="border-dotted"></p></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-11 col-md-11 asked-question">
+                                    <h4> ${house.address}</h4>
+                                    <p>Prices: ${house.price} <br>
+                                        Bedrooms: ${house.bedrooms} <br>
+                                        Bathrooms: ${house.bathrooms} <br>
+                                        Carparks: ${house.carparks} </p>
+                                    <br>
                                     <a class="btn btn-danger"
                                        href="#"
-                                       data-toggle="modal" data-target="#rejectmodal_${application.id}">Reject</a>
-                                </c:if>
+                                       data-toggle="modal" data-target="#housemodal_${house.id}">Delete</a>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <!-- Modal approve-->
-                        <div class="modal fade" id="approvemodal_${application.id}" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalLabel"
-                             aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Approve this application?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <a class="btn btn-success"
-                                           href="/decide?decision=Approved&applicationid=${application.id}">Approve</a>
+                            <br>
+                            <!-- Modal -->
+                            <div class="modal fade" id="housemodal_${house.id}" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Delete this property?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-danger"
+                                               href="/delete_house?houseId=${house.id}">Confirm</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal reject-->
-                        <div class="modal fade" id="rejectmodal_${application.id}" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalLabel"
-                             aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Reject this application?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <a class="btn btn-danger"
-                                           href="/decide?decision=Rejected&applicationid=${application.id}">Reject</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
+                        </c:forEach>
 
-                    <br><br>
-                    <h2>Your Properties:</h2>
-                    <c:forEach var="house" items="${houses}">
-                        <br>
-                        <div class="card">
-                            <div class="card-header">
-                                <b>${house.address}</b>
-                            </div>
-                            <div class="card-body">
-                                <b>Price: </b>${house.price}<br>
-                                <b>Bedrooms: </b>${house.bedrooms}<br>
-                                <b>Bathrooms: </b>${house.bathrooms}<br>
-                                <b>Carparks: </b>${house.carparks}<br>
-                                <br>
-                                <a class="btn btn-danger"
-                                   href="#"
-                                   data-toggle="modal" data-target="#housemodal_${house.id}">Delete</a>
-                            </div>
-                        </div>
-                        <br>
-                        <!-- Modal -->
-                        <div class="modal fade" id="housemodal_${house.id}" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalLabel"
-                             aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Delete this property?
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <a class="btn btn-danger"
-                                           href="/delete_house?houseId=${house.id}">Confirm</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
+                    </div>
 
+                </div>
 
             </div>
         </div>
@@ -293,8 +299,6 @@
                                 <p>(02) 9514 2000 </p>
                                 <p>info@gmail.com</p>
                             </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -315,3 +319,4 @@
 <script type="text/javascript" src="/resources/includes/js/jquery.elevatezoom.js"></script>
 <script type="text/javascript" src="/resources/includes/js/room-1.js" ></script>
 </body>
+</html>
