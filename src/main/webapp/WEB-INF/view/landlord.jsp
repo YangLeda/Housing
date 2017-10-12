@@ -21,6 +21,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/ionicons.min.css">
 </head>
+
 <body class="stretched dark side-push-panel">
 <div class="body-overlay"></div>
 <div id="side-panel" class="dark">
@@ -97,10 +98,12 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <hr class="hidden-xs hidden-sm">
             </div>
         </div>
+
     </header>
     <section class="slider-box parslide">
         <div class="slider-mask"></div>
@@ -115,6 +118,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

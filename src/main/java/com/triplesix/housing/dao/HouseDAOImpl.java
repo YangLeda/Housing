@@ -92,6 +92,11 @@ public class HouseDAOImpl implements HouseDAO {
         Query query = currentSession.createQuery("delete from House where id=:id");
         query.setParameter("id", id);
         query.executeUpdate();
+
+        // delete related applications
+        query = currentSession.createQuery("delete from Application where houseid=:id");
+        query.setParameter("id", id);
+        query.executeUpdate();
     }
 
 }
