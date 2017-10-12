@@ -75,19 +75,24 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Approve application</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        Approve this application?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-success"
-                           href="/decide?decision=Approved&applicationid=${application.id}">Approve</a>
-                    </div>
+                    <form method="post" action="decide?decision=Approved">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="approve_message">Leave a message to the student:</label>
+                                <textarea class="form-control" id="approve_message" name="message" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="applicationid" value="${application.id}">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-success">Approve</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -98,19 +103,24 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Housing</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Reject application</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        Reject this application?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-danger"
-                           href="/decide?decision=Rejected&applicationid=${application.id}">Reject</a>
-                    </div>
+                    <form method="post" action="decide?decision=Rejected">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="reject_message">Leave a message to the student:</label>
+                                <textarea class="form-control" id="reject_message" name="message" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="applicationid" value="${application.id}">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-success">Reject</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
