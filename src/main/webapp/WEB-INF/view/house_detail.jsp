@@ -85,9 +85,9 @@
                 <h5>Your name</h5>
                 <input type="text" name="name" class="form-control" required>
                 <h5>Your phone number</h5>
-                <input type="text" name="phone" class="form-control" required>
+                <input type="text" name="phone" class="form-control" pattern="\d{10}" title="10 digit phone number." required>
                 <h5>Your email</h5>
-                <input type="text" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" required>
                 <br>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Apply</button>
                 <br><br>

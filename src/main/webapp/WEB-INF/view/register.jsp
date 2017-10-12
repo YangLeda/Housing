@@ -24,21 +24,21 @@
 
         <div class="form-check form-check-inline">
             <h5> Username:</h5>
-            <input class="form-control" type="text" name="username">
+            <input class="form-control" type="text" name="username" required>
             <br>
 
             <h5>Password:</h5>
             <div>
-                <input class="form-control" type="password" name="password" pattern=".{6,}" title="Six or more characters">
+                <input class="form-control" type="password" name="password" pattern=".{6,}" title="Six or more characters" required>
                 <h7>Password must be 6 or more characters.</h7>
             </div>
             <br>
 
             <h5>Full name:</h5>
-            <input class="form-control" type="text" name="fullname">
+            <input class="form-control" type="text" name="fullname" required>
 
             <h5>Email:</h5>
-            <input class="form-control" type="email" name="email">
+            <input class="form-control" type="email" name="email" required>
         </div>
 
         <div>

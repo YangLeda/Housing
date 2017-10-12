@@ -63,8 +63,8 @@
             </div>
 
             <div class="form-group">
-                <label for="price"><b>Price</b></label>
-                <input type="text" id="price" name="price" class="form-control" placeholder="price" required autofocus>
+                <label for="price"><b>Price per week</b></label>
+                <input type="text" id="price" name="price" pattern="[0-9.]+" title="Numeric characters only" class="form-control" placeholder="price" required autofocus>
             </div>
 
             <div class="form-row align-items-center">
@@ -110,7 +110,7 @@
 
             <div class="form-group">
                 <label for="description"><b>Description</b></label>
-                <textarea class="form-control" id="description" name="description" rows="10"></textarea>
+                <textarea class="form-control" id="description" name="description" rows="10" required></textarea>
             </div>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
