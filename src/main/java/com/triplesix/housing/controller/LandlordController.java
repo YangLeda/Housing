@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
@@ -113,18 +112,14 @@ public class LandlordController {
 
     @RequestMapping("/decide")
     public String decide(@RequestParam("applicationid") Integer applicationId,
-                         @RequestParam("decision") String decision,
-                         @RequestParam("message") String message) throws MessagingException {
+                         @RequestParam("decision") String decision) {
 
         applicationDAO.setStatusById(applicationId, decision);
 
         // send email
         String email = applicationDAO.getEmailById(applicationId);
-        String text = "One of your application has been " + decision.toLowerCase()+ "!<br>Please visit UTS Online Housing website to see more detail.";
-
-        // message from landlord
-        System.out.println("Landlord message: " + message);
-        emailService.sendEmail(email, text, message);
+        String text = "Your application status has changed! Please visit UTS Online Housing website to see more detail.";
+        emailService.sendEmail(email, text);
 
         return "redirect:/landlord";
     }

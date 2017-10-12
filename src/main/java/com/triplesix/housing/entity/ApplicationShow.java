@@ -1,5 +1,7 @@
 package com.triplesix.housing.entity;
 
+import java.util.Date;
+
 public class ApplicationShow {
     private Integer id;
 
@@ -20,10 +22,6 @@ public class ApplicationShow {
     private Integer bathrooms;
 
     private Integer carparks;
-
-    private String phone;
-
-    private String email;
 
 
     public Integer getId() {
@@ -104,21 +102,5 @@ public class ApplicationShow {
 
     public void setCarparks(Integer carparks) {
         this.carparks = carparks;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }

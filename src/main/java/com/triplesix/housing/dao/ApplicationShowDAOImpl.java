@@ -37,8 +37,6 @@ public class ApplicationShowDAOImpl implements ApplicationShowDAO {
             a.setId(application.getId());
             a.setMessage(application.getMessage());
             a.setStatus(application.getStatus());
-            a.setPhone(application.getPhone());
-            a.setEmail(application.getEmail());
             LocalDateTime time = LocalDateTime.parse(application.getTime().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
             a.setTime(time.format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm")));
 
