@@ -38,10 +38,8 @@
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    <b>Bedrooms: </b>${application.bedrooms}<br>
-                    <b>Bathrooms: </b>${application.bathrooms}<br>
-                    <b>Carparks: </b>${application.carparks}<br>
                     <b>Price: </b>${application.price}<br>
+                    <b>Student Name: </b>${application.name}<br>
                     <b>Message: </b>${application.message}<br>
                     <b>Phone: </b>${application.phone}<br>
                     <b>Email: </b>${application.email}<br>

@@ -14,6 +14,9 @@ public class Application {
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "email")
     private String email;
 
@@ -40,7 +43,8 @@ public class Application {
     public Application() {
     }
 
-    public Application(String phone, String email, String message, Date time, Integer houseid, Integer studentid, Integer landlordid, String status) {
+    public Application(String name, String phone, String email, String message, Date time, Integer houseid, Integer studentid, Integer landlordid, String status) {
+        this.name = name;
         this.phone = phone;
         this.email = email;
         this.message = message;
@@ -49,6 +53,14 @@ public class Application {
         this.studentid = studentid;
         this.landlordid = landlordid;
         this.status = status;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {
@@ -128,6 +140,7 @@ public class Application {
         return "Application{" +
                 "id=" + id +
                 ", phone='" + phone + '\'' +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", message='" + message + '\'' +
                 ", time=" + time +

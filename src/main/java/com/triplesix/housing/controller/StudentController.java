@@ -74,6 +74,7 @@ public class StudentController {
 
     @RequestMapping("/submit_application")
     public String submitApplication(@RequestParam("phone") String phone,
+                                    @RequestParam("name") String name,
                                     @RequestParam("email") String email,
                                     @RequestParam("message") String message,
                                     @RequestParam("houseid") Integer houseid,
@@ -91,7 +92,7 @@ public class StudentController {
         Date time = new Date();
 
         // dao
-        applicationDAO.addApplication(phone, email, message, time, houseid, studentid, landlordid);
+        applicationDAO.addApplication(name, phone, email, message, time, houseid, studentid, landlordid);
 
         model.addAttribute("message", "Submit success! Landlord will receive notification.");
 

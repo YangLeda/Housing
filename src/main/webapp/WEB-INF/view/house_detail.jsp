@@ -80,6 +80,8 @@
                 <input type="hidden" name="landlordid" value="${house.landlordid}">
                 <h5>Leave a Message</h5>
                 <textarea style="min-width: 100%" rows="10" name="message"></textarea>
+                <h5>Your name</h5>
+                <input type="text" name="name" class="form-control" required>
                 <h5>Your phone number</h5>
                 <input type="text" name="phone" class="form-control" required>
                 <h5>Your email</h5>

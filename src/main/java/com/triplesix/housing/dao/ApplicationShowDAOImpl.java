@@ -35,6 +35,7 @@ public class ApplicationShowDAOImpl implements ApplicationShowDAO {
             a.setDescription(h.getDescription());
             a.setPrice(h.getPrice());
             a.setId(application.getId());
+            a.setName(application.getName());
             a.setMessage(application.getMessage());
             a.setStatus(application.getStatus());
             a.setPhone(application.getPhone());

@@ -22,8 +22,8 @@ public class ApplicationDAOImpl implements ApplicationDAO {
 
     @Override
     @Transactional
-    public void addApplication(String phone, String email, String message, Date time, Integer houseid, Integer studentid, Integer landlordid) {
-        Application application = new Application(phone, email, message, time, houseid, studentid, landlordid, "Pending");
+    public void addApplication(String name, String phone, String email, String message, Date time, Integer houseid, Integer studentid, Integer landlordid) {
+        Application application = new Application(name, phone, email, message, time, houseid, studentid, landlordid, "Pending");
         Session currentSession = sessionFactory.getCurrentSession();
         currentSession.persist(application);
     }
