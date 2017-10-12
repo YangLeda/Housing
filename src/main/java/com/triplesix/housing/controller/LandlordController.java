@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
@@ -112,7 +113,7 @@ public class LandlordController {
 
     @RequestMapping("/decide")
     public String decide(@RequestParam("applicationid") Integer applicationId,
-                         @RequestParam("decision") String decision) {
+                         @RequestParam("decision") String decision) throws MessagingException {
 
         applicationDAO.setStatusById(applicationId, decision);
 

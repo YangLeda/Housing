@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.mail.MessagingException;
 import java.util.Date;
 import java.util.List;
 
@@ -79,7 +80,7 @@ public class StudentController {
                                     @RequestParam("landlordid") Integer landlordid,
                                     @CookieValue(value = "as", required = false) String as,
                                     @CookieValue(value = "id", required = false) Integer studentid,
-                                    Model model) {
+                                    Model model) throws MessagingException {
 
         // ask to log in if not a student
         if (as == null || !as.equals("Student")) {
