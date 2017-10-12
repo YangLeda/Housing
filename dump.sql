@@ -59,7 +59,7 @@ CREATE TABLE `application` (
   `landlordid` int(11) DEFAULT NULL,
   `status` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (5,'0401334789','yangledaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1,'Approved'),(6,'0401323367','yangledaa@gmail.com','Hi. I want to apply.','2017-10-05 14:42:10',2,1,2,'Rejected'),(7,'0401327539','yangledaa@gmail.com','I want to apply.','2017-10-07 19:37:48',2,1,2,'Approved'),(10,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-10 21:12:35',2,1,2,'Pending'),(11,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-11 21:12:35',2,1,2,'Pending');
+INSERT INTO `application` VALUES (5,'0401334789','yangledaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1,'Approved'),(6,'0401323367','yangledaa@gmail.com','Hi. I want to apply.','2017-10-05 14:42:10',2,1,2,'Rejected'),(7,'0401327539','yangledaa@gmail.com','I want to apply.','2017-10-07 19:37:48',2,1,2,'Approved'),(10,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-10 21:12:35',2,1,2,'Pending'),(11,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-11 21:12:35',2,1,2,'Pending'),(12,'0456233456','yangledaa@gmail.com','The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection. \r\n','2017-10-12 11:35:43',1,1,2,'Pending');
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-10 22:07:45
+-- Dump completed on 2017-10-12 11:36:18
