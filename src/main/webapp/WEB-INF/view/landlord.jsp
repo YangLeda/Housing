@@ -43,6 +43,8 @@
                     <b>Carparks: </b>${application.carparks}<br>
                     <b>Price: </b>${application.price}<br>
                     <b>Message: </b>${application.message}<br>
+                    <b>Phone: </b>${application.phone}<br>
+                    <b>Email: </b>${application.email}<br>
                     <b>Apply time: </b>${application.time}<br>
                     <b>Status:</b>
                     <c:if test="${ status  == 'Pending'}">

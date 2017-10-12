@@ -20,7 +20,7 @@ public class EmailService {
         mailMessage.setSubject("UTS Housing");
         mailMessage.setText(text);
 
-        //mailSender.send(mailMessage);
-        System.out.println("Email not sent: " + mailMessage.getText());
+        mailSender.send(mailMessage);
+        //System.out.println("Email not sent: " + mailMessage.getText());
     }
 }
