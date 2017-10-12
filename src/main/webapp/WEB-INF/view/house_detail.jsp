@@ -20,6 +20,11 @@
     <link type="text/css" rel="stylesheet" href="/resources/includes/css/ionicons.min.css">
 </head>
 <body class="stretched dark side-push-panel">
+<script>
+    $(document).ready(function () {
+        $('#carousel').find('.carousel-item').first().addClass('active');
+    });
+</script>
 <div class="body-overlay"></div>
 <div id="side-panel" class="dark">
     <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="fa fa-times"></i></a></div>
