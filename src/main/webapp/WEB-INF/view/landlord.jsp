@@ -116,7 +116,7 @@
                         <div class="modal-footer">
                             <input type="hidden" name="applicationid" value="${application.id}">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-success">Reject</button>
+                            <button type="submit" class="btn btn-danger">Reject</button>
                         </div>
                     </form>
                 </div>
