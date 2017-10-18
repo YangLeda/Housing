@@ -34,8 +34,9 @@ public class HouseDAOImpl implements HouseDAO {
         String query = "Select h from House h where " +
                 "h.bedrooms >= :minBedrooms and " +
                 "h.bathrooms >= :minBathrooms and " +
-                "h.carparks > :minCarparks and " +
-                "h.price between :minPrice and :maxPrice";
+                "h.carparks >= :minCarparks and " +
+                "h.price >= :minPrice and " +
+                "h.price <= :maxPrice";
 
         Query<House> q = currentSession.createQuery(query, House.class);
         q.setParameter("minBedrooms", minBedrooms);
