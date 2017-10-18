@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'admin','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
+INSERT INTO `admin` VALUES (1,'admin','d82494f05d6917ba02f7aaa29689ccb444bb73f20380876cb05d1f37537b7892');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `application` (
   `status` varchar(45) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (5,'0401334789','yangledaa@gmail.com','I want to apply.','2017-10-03 15:12:10',23,1,1,'Approved',NULL),(6,'0401323367','yangledaa@gmail.com','Hi. I want to apply.','2017-10-05 14:42:10',2,1,2,'Rejected',NULL),(7,'0401327539','yangledaa@gmail.com','I want to apply.','2017-10-07 19:37:48',2,1,2,'Approved',NULL),(10,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-10 21:12:35',2,1,2,'Pending',NULL),(11,'0401347902','yangledaa@gmail.com','I like this house.','2017-10-11 21:12:35',2,1,2,'Pending',NULL),(12,'0456233456','yangledaa@gmail.com','The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection. \r\n','2017-10-12 11:35:43',1,1,2,'Pending',NULL),(13,'1234','ww','hahaha','2017-10-12 19:27:52',2,1,2,'Pending','leda');
+INSERT INTO `application` VALUES (1,'0401312404','yangledaa@gmail.com','I want to apply.','2017-10-03 15:12:10',1,1,1,'Approved',NULL),(2,'0401312404','yangledaa@gmail.com','I want to apply.','2017-10-05 14:42:10',2,1,1,'Rejected',NULL),(3,'0401312404','yangledaa@gmail.com','I like the house.','2017-10-07 19:37:48',3,1,1,'Pending',NULL);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +92,7 @@ CREATE TABLE `house` (
   `landlordid` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `house` (
 
 LOCK TABLES `house` WRITE;
 /*!40000 ALTER TABLE `house` DISABLE KEYS */;
-INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,2),(2,'51 Cowper Street',3,1,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',550,2),(3,'49-51 Loch St',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',600,2),(22,'38 Bridge Street',5,5,3,'/resources/img/1506853533881house1.jpg','Bridgeport is a well maintained security building with gymnasium located moments to Circular Quay, The Botanical Gardens and all that the City has to offer.  For private inspections please contact: Vicheka Yoeun on: W: 9241 3327 M: 0424 360 484',650,2),(23,'127 Kent St',4,3,2,'/resources/img/1506854205232image4.jpg','* Bright and airy living area with floor to ceiling glass doors * Two large bedrooms, master with ensuite and walk-through-robe  * Galley kitchen with gas appliances, granite finishes and parquetry flooring * Featuring large balcony, and second balcony off main bedroom * Views capturing Darling Harbour and Barangaroo * Prestigious entry foyer with 24hr concierge plus residents lounge',900,1);
+INSERT INTO `house` VALUES (1,'418 - 422 Canterbury Road',3,2,1,'/resources/img/house1.jpg','Setting a new benchmark in visionary contemporary design, \'Campsie Central\' is a brave and distinctive lifestyle development intuitively crafted by award winning CDArchitects. The sublime development presents an outstanding opportunity to enjoy a life of vitality, convenience and connection.',700,1),(2,'148-160 King Street, Sydney',3,2,1,'/resources/img/house2.jpg','A tightly held and highly regarded tree lined location within walking distance to schools, parks, playgrounds, restaurants and both bus and train transport.',600,1),(3,'129 Harrington Street, Sydney',2,1,1,'/resources/img/house3.jpg','This site represents an outstanding opportunity to acquire this DA approved residential development site for 14 apartments in the high growth precinct of Campsie.',500,1),(4,'168 Kent Street, Sydney',4,2,2,'/resources/img/house4.jpg','City Living at its finest. Situated in one of Sydney’s most highly sought after residential buildings.',550,1),(5,'343-357 Pitt Street, Sydney',3,2,2,'/resources/img/house5.jpg','You will be hard-pressed to find a better location than this, with everything at your doorstep.',800,1);
 /*!40000 ALTER TABLE `house` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +126,7 @@ CREATE TABLE `img` (
 
 LOCK TABLES `img` WRITE;
 /*!40000 ALTER TABLE `img` DISABLE KEYS */;
-INSERT INTO `img` VALUES (7,'/resources/img/1506853533881house1.jpg',22),(8,'/resources/img/1506853533889house2.jpg',22),(9,'/resources/img/1506853533892house3.jpg',22),(10,'/resources/img/house1.jpg',1),(11,'/resources/img/pic1.jpg',1),(12,'/resources/img/pic2.jpg',1),(13,'/resources/img/house2.jpg',2),(14,'/resources/img/pic3.jpg',2),(15,'/resources/img/pic4.jpg',2),(16,'/resources/img/house3.jpg',3),(17,'/resources/img/pic5.jpg',3),(18,'/resources/img/pic6.jpg',3),(19,'/resources/img/1506854205232image4.jpg',23),(20,'/resources/img/1506854205251image3.jpg',23),(21,'/resources/img/1506854205254image2.jpg',23),(22,'/resources/img/1506854205257main.jpg',23),(23,'/resources/img/1507629514605',24);
+INSERT INTO `img` VALUES (1,'/resources/img/house1.jpg',1),(2,'/resources/img/pic1.jpg',1),(3,'/resources/img/pic2.jpg',1),(4,'/resources/img/house2.jpg',2),(5,'/resources/img/pic3.jpg',2),(6,'/resources/img/pic4.jpg',2),(7,'/resources/img/house3.jpg',3),(8,'/resources/img/pic5.jpg',3),(9,'/resources/img/pic6.jpg',3),(10,'/resources/img/house4.jpg',4),(11,'/resources/img/pic7.jpg',4),(12,'/resources/img/pic8.jpg',4),(13,'/resources/img/house5.jpg',5),(14,'/resources/img/pic9.jpg',5),(15,'/resources/img/pic10.jpg',5);
 /*!40000 ALTER TABLE `img` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +145,7 @@ CREATE TABLE `landlord` (
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +154,7 @@ CREATE TABLE `landlord` (
 
 LOCK TABLES `landlord` WRITE;
 /*!40000 ALTER TABLE `landlord` DISABLE KEYS */;
-INSERT INTO `landlord` VALUES (1,'landlord','c4a11b3a02a7908b51baf438f5024526f2bde971b3024d058420b737dc61e93f','landlord','yangledaa@gmail.com'),(2,'a','ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb','yangleda','yangledaa@gmail.com'),(3,'l','acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0','leda','yangledaa@gmail.com');
+INSERT INTO `landlord` VALUES (1,'landlord','7bbdfb675eaaa3ee22be6d75e6777df26267f202272d2528b76f7c030684b2e8','landlord','yangledaa@gmail.com');
 /*!40000 ALTER TABLE `landlord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +180,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'123','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3');
+INSERT INTO `student` VALUES (1,'student','0a83b75732fb39e74753c47712db5e4e5f33d26b62db7170f9cb2851bde2f1e6');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -193,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-12 19:33:00
+-- Dump completed on 2017-10-18 16:07:41
