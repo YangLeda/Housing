@@ -35,7 +35,7 @@ public class EmailService {
         helper.setSubject("UTS Housing");
         helper.setText(content, true);
 
-        //mailSender.send(mailMessage);
+        mailSender.send(mailMessage);
         System.out.println("Email:" + mailMessage);
     }
 
